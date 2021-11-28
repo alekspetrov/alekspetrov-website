@@ -1,7 +1,7 @@
 import { defineNuxtConfig } from 'nuxt3'
 
 export default defineNuxtConfig({
-  css: ['~/assets/css/tailwind.css'],
+  css: ['~/assets/css/fonts.css', '~/assets/css/tailwind.css'],
   build: {
     postcss: {
       postcssOptions: {
@@ -11,5 +11,8 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  privateRuntimeConfig: {
+    notionToken: process.env.NOTION_TOKEN,
   },
 })

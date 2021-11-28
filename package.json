@@ -10,5 +10,8 @@
     "nuxt3": "latest",
     "postcss": "^8.4.4",
     "tailwindcss": "^2.2.19"
+  },
+  "dependencies": {
+    "@notionhq/client": "^0.4.9"
   }
 }
