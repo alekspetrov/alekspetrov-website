@@ -7,6 +7,7 @@ const NOTION_TOKEN = config.notionToken
 const NOTION_POSTS_DB_ID = config.notionPostDbId
 
 const notion = new Client({
+  // baseUrl: 'https://notion-api.splitbee.io',
   auth: NOTION_TOKEN,
 })
 

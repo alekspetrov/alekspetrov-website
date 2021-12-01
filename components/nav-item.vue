@@ -6,7 +6,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <a :href="link" class="relative group block leading-8">
+  <span class="relative group block leading-8">
     <span
       class="
         absolute
@@ -16,8 +16,9 @@ const props = defineProps({
         group-hover:inline-block
         text-gray-400
       "
-      >#</span
     >
-    {{ title }}</a
-  >
+      #
+    </span>
+    {{ title }}
+  </span>
 </template>
