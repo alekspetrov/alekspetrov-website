@@ -1,15 +1,16 @@
 import { Client } from '@notionhq/client'
+import { foramatDate } from '../../../utils/dateToReadable'
+import { useQuery } from 'h3'
+import config from '#config'
 
-const NOTION_API_URL = process.env.NOTION_API_URL || 'http://localhost:3000'
-const NOTION_TOKEN = process.env.NOTION_TOKEN
-const NOTION_POSTS_DB_ID = process.env.NOTION_POSTS_DB_ID
-const NOTION_VERSION = process.env.NOTION_VERSION
+const NOTION_TOKEN = config.notionToken
+const NOTION_POSTS_DB_ID = config.notionPostDbId
 
 const notion = new Client({
   auth: NOTION_TOKEN,
 })
 
-export default async (req, res) => {
+const getPosts = async () => {
   const { results } = await notion.databases.query({
     database_id: NOTION_POSTS_DB_ID,
     filter: {
@@ -23,11 +24,24 @@ export default async (req, res) => {
   const data = results.map(post => {
     return {
       id: post.id,
-      crated_at: post.created_time,
+      crated_at: foramatDate(post.created_time),
       title: post.properties.Name.title[0].plain_text,
       desctiption: post.properties.Description.rich_text[0].plain_text,
+      tags: post.properties.Tags.multi_select,
     }
   })
 
   return data
+}
+
+const getPost = async query => {
+  const { results: data } = await notion.blocks.children.list({
+    block_id: query,
+  })
+  return data
+}
+
+export default async (req, res) => {
+  const { query } = useQuery(req)
+  return query ? getPost(query) : getPosts()
 }

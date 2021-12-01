@@ -14,7 +14,7 @@
         <span class="text-gray-400 tracking-tight inline-block">
           Aleks Petrov /
         </span>
-        Blog
+        <NuxtLink to="/">Blog</NuxtLink>
       </div>
       <div class="md:hidden space-x-2 md:mt-4">
         <button>

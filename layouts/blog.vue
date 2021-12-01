@@ -1,5 +1,13 @@
 <template>
   <div class="max-w-6xl mx-auto">
-    <slot />
+    <div>
+      <div class="md:flex">
+        <SiteHeader />
+        <SiteBody>
+          <slot />
+        </SiteBody>
+      </div>
+      <SiteFooter />
+    </div>
   </div>
 </template>
