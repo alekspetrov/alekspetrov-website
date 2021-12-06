@@ -2,14 +2,37 @@ module.exports = {
   mode: 'jit',
   purge: [
     './components/**/*.{vue,js}',
-    './layouts/**/*.vue',
+    './layouts/*.vue',
+    './pages/*.vue',
     './pages/**/*.vue',
     './plugins/**/*{.js,.ts}',
     './nuxt.config.{js,ts}',
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#24202C',
+        accent: '#FBC16A',
+      },
+      rounded: {
+        md: '4px',
+      },
+      width: {
+        18: '72px',
+      },
+      height: {
+        18: '72px',
+      },
+      tracking: {
+        tight: '-0.5%',
+      },
+    },
+    fontSize: {
+      md: '0.9375rem',
+      lg: '1.125rem',
+      xl: '2rem',
+    },
     fontFamily: {
       sans: [
         'Inter',

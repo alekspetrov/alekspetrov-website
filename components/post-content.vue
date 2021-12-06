@@ -18,7 +18,5 @@ const {
   </Html>
   <div v-if="pending">Pending</div>
   <div v-if="error">{{ error }}</div>
-  <pre v-for="block in post" :key="block.id">{{
-    block.type || 'No content'
-  }}</pre>
+  <pre v-for="block in post" :key="block.id">{{ block || 'No content' }}</pre>
 </template>
