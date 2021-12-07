@@ -14,9 +14,9 @@
           lg:mr-4 lg:absolute lg:top-0 lg:right-[100%] lg:mb-0
         "
       ></div>
-      <h1 class="font-semibold text-xl leading-8 mb-3">Blog</h1>
+      <h1 class="font-semibold text-xl leading-8 mb-3">Aleksei Petrov</h1>
       <p class="font-medium text-lg opacity-60">
-        Writing about my vision on how to build web products
+        About digital products, development and design.
       </p>
     </div>
     <BlogArticlesList />

@@ -14,8 +14,6 @@ const props = defineProps({
     <p class="opacity-50 leading-6">
       {{ post.desctiption }}
     </p>
-    <NuxtLink :to="`/posts/${post.id}`" class="opacity-80 block">
-      Read more...
-    </NuxtLink>
+    <div>12 Dec, 2021</div>
   </li>
 </template>

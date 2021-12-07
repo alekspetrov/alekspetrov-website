@@ -1,6 +1,6 @@
 <template>
   <header class="mt-4 mb-14 flex justify-between">
-    <NuxtLink to="/" class="hover:text-accent">Aleksei Petrov</NuxtLink>
+    <NuxtLink to="/" class="hover:text-accent">Blog</NuxtLink>
     <div class="w-5">
       <svg
         data-v-bb4ed8b8=""
