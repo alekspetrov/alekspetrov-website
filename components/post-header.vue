@@ -8,7 +8,7 @@ const props = defineProps({
   },
 })
 
-const date = foramatDate('123')
+const date = foramatDate(props.properties['Crated at'].created_time)
 </script>
 
 <template>

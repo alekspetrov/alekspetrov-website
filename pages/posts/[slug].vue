@@ -14,7 +14,6 @@ useMeta({ title: post.page.properties.Description.rich_text[0].plain_text, })
 
 <template>
   <NuxtLayout name="blog">
-    <pre>{{ post.page.properties.Description.rich_text[0].plain_text }}</pre>
     <PostHeader :properties="post.page.properties" />
     <PostContent :content="post.content" />
   </NuxtLayout>
