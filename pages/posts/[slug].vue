@@ -7,14 +7,18 @@ const {
   data: post,
   error,
   pending,
-} = await useFetch(`/api/notion/posts/?query=${slug}`)
-</script>
+} = await useFetch(`/api/notion/posts/?query=${slug}`, { lazy: true })
 
-useMeta({ title: post.page.properties.Description.rich_text[0].plain_text, })
+// useMeta({ title: post.page.properties.Description.rich_text[0].plain_text})
+</script>
 
 <template>
   <NuxtLayout name="blog">
-    <PostHeader :properties="post.page.properties" />
-    <PostContent :content="post.content" />
+    <template v-if="pending">Loading...</template>
+    <template v-else-if="error">Oops! Sometging goes wrong =/</template>
+    <template v-else>
+      <PostHeader :properties="post.page.properties" />
+      <PostContent :content="post.content" />
+    </template>
   </NuxtLayout>
 </template>
