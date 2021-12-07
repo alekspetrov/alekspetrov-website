@@ -5,15 +5,15 @@ const props = defineProps({
 </script>
 
 <template>
-  <li class="space-y-4">
+  <li class="space-y-4 leading-6">
     <NuxtLink :to="`/posts/${post.id}`" class="hover:text-accent">
       <h3 class="font-medium text-lg">
         {{ post.title }}
       </h3>
     </NuxtLink>
-    <p class="opacity-50 leading-6">
+    <p class="opacity-50">
       {{ post.desctiption }}
     </p>
-    <div>12 Dec, 2021</div>
+    <div class="opacity-80">12 Dec, 2021</div>
   </li>
 </template>

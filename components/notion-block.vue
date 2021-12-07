@@ -1,6 +1,6 @@
 <script setup>
 const props = defineProps({
-  content: {
+  block: {
     type: Object,
     default: () => ({}),
   },
@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="text-md leading-6">
-    <NotionBlock v-for="block in content" :key="block.id" :block="block" />
+  <div>
+    <component :is="`post-${block.type}`" :block="block"></component>
   </div>
 </template>
