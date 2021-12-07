@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div v-if="block.content[0]" class="mb-6">
+  <div v-if="block.content[0]">
     <template v-for="(node, idx) in block.content" :key="idx">
       <a
         v-if="node.href"

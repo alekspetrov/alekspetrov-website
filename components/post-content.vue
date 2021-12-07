@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="text-md leading-6">
+  <div class="text-[17px] leading-7 space-y-8">
     <NotionBlock v-for="block in content" :key="block.id" :block="block" />
   </div>
 </template>

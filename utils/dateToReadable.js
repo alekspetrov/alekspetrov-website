@@ -1,6 +1,4 @@
 export function foramatDate(dateString) {
-  console.log('Date', dateString)
-
   const monthNames = [
     'January',
     'February',

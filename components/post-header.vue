@@ -19,6 +19,6 @@ const date = foramatDate(props.properties['Crated at'].created_time)
     <p class="text-lg leading-7 font-medium opacity-60 mb-8">
       {{ properties.Description.rich_text[0].plain_text }}
     </p>
-    <time>{{ date }}</time>
+    <time class="opacity-40">{{ date }}</time>
   </div>
 </template>
