@@ -6,7 +6,7 @@ const props = defineProps({
 
 <template>
   <li class="space-y-4 leading-6">
-    <NuxtLink prefetch :to="`/posts/${post.id}`" class="hover:text-accent">
+    <NuxtLink prefetch :to="`/${post.id}`" class="hover:text-accent">
       <h3 class="font-medium text-lg">
         {{ post.title }}
       </h3>
