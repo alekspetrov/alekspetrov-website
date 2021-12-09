@@ -7,13 +7,13 @@ const NOTION_TOKEN = config.notionToken
 const NOTION_POSTS_DB_ID = config.notionPostDbId
 
 const notion = new Client({
-  // baseUrl: 'https://notion-api.splitbee.io',
   auth: NOTION_TOKEN,
 })
 
 const getPosts = async () => {
   const { results } = await notion.databases.query({
     database_id: NOTION_POSTS_DB_ID,
+    page_size: 5,
     filter: {
       property: 'Status',
       select: {
