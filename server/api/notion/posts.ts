@@ -35,48 +35,138 @@ const getPosts = async () => {
   return data
 }
 
-const apiUrl = 'https://api.notion.com/v1'
+const blockNames = {
+  bulleted_list_item: 'bulleted-list',
+  paragraph: 'paragraph',
+  heading_3: 'heading-3',
+}
 
-const getPost = async pageId => {
+const blockFactory = block => {
+  return {
+    id: block.id,
+    type: blockNames[block.type],
+    content: block[block.type].text.map(text => {
+      return {
+        type: text.type,
+        text: text.text.content,
+        href: text.href,
+      }
+    }),
+  }
+}
+
+const getPage = async id => {
   const [page, { results }] = await Promise.all([
-    notion.pages.retrieve({ page_id: pageId }),
-    notion.blocks.children.list({ block_id: pageId }),
+    notion.pages.retrieve({ page_id: id }),
+    notion.blocks.children.list({ block_id: id }),
   ])
 
-  const content = results.map(post => {
-    return {
-      type: post.type,
-      content: post[post.type].text,
-    }
-  })
+  const blocks = results.reduce((blocks, currentBlock) => {
+    const lastBlock = blocks[blocks.length - 1] || {}
 
-  return { page, content }
+    // if blocks the same type, append to the last block
+    if (lastBlock.type === blockNames[currentBlock.type]) {
+      lastBlock.content = [
+        ...lastBlock.content,
+        ...blockFactory(currentBlock).content,
+      ]
+    } else {
+      blocks.push(blockFactory(currentBlock))
+    }
+
+    return blocks
+  }, [])
+
+  return { page, blocks }
 }
 
 export default async (req, res) => {
   const { query } = useQuery(req)
-  return query ? getPost(query) : getPosts()
+  return query ? getPage(query) : getPosts()
 }
 
 /*
 
 {
-  properties: {
+  page: {
     title: String,
     description: String,
+    tags: [String],
     created_at: Date,
   },
-  content: {
-    blocks: [
-      { 
-        type: String,
-        content: [
-
-        ],
+  blocks: [
+    {
+      type: 'code',
+      content: [
+        {
+          text: String,
+          language: String,
+        }
+      ],
+    },
+    {
+      type: 'heading'
+      level: Number,
+      content: [
+        {
+          text: String,
+        }
+      ]
+    },
+    { 
+      type: 'paragraph',
+      content: [
+        {
+          text: String,
+          properties: [bold, italic, underline],
+          href: String | Null,
+        },
+      ]
+    },
+    {
+      type: 'numbered-list',
+      items: [
+        {
+          text: String,
+          content: [
+            {
+              text: String,
+              properties: [bold, italic, underline],
+              href: String | Null,
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: 'image',
+      src: String,
+      properties: [width, height],
+      caption: {
+        content: {
+          text: String,
+          properties: [bold, italic, underline],
+          href: String | Null,
+        }
       }
-    ]
-  }
+    },
+    {
+      type: 'quote'
+      content: [
+        {
+          text: String,
+          properties: [bold, italic, underline],
+          href: String | Null,
+        }
+      ]
+    },
+    {
+      type: 'divider'
+    },
+    {
+      type: 'video',
+    }
+  ]
 }
-
 
 */

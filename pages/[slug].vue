@@ -18,7 +18,10 @@ const {
     <template v-else-if="error">Oops! Sometging goes wrong =/</template>
     <template v-else>
       <PostHeader :properties="post.page.properties" />
-      <PostContent :content="post.content" />
+      <!-- <PostContent :content="post.content" /> -->
+      <pre>
+        {{ post.blocks }}
+      </pre>
     </template>
   </NuxtLayout>
 </template>
