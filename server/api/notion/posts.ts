@@ -35,10 +35,12 @@ const getPosts = async () => {
   return data
 }
 
-const getPost = async query => {
+const apiUrl = 'https://api.notion.com/v1'
+
+const getPost = async pageId => {
   const [page, { results }] = await Promise.all([
-    notion.pages.retrieve({ page_id: query }),
-    notion.blocks.children.list({ block_id: query }),
+    notion.pages.retrieve({ page_id: pageId }),
+    notion.blocks.children.list({ block_id: pageId }),
   ])
 
   const content = results.map(post => {
@@ -55,3 +57,26 @@ export default async (req, res) => {
   const { query } = useQuery(req)
   return query ? getPost(query) : getPosts()
 }
+
+/*
+
+{
+  properties: {
+    title: String,
+    description: String,
+    created_at: Date,
+  },
+  content: {
+    blocks: [
+      { 
+        type: String,
+        content: [
+
+        ],
+      }
+    ]
+  }
+}
+
+
+*/

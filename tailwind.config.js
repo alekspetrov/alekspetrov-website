@@ -31,7 +31,8 @@ module.exports = {
     fontSize: {
       md: '0.9375rem',
       lg: '1.125rem',
-      xl: '2rem',
+      xl: '1.25rem',
+      '2xl': '2rem',
     },
     fontFamily: {
       sans: [
