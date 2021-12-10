@@ -1,6 +1,7 @@
 import { Client } from '@notionhq/client'
 import { foramatDate } from '../../../utils/dateToReadable'
 import { useQuery } from 'h3'
+import { blockFactory } from '~/utils/notionBlocks'
 import config from '#config'
 
 const NOTION_TOKEN = config.notionToken
@@ -33,77 +34,6 @@ const getPosts = async () => {
   })
 
   return data
-}
-
-const blockFactory = (block, options = { duplicated: false }) => {
-  if (block.type === 'quote') {
-    return {
-      id: block.id,
-      type: block.type,
-      content: block[block.type].text.map(text => {
-        return {
-          text: text.text.content,
-          href: text.text.link,
-        }
-      }),
-    }
-  }
-
-  if (block.type === 'image') {
-    return {
-      id: block.id,
-      type: 'image',
-      src: block.image.file.url,
-      caption: block.image.caption[0]?.text.content || '',
-    }
-  }
-
-  if (block.type === 'divider') {
-    return {
-      id: block.id,
-      type: 'divider',
-    }
-  }
-
-  if (block.type === 'bulleted_list_item') {
-    return {
-      id: block.id,
-      type: 'bulleted_list_item',
-      content: block[block.type].text.map(item => {
-        return {
-          text: item.text.content,
-          href: item.text.link?.url,
-        }
-      }),
-    }
-  }
-
-  if (block.type === 'heading_3') {
-    return {
-      id: block.id,
-      type: 'heading-3',
-      content: block[block.type].text.map(text => {
-        return {
-          type: text.type,
-          text: text.text.content,
-          href: text.href,
-        }
-      }),
-    }
-  }
-
-  if (block.type === 'paragraph') {
-    return {
-      id: block.id,
-      type: 'paragraph',
-      content: block[block.type].text.map(text => {
-        return {
-          text: text.text.content,
-          href: text.href,
-        }
-      }),
-    }
-  }
 }
 
 const getPage = async id => {
