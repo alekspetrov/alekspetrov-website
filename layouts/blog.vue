@@ -1,5 +1,13 @@
 <template>
-  <div class="bg-primary text-white antialiased text-md">
+  <div
+    class="
+      bg-white
+      text-black
+      dark:bg-primary dark:text-white
+      antialiased
+      text-md
+    "
+  >
     <div class="blog-layout">
       <site-header />
       <div>
@@ -19,7 +27,5 @@
   padding-right: 32px;
   display: grid;
   grid-template-rows: auto 1fr auto;
-
-  /* min-h-screen max-w-[760px] mx-auto px-8 */
 }
 </style>

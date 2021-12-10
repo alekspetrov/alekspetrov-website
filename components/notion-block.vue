@@ -5,12 +5,8 @@ const props = defineProps({
     default: () => ({}),
   },
 })
-console.log(props.block.type.replace(/_/g, '-'))
 </script>
 
 <template>
-  <component
-    :is="`blocks-${block.type.replace(/_/g, '-')}`"
-    :block="block"
-  ></component>
+  <component :is="`blocks-${block.type}`" :block="block"></component>
 </template>

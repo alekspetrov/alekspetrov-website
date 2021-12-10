@@ -13,7 +13,17 @@ const {
 <template>
   <div class="mb-10">
     <ul class="font-medium flex items-center leading-7">
-      <li class="bg-white bg-opacity-10 px-3 rounded-sm cursor-pointer">All</li>
+      <li
+        class="
+          bg-black bg-opacity-10
+          dark:bg-white dark:bg-opacity-10
+          px-3
+          rounded-sm
+          cursor-pointer
+        "
+      >
+        All
+      </li>
       <li class="hover:opacity-100 px-3 rounded-sm opacity-40 cursor-pointer">
         Development
       </li>
