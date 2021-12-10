@@ -35,18 +35,24 @@ const getPosts = async () => {
   return data
 }
 
-const blockNames = {
-  bulleted_list_item: 'bulleted-list',
-  paragraph: 'paragraph',
-  heading_3: 'heading-3',
-  image: 'image',
-}
-
 const blockFactory = (block, options = { duplicated: false }) => {
+  if (block.type === 'quote') {
+    return {
+      id: block.id,
+      type: block.type,
+      content: block[block.type].text.map(text => {
+        return {
+          text: text.text.content,
+          href: text.text.link,
+        }
+      }),
+    }
+  }
+
   if (block.type === 'image') {
     return {
       id: block.id,
-      type: blockNames[block.type],
+      type: 'image',
       src: block.image.file.url,
       caption: block.image.caption[0]?.text.content || '',
     }
@@ -62,7 +68,7 @@ const blockFactory = (block, options = { duplicated: false }) => {
   if (block.type === 'bulleted_list_item') {
     return {
       id: block.id,
-      type: blockNames[block.type],
+      type: 'bulleted_list_item',
       content: block[block.type].text.map(item => {
         return {
           text: item.text.content,
@@ -89,7 +95,7 @@ const blockFactory = (block, options = { duplicated: false }) => {
   if (block.type === 'paragraph') {
     return {
       id: block.id,
-      type: blockNames[block.type],
+      type: 'paragraph',
       content: block[block.type].text.map(text => {
         return {
           text: text.text.content,
@@ -143,7 +149,6 @@ export default async (req, res) => {
 }
 
 /*
-
 {
   page: {
     title: String,

@@ -8,20 +8,18 @@ const props = defineProps({
 </script>
 
 <template>
-  <p
+  <blockquote
     v-if="block.content"
-    class="dark:text-[#A7A6AB] text-black text-opacity-80"
+    class="border-l-2 ml-[-24px] pl-[20px] text-lg"
   >
     <template v-for="(node, idx) in block.content" :key="idx">
       <a
         v-if="node.href"
         :href="node.href"
-        class="inline-block text-accent hover:underline"
+        class="inline text-accent hover:underline"
         >{{ node.text }}</a
       >
-      <template v-else>
-        {{ node.text }}
-      </template>
+      <p v-else class="opacity-80">{{ node.text }}</p>
     </template>
-  </p>
+  </blockquote>
 </template>
