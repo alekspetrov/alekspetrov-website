@@ -5,19 +5,13 @@ Author: Simurai, adapted from DuoTone themes for Atom (http://simurai.com/projec
 Conversion: Bram de Haan (http://atelierbram.github.io/Base2Tone-prism/output/prism/prism-base2tone-evening-dark.css)
 Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 */
-
-pre[class*='language-'] {
-  background: hsla(255, 255%, 255%, 0.05);
-}
-
 code[class*='language-'],
 pre[class*='language-'] {
   font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
     'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
     'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
     'Courier New', Courier, monospace;
-  font-size: 14px;
-  line-height: 1.375;
+  line-height: 1.5;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -35,7 +29,7 @@ pre[class*='language-'] {
 }
 
 pre > code[class*='language-'] {
-  font-size: 1em;
+  font-size: 0.875em;
 }
 
 pre[class*='language-']::-moz-selection,
@@ -56,7 +50,7 @@ code[class*='language-'] ::selection {
 
 /* Code blocks */
 pre[class*='language-'] {
-  padding: 1em;
+  padding: 1.5em 0em 1.5em 0em;
   margin: 0.5em 0;
   overflow: auto;
 }
@@ -90,7 +84,7 @@ pre[class*='language-'] {
 
 .token.property,
 .token.function {
-  color: #9a86fd;
+  color: hsla(255, 255%, 255%, 0.8);
 }
 
 .token.tag-id,
@@ -101,7 +95,7 @@ pre[class*='language-'] {
 
 code.language-javascript,
 .token.attr-name {
-  color: #c4b9fe;
+  color: #a688d6;
 }
 
 code.language-css,

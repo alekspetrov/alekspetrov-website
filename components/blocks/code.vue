@@ -1,6 +1,8 @@
 <script setup>
 import Prism from 'prismjs'
 import '../../assets/css/prism-theme.css'
+// import { watchEffect } from 'vue'
+import { toRefs } from 'vue'
 
 Prism.languages.vue = Prism.languages.markup
 
@@ -17,11 +19,9 @@ const highlight = code => {
 </script>
 
 <template>
-  <pre class="whitespace-pre"><code
-      v-for="(node, idx) in block.content"
-      :key="idx"
-      :class="`language-${block.language}`"
-      v-html="highlight(node.text)"
-    />
-  </pre>
+  <pre :class="`language-${block.language}`"><code
+        v-for="(node, idx) in block.content"
+        :key="idx"
+        :class="`language-${block.language}`"
+        v-html="highlight(node.text)" /></pre>
 </template>
