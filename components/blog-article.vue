@@ -14,6 +14,6 @@ const props = defineProps({
     <p class="opacity-50">
       {{ post.desctiption }}
     </p>
-    <div class="opacity-80">12 Dec, 2021</div>
+    <div class="opacity-30">12 Dec, 2021</div>
   </li>
 </template>

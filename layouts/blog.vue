@@ -23,8 +23,8 @@
   min-height: 100vh;
   max-width: 760px;
   margin: 0 auto;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 24px;
+  padding-right: 24px;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }

@@ -11,8 +11,8 @@ const {
 </script>
 
 <template>
-  <div class="mb-10">
-    <ul class="font-medium flex items-center leading-7">
+  <div class="mb-10 font-medium flex items-center leading-7 opacity-30">
+    <!-- <ul>
       <li
         class="
           bg-black bg-opacity-10
@@ -30,7 +30,8 @@ const {
       <li class="hover:opacity-100 px-3 rounded-sm opacity-40 cursor-pointer">
         Design
       </li>
-    </ul>
+    </ul> -->
+    Last thoughts
   </div>
   <ul class="space-y-12">
     <template v-if="pending">Loading...</template>

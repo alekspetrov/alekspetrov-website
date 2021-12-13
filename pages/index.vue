@@ -1,24 +1,20 @@
 <template>
   <NuxtLayout name="blog">
-    <div class="relative mb-20">
-      <div
-        class="
-          flex-shrink-0
-          mb-4
-          -ml-2
-          w-18
-          h-18
-          bg-white
-          opacity-10
-          rounded-full
-          lg:mr-4 lg:absolute lg:top-0 lg:right-[100%] lg:mb-0
-        "
-      ></div>
-      <h1 class="font-semibold text-2xl leading-8 mb-3">Aleksei Petrov</h1>
-      <p class="font-medium text-lg opacity-60">
-        About digital products, development and design.
-      </p>
+    <div class="md:flex md:space-x-12">
+      <div class="w-1/3 mb-8 md:mb-0">
+        <img src="avatar-big.jpg" alt="" />
+      </div>
+      <div class="md:w-2/3">
+        <div class="mb-10 pb-10 border-b border-opacity-10 mt-8">
+          <h1 class="font-semibold text-xl md:text-2xl leading-8 mb-3">
+            Aleksei Petrov
+          </h1>
+          <p class="md:font-medium md:text-lg opacity-60">
+            About digital products, development and design.
+          </p>
+        </div>
+        <BlogArticlesList />
+      </div>
     </div>
-    <BlogArticlesList />
   </NuxtLayout>
 </template>
