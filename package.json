@@ -12,6 +12,7 @@
     "tailwindcss": "^2.2.19"
   },
   "dependencies": {
-    "@notionhq/client": "^0.4.9"
+    "@notionhq/client": "^0.4.9",
+    "prismjs": "^1.25.0"
   }
 }

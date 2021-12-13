@@ -1,4 +1,17 @@
 export const blockFactory = (block, options = { duplicated: false }) => {
+  if (block.type === 'code') {
+    return {
+      id: block.id,
+      type: block.type,
+      language: block.code.language,
+      content: block[block.type].text.map(text => {
+        return {
+          text: text.text.content,
+        }
+      }),
+    }
+  }
+
   if (block.type === 'callout') {
     return {
       id: block.id,
@@ -27,7 +40,6 @@ export const blockFactory = (block, options = { duplicated: false }) => {
   }
 
   if (block.type === 'image') {
-    console.log(block.image?.type)
     if (block.image?.type === 'external') {
       return {
         id: block.id,
