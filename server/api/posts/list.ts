@@ -43,10 +43,10 @@ const notion = new Client({
 //   }
 // }
 
-const getPosts = async () => {
+const getPosts = async (limit = 5) => {
   const { results } = await notion.databases.query({
     database_id: NOTION_PAGE_ID,
-    page_size: 5,
+    page_size: limit,
     filter: {
       property: 'Status',
       select: {
@@ -68,6 +68,6 @@ const getPosts = async () => {
   return data
 }
 
-export default async _req => {
+export default async (req, res) => {
   return getPosts()
 }
