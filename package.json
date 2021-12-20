@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@notionhq/client": "^0.4.9",
-    "prismjs": "^1.25.0"
+    "prismjs": "^1.25.0",
+    "slugify": "^1.6.4"
   }
 }

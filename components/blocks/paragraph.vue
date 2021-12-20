@@ -16,7 +16,15 @@ const props = defineProps({
       <a
         v-if="node.href"
         :href="node.href"
-        class="inline-block text-accent hover:underline"
+        class="
+          inline-block
+          text-accent
+          hover:underline
+          transform
+          transition-transform
+          duration-200
+          ease-in-out
+        "
         >{{ node.text }}</a
       >
       <template v-else>

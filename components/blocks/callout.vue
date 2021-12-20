@@ -8,9 +8,16 @@ const props = defineProps({
 </script>
 
 <template>
-  <p
+  <div
     v-if="block.content"
-    class="dark:text-[#A7A6AB] text-black text-opacity-80"
+    class="
+      dark:text-[#A7A6AB]
+      text-black text-opacity-80
+      bg-white bg-opacity-5
+      px-6
+      py-4
+      rounded
+    "
   >
     <template v-for="(node, idx) in block.content" :key="idx">
       <a
@@ -23,5 +30,5 @@ const props = defineProps({
         {{ node.text }}
       </template>
     </template>
-  </p>
+  </div>
 </template>

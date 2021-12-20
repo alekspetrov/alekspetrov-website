@@ -3,11 +3,7 @@ const props = defineProps({
   limit: Number,
 })
 
-const {
-  data: posts,
-  error,
-  pending,
-} = await useFetch('/api/notion/posts', { lazy: true })
+const { data: posts } = await useFetch('/api/posts/list')
 </script>
 
 <template>
@@ -34,10 +30,6 @@ const {
     Last thoughts
   </div>
   <ul class="space-y-12">
-    <template v-if="pending">Loading...</template>
-    <template v-else-if="error">Oops! Sometging goes wrong =/</template>
-    <template v-else>
-      <BlogArticle v-for="(post, i) in posts" :key="i" :post="post" />
-    </template>
+    <BlogArticle v-for="(post, i) in posts" :key="i" :post="post" />
   </ul>
 </template>

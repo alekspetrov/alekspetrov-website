@@ -1,19 +1,39 @@
 import { Client } from '@notionhq/client'
-import { foramatDate } from '../../../utils/dateToReadable'
+import { foramatDate } from '../../utils/dateToReadable'
 import { useQuery } from 'h3'
 import { blockFactory } from '~/utils/notionBlocks'
 import config from '#config'
 
 const NOTION_TOKEN = config.notionToken
-const NOTION_POSTS_DB_ID = config.notionPostDbId
+const NOTION_PAGE_ID = config.notionPostDbId
 
 const notion = new Client({
   auth: NOTION_TOKEN,
 })
 
+interface Post {
+  id: string
+  created_time: string
+  properties: {
+    Name: {
+      [title: string]: {
+        plain_text: string
+      }
+    }
+    Description: {
+      [rich_text: string]: {
+        plain_text: string
+      }
+    }
+    Tags: {
+      multi_select: string
+    }
+  }
+}
+
 const getPosts = async () => {
   const { results } = await notion.databases.query({
-    database_id: NOTION_POSTS_DB_ID,
+    database_id: NOTION_PAGE_ID,
     page_size: 5,
     filter: {
       property: 'Status',
@@ -23,7 +43,9 @@ const getPosts = async () => {
     },
   })
 
-  const data = results.map(post => {
+  const data = results.map((post: Post) => {
+    console.log(post)
+
     return {
       id: post.id,
       crated_at: foramatDate(post.created_time),
