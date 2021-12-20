@@ -68,5 +68,11 @@ export default async (req, res) => {
 
   const blocks = await getPageBlocks(page.id)
 
-  return { page, blocks }
+  const pageData = {
+    title: page.properties.Name.title[0].plain_text,
+    description: page.properties.Description.rich_text[0].plain_text,
+    date: page.properties['Crated at'].created_time,
+  }
+
+  return { ...pageData, blocks }
 }

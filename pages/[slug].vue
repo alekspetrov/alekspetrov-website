@@ -1,21 +1,22 @@
 <script setup>
 import { useRoute } from 'vue-router'
+import { ref } from 'vue'
 
 const { params } = useRoute()
 
 const { data: post } = await useFetch(`/api/posts/get`, {
   params,
 })
-
-useMeta({
-  title: post._value.page.properties.Name.title[0].plain_text,
-})
 </script>
 
 <template>
   <NuxtLayout name="blog" v-if="post">
     <div class="max-w-3xl m-auto">
-      <PostHeader :properties="post.page.properties" />
+      <PostHeader
+        :title="post.title"
+        :description="post.description"
+        :date="post.date"
+      />
       <PostContent :content="post.blocks" />
     </div>
   </NuxtLayout>
