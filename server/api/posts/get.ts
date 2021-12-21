@@ -1,21 +1,9 @@
-import { getPosts } from './list'
-
-import { Client } from '@notionhq/client'
 import slugify from 'slugify'
-import config from '#config'
 import { blockFactory } from '~/utils/notionBlocks'
+import { fetchPosts, fetchPost } from '../../../utils/notionApi'
 
-const NOTION_TOKEN = config.notionToken
-const NOTION_PAGE_ID = config.notionPostDbId
-
-const notion = new Client({
-  auth: NOTION_TOKEN,
-})
-
-const getPageBlocks = async id => {
-  const { results } = await notion.blocks.children.list({ block_id: id })
-
-  const blocks = results.reduce((blocks, currentBlock) => {
+const parsePostBlocks = post => {
+  const postBlocks = post.reduce((blocks, currentBlock) => {
     const lastBlock = blocks[blocks.length - 1] || {}
 
     if (
@@ -43,33 +31,25 @@ const getPageBlocks = async id => {
     return blocks
   }, [])
 
+  return postBlocks
+}
+
+const getPostBlocks = async id => {
+  const post = await fetchPost(id)
+  const blocks = parsePostBlocks(post)
+
   return blocks
 }
 
-export default async (req, res) => {
-  const params = new URLSearchParams(req.url)
-  const slug = params.get('slug')
-
-  const { results } = await notion.databases.query({
-    database_id: NOTION_PAGE_ID,
-    filter: {
-      property: 'Status',
-      select: {
-        equals: 'Published',
-      },
-    },
-  })
-
+const getPost = async slug => {
+  const results = await fetchPosts()
   const page = results.find(post => {
-    const postSlug = slugify(
-      post.properties.Name.title[0].plain_text
-    ).toLowerCase()
+    const postTitle = post.properties.Name.title[0].plain_text
+    const postSlug = slugify(postTitle).toLowerCase()
 
     return postSlug === slug
   })
-
-  const blocks = await getPageBlocks(page.id)
-
+  const blocks = await getPostBlocks(page.id)
   const pageData = {
     title: page.properties.Name.title[0].plain_text,
     description: page.properties.Description.rich_text[0].plain_text,
@@ -77,4 +57,11 @@ export default async (req, res) => {
   }
 
   return { ...pageData, blocks }
+}
+
+export default async (req, res) => {
+  const params = new URLSearchParams(req.url)
+  const slug = params.get('slug')
+
+  return getPost(slug)
 }

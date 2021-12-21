@@ -28,3 +28,19 @@ export const fetchPosts = async () => {
 
   return results
 }
+
+export const fetchPost = async id => {
+  const { results } = await $fetch(
+    `https://api.notion.com/v1/blocks/${id}/children`,
+    {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${NOTION_TOKEN}`,
+        'Notion-Version': `${NOTION_VERSION}`,
+        'Content-Type': 'application/json',
+        'Cache-Control': 's-maxage=1, stale-while-revalidate',
+      },
+    }
+  )
+  return results
+}
