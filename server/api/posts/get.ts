@@ -1,3 +1,5 @@
+import { getPosts } from './list'
+
 import { Client } from '@notionhq/client'
 import slugify from 'slugify'
 import config from '#config'
