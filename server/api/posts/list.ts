@@ -3,6 +3,8 @@ import { foramatDate } from '../../../utils/dateToReadable'
 import { useQuery } from 'h3'
 import config from '#config'
 
+import { ClientOptions } from '@notionhq/client/build/src/Client'
+
 const NOTION_TOKEN = config.notionToken
 const NOTION_PAGE_ID = config.notionPostDbId
 
