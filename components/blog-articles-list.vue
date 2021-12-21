@@ -5,7 +5,7 @@ const props = defineProps({
 
 const { data: posts } = await useFetch('/api/posts/list', {
   headers: {
-    'Cache-Control': 's-maxage=3600, stale-while-revalidate',
+    'Cache-Control': 's-maxage=3600, stale-while-revalidate=3600',
   },
 })
 </script>
