@@ -13,7 +13,7 @@ export const fetchPosts = async () => {
         Authorization: `Bearer ${NOTION_TOKEN}`,
         'Notion-Version': `${NOTION_VERSION}`,
         'Content-Type': 'application/json',
-        'Cache-Control': 's-maxage=1, stale-while-revalidate',
+        'Cache-Control': 's-maxage=3600, stale-while-revalidate',
       },
       body: JSON.stringify({
         filter: {
@@ -38,7 +38,7 @@ export const fetchPost = async id => {
         Authorization: `Bearer ${NOTION_TOKEN}`,
         'Notion-Version': `${NOTION_VERSION}`,
         'Content-Type': 'application/json',
-        'Cache-Control': 's-maxage=1, stale-while-revalidate',
+        'Cache-Control': 's-maxage=3600, stale-while-revalidate',
       },
     }
   )
