@@ -6,6 +6,9 @@ const { params } = useRoute()
 
 const { data: post } = await useFetch(`/api/posts/get`, {
   params,
+  headers: {
+    'Cache-Control': 's-maxage=3600, stale-while-revalidate',
+  },
 })
 </script>
 

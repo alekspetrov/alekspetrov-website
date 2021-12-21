@@ -3,7 +3,11 @@ const props = defineProps({
   limit: Number,
 })
 
-const { data: posts } = await useFetch('/api/posts/list')
+const { data: posts } = await useFetch('/api/posts/list', {
+  headers: {
+    'Cache-Control': 's-maxage=3600, stale-while-revalidate',
+  },
+})
 </script>
 
 <template>
