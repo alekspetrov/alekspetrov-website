@@ -21,7 +21,6 @@
 <style>
 .blog-layout {
   min-height: 100vh;
-  /* max-width: 760px; */
   margin: 0 auto;
   padding-left: 24px;
   padding-right: 24px;

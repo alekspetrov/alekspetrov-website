@@ -2,7 +2,7 @@
   <header class="mt-4 mb-14">
     <div class="flex justify-between">
       <NuxtLink to="/" class="hover:text-accent">Blog</NuxtLink>
-      <div class="w-5">
+      <a href="https://twitter.com/alekspetrov_" class="w-5">
         <svg
           data-v-bb4ed8b8=""
           title="Twitter"
@@ -16,7 +16,7 @@
             class="twitter-logo"
           ></path>
         </svg>
-      </div>
+      </a>
     </div>
   </header>
 </template>
