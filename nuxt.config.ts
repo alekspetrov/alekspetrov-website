@@ -1,7 +1,11 @@
 import { defineNuxtConfig } from 'nuxt3'
 
 export default defineNuxtConfig({
-  css: ['~/assets/css/fonts.css', '~/assets/css/tailwind.css'],
+  css: [
+    '~/assets/css/fonts.css',
+    '~/assets/css/tailwind.css',
+    '~/assets/css/nprogress.css',
+  ],
   build: {
     postcss: {
       postcssOptions: {

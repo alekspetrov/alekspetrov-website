@@ -1,3 +1,20 @@
+<script setup>
+import Nprogress from 'nprogress'
+
+const router = useRouter()
+
+router.beforeResolve((to, from, next) => {
+  console.log('before')
+  Nprogress.start()
+  next()
+})
+
+router.afterEach(() => {
+  console.log('after')
+  Nprogress.done(true)
+})
+</script>
+
 <template>
   <div
     class="

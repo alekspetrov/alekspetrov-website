@@ -6,7 +6,7 @@ const getPosts = async () => {
   const data = results.map(post => {
     return {
       id: post.id,
-      crated_at: foramatDate(post.created_time),
+      date: foramatDate(post.created_time),
       title: post.properties.Name.title[0].plain_text,
       desctiption: post.properties.Description.rich_text[0].plain_text || '',
       tags: post.properties.Tags.multi_select,
