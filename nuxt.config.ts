@@ -14,6 +14,7 @@ export default defineNuxtConfig({
   },
   privateRuntimeConfig: {
     notionToken: process.env.NOTION_TOKEN,
-    notionPostDbId: process.env.NOTION_PAGE_ID,
+    notionPageId: process.env.NOTION_PAGE_ID,
+    notionVersion: process.env.NOTION_VERSION,
   },
 })

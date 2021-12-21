@@ -1,61 +1,31 @@
-import { Client } from '@notionhq/client'
 import { foramatDate } from '../../../utils/dateToReadable'
-import { useQuery } from 'h3'
 import config from '#config'
 
-import { ClientOptions } from '@notionhq/client/build/src/Client'
-
 const NOTION_TOKEN = config.notionToken
-const NOTION_PAGE_ID = config.notionPostDbId
+const NOTION_PAGE_ID = config.notionPageId
+const NOTION_VERSION = config.notionVersion
 
-const notion = new Client({
-  auth: NOTION_TOKEN,
-})
-
-// interface Post {
-//   id: string
-//   created_time: string
-//   last_edited_time: string
-//   cover: string
-//   icon: string
-//   parent: {
-//     type: string
-//     database_id: string
-//   }
-//   archived: boolean
-//   properties: {
-//     Name: {
-//       [title: string]: {
-//         plain_text: string
-//       }
-//     }
-//     Description: {
-//       [rich_text: string]: {
-//         plain_text: string
-//       }
-//     }
-//     Tags: {
-//       multi_select: string
-//     }
-//     Type: {
-//       id: string
-//       type: string
-//       select: string[]
-//     }
-//   }
-// }
-
-const getPosts = async (limit = 5) => {
-  const { results } = await notion.databases.query({
-    database_id: NOTION_PAGE_ID,
-    page_size: limit,
-    filter: {
-      property: 'Status',
-      select: {
-        equals: 'Published',
+const getPosts = async () => {
+  const { results } = await $fetch(
+    `https://api.notion.com/v1/databases/${NOTION_PAGE_ID}/query`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${NOTION_TOKEN}`,
+        'Notion-Version': `${NOTION_VERSION}`,
+        'Content-Type': 'application/json',
+        'Cache-Control': 's-maxage=1, stale-while-revalidate',
       },
-    },
-  })
+      body: JSON.stringify({
+        filter: {
+          property: 'Status',
+          select: {
+            equals: 'Published',
+          },
+        },
+      }),
+    }
+  )
 
   const data = results.map(post => {
     return {
