@@ -8,7 +8,7 @@ module.exports = {
     './plugins/**/*{.js,.ts}',
     './nuxt.config.{js,ts}',
   ],
-  darkMode: 'media', // or 'media' or 'class'
+  // darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
@@ -30,10 +30,11 @@ module.exports = {
     },
     fontSize: {
       sm: '0.875rem',
-      md: '0.9375rem',
+      md: '1rem',
       lg: '1.125rem',
       xl: '1.25rem',
-      '2xl': '2rem',
+      '2xl': '2.125rem',
+      '3xl': '2.5rem',
     },
     fontFamily: {
       sans: [

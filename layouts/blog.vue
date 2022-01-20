@@ -14,21 +14,13 @@ router.afterEach(() => {
 </script>
 
 <template>
-  <div
-    class="
-      bg-white
-      text-black
-      dark:bg-primary dark:text-white
-      antialiased
-      text-md
-    "
-  >
+  <div class="text-black bg-gray-100 antialiased text-md">
     <div class="blog-layout">
-      <site-header />
-      <div>
+      <SiteHeader />
+      <SiteBody>
         <slot />
-      </div>
-      <site-footer />
+      </SiteBody>
+      <SiteFooter />
     </div>
   </div>
 </template>

@@ -12,6 +12,7 @@ const parsePostBlocks = post => {
     ) {
       const isArray = Array.isArray(lastBlock.content[0])
 
+      // Makes list items into an array
       // TODO: Refactor this
       if (isArray) {
         lastBlock.content = [
@@ -49,6 +50,7 @@ const getPost = async slug => {
 
     return postSlug === slug
   })
+
   const blocks = await getPostBlocks(page.id)
   const pageData = {
     title: page.properties.Name.title[0].plain_text,

@@ -30,7 +30,6 @@ const fetchPosts = async () => {
       }),
     }
   )
-
   return results
 }
 

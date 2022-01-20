@@ -1,3 +1,5 @@
 <template>
-  <main class="flex-1"><slot /></main>
+  <main class="container m-auto flex h-full">
+    <slot />
+  </main>
 </template>
