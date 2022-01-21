@@ -12,7 +12,7 @@ const props = defineProps({
       :to="`/${slugify(post.title).toLowerCase()}`"
       class="w-1/2 overflow-hidden rounded-sm"
     >
-      <!-- <img :src="post.cover" :alt="post.cover" /> -->
+      <AtomsMedia name="jordan-whitfield-1_nvzvgf" />
     </NuxtLink>
     <div class="w-1/2 px-12 pt-12">
       <NuxtLink :to="`/${slugify(post.title).toLowerCase()}`">
