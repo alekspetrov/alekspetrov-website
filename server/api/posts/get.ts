@@ -1,8 +1,8 @@
 import slugify from 'slugify'
 import { blockFactory } from '~/utils/notionBlocks'
-import { fetchDatabase, fetchPage } from '../../../utils/notionApi'
+import { fetchDatabase, fetchBlocks, fetchPage } from '../../../utils/notionApi'
 
-const parsePostBlocks = post => {
+const makeBlocks = post => {
   const postBlocks = post.reduce((blocks, currentBlock) => {
     const lastBlock = blocks[blocks.length - 1] || {}
 
@@ -37,33 +37,39 @@ const parsePostBlocks = post => {
 
 const getBlocks = async id => {
   try {
-    const post = await fetchPage(id)
-    const blocks = parsePostBlocks(post)
+    const post = await fetchBlocks(id)
+    const blocks = makeBlocks(post)
     return blocks
   } catch (e) {
-    throw new Error(e)
+    throw new Error("Can't get blocks")
   }
 }
 
 const getPage = async slug => {
-  const results = await fetchDatabase()
+  try {
+    const results = await fetchDatabase()
 
-  const page = results.find(post => {
-    const postTitle = post.properties.Name.title[0].plain_text
-    const postSlug = slugify(postTitle).toLowerCase()
+    const page = results.find(post => {
+      const { Name } = post.properties
+      const postTitle = Name.title[0].plain_text
+      const postSlug = slugify(postTitle).toLowerCase()
 
-    return postSlug === slug
-  })
+      return postSlug === slug
+    })
 
-  const blocks = await getBlocks(page.id)
+    const blocks = await getBlocks(page.id)
+    const { Name, Description } = page.properties
 
-  const pageData = {
-    title: page.properties.Name.title[0].plain_text,
-    description: page.properties.Description.rich_text[0].plain_text,
-    date: page.properties['Crated at'].created_time,
+    const pageData = {
+      title: Name.title[0].plain_text,
+      description: Description.rich_text[0].plain_text,
+      date: page.properties['Crated at'].created_time,
+    }
+
+    return { ...pageData, blocks }
+  } catch (e) {
+    throw new Error("Can't load data from Notion")
   }
-
-  return { ...pageData, blocks }
 }
 
 export default async req => {

@@ -5,13 +5,15 @@ const getDatabase = async () => {
   const response = await fetchDatabase()
 
   const data = response.map(post => {
+    const { Image, Name, Description, Tags } = post.properties
+
     return {
       id: post.id,
-      cover: post.properties.Image?.rich_text[0]?.plain_text || null,
+      cover: Image.rich_text[0]?.plain_text || null,
       date: foramatDate(post.created_time),
-      title: post.properties.Name?.title[0]?.plain_text,
-      description: post.properties.Description?.rich_text[0]?.plain_text || '',
-      tags: post.properties.Tags?.multi_select,
+      title: Name.title[0]?.plain_text,
+      description: Description.rich_text[0]?.plain_text || '',
+      tags: Tags.multi_select,
     }
   })
 

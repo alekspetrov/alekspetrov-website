@@ -33,7 +33,7 @@ const fetchPage = async pageId => {
 const fetchBlocks = async blockId => {
   const response = await notion.blocks.children.list({
     block_id: blockId,
-    page_size: 10,
+    page_size: 50,
   })
   return response.results
 }
