@@ -7,16 +7,19 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="flex mb-16 border-b pb-16">
+  <div class="lg:flex mb-8 md:mb-16 pb-8 md:pb-16 border-b">
     <NuxtLink
       :to="`/${slugify(post.title).toLowerCase()}`"
-      class="w-1/2 overflow-hidden rounded-sm"
+      class="mb-4 block lg:w-1/2 lg:mb-0 overflow-hidden rounded-sm"
     >
       <AtomsMedia name="jordan-whitfield-1_nvzvgf" />
     </NuxtLink>
-    <div class="w-1/2 px-12 pt-12">
+
+    <div class="lg:w-1/2 lg:px-12 md:pt-12">
       <NuxtLink :to="`/${slugify(post.title).toLowerCase()}`">
-        <h1 class="mb-4 font-bold text-2xl lg:text-3xl leading-[46px]">
+        <h1
+          class="mb-2 md:mb-4 font-bold text-xl md:text-2xl lg:text-3xl leading-[46px]"
+        >
           {{ post.title }}
         </h1>
       </NuxtLink>

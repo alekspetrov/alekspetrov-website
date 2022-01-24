@@ -1,6 +1,6 @@
 import slugify from 'slugify'
 import { blockFactory } from '~/utils/notionBlocks'
-import { fetchPosts, fetchPost } from '../../../utils/notionApi'
+import { fetchDatabase, fetchPage } from '../../../utils/notionApi'
 
 const parsePostBlocks = post => {
   const postBlocks = post.reduce((blocks, currentBlock) => {
@@ -35,15 +35,19 @@ const parsePostBlocks = post => {
   return postBlocks
 }
 
-const getPostBlocks = async id => {
-  const post = await fetchPost(id)
-  const blocks = parsePostBlocks(post)
-
-  return blocks
+const getBlocks = async id => {
+  try {
+    const post = await fetchPage(id)
+    const blocks = parsePostBlocks(post)
+    return blocks
+  } catch (e) {
+    throw new Error(e)
+  }
 }
 
-const getPost = async slug => {
-  const results = await fetchPosts()
+const getPage = async slug => {
+  const results = await fetchDatabase()
+
   const page = results.find(post => {
     const postTitle = post.properties.Name.title[0].plain_text
     const postSlug = slugify(postTitle).toLowerCase()
@@ -51,7 +55,8 @@ const getPost = async slug => {
     return postSlug === slug
   })
 
-  const blocks = await getPostBlocks(page.id)
+  const blocks = await getBlocks(page.id)
+
   const pageData = {
     title: page.properties.Name.title[0].plain_text,
     description: page.properties.Description.rich_text[0].plain_text,
@@ -61,9 +66,9 @@ const getPost = async slug => {
   return { ...pageData, blocks }
 }
 
-export default async (req, res) => {
+export default async req => {
   const params = new URLSearchParams(req.url)
   const slug = params.get('slug')
 
-  return getPost(slug)
+  return getPage(slug)
 }
