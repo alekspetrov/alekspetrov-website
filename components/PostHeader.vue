@@ -1,5 +1,5 @@
 <script setup>
-import { foramatDate } from '../utils/dateToFormat
+import { foramatDate } from '../utils/dateToFormat'
 
 const props = defineProps({
   title: String,

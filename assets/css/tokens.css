@@ -1,0 +1,51 @@
+:root {
+  --white: hsl(255, 255, 255);
+  --accent: hsl(36, 95%, 70%);
+
+  --gray-100: hsl(180, 5%, 96%);
+  --gray-200: hsl(180, 2%, 91%);
+  --gray-300: hsl(180, 1%, 86%);
+  --gray-500: hsl(180, 1%, 66%);
+  --gray-600: hsl(200, 1%, 48%);
+  --gray-700: hsl(195, 4%, 18%);
+  --gray-800: hsl(195, 5%, 15%);
+  --gray-900: hsl(195, 7%, 11%);
+
+  /* --bg-color: var(--gray-100);
+  --title-color: var(--gray-900);
+  --text-dark-color: var(--gray-700);
+  --text-light-color: var(--gray-600);
+  --hr-color: var(--gray-300); */
+
+  --font-sans: 'Work Sans', sans-serif;
+  --font-serif: 'Noticia Text', serif;
+
+  /* --title-font: var(--font-sans);
+  --text-font: var(--font-serif); */
+
+  --text-3xl: 42px;
+  --text-2xl: 42px;
+  --text-xl: 28px;
+  --text-lg: 26px;
+  --text-md: 18px;
+  --text-base: 16px;
+  --text-sm: 14px;
+
+  --leading-5xl: 44px;
+  --leading-4xl: 44px;
+  --leading-3xl: 32px;
+  --leading-2xl: 36px;
+  --leading-xl: 28px;
+  --leading-lg: 26px;
+  --leading-md: 24px;
+  --leading-sm: 16px;
+
+  --space-5xl: 72px;
+  --space-4xl: 56px;
+  --space-3xl: 48px;
+  --space-2xl: 40px;
+  --space-xl: 32px;
+  --space-lg: 24px;
+  --space-md: 16px;
+  --space-sm: 8px;
+}

@@ -14,24 +14,17 @@ router.afterEach(() => {
 </script>
 
 <template>
-  <div class="text-black bg-gray-100 antialiased text-md">
-    <div class="blog-layout">
-      <SiteHeader />
-      <SiteBody>
-        <slot />
-      </SiteBody>
-      <SiteFooter />
-    </div>
+  <div class="blog-layout">
+    <SiteHeader />
+    <SiteBody>
+      <slot />
+    </SiteBody>
+    <SiteFooter />
   </div>
 </template>
 
-<style>
-.blog-layout {
-  min-height: 100vh;
-  margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+<style scoped lang="postcss">
+.container {
+  padding-inline: 20px;
 }
 </style>
