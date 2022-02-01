@@ -23,10 +23,11 @@
   /* --title-font: var(--font-sans);
   --text-font: var(--font-serif); */
 
+  --text-4xl: 42px;
   --text-3xl: 42px;
-  --text-2xl: 42px;
-  --text-xl: 28px;
-  --text-lg: 26px;
+  --text-2xl: 28px;
+  --text-xl: 26px;
+  --text-lg: 24px;
   --text-md: 18px;
   --text-base: 16px;
   --text-sm: 14px;
@@ -48,10 +49,14 @@
   --space-lg: 24px;
   --space-md: 16px;
   --space-sm: 8px;
+
+  --column-gap: 40px;
 }
 
 @media screen and (min-width: 768px) {
   :root {
     --text-sm: 16px;
+
+    --text-3xl: 60px;
   }
 }

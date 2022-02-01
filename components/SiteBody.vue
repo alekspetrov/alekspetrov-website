@@ -1,5 +1,5 @@
 <template>
-  <main class="container site-body">
+  <main class="site-body">
     <slot />
   </main>
 </template>

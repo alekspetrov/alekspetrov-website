@@ -18,6 +18,7 @@
   align-items: center;
   padding-bottom: var(--space-sm);
   border-bottom: 1px solid var(--gray-300);
+  margin-bottom: var(--space-lg);
 
   &_item {
     display: flex;

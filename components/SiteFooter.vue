@@ -1,9 +1,7 @@
 <template>
-  <footer class="container">
-    <div class="site-footer">
-      <div class="">© Aleksei Petrov</div>
-      <a href="mailto:hello@alekspetrov.com" class="">Contact me</a>
-    </div>
+  <footer class="site-footer">
+    <div class="">© Aleksei Petrov</div>
+    <a href="mailto:hello@alekspetrov.com" class="">Contact me</a>
   </footer>
 </template>
 

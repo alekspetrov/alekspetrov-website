@@ -24,16 +24,28 @@ router.afterEach(() => {
 </template>
 
 <style lang="postcss" scoped>
+body {
+  background: var(--gray-100);
+}
+
 .blog-layout {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-</style>
 
-<style lang="postcss">
-.container {
+.blog-layout {
+  max-width: 1280px;
   padding-inline: 20px;
+  margin: 0 auto;
   font-size: var(--text-sm);
+}
+
+@media screen and (min-width: 1281px) {
+  .blog-layout {
+    padding-inline: 0;
+  }
 }
 </style>

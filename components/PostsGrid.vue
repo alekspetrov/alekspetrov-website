@@ -1,5 +1,15 @@
 <template>
-  <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+  <div class="posts-grid">
     <slot />
-  </ul>
+  </div>
 </template>
+
+<style lang="postcss" scoped>
+@media screen and (min-width: 860px) {
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--column-gap);
+  }
+}
+</style>
