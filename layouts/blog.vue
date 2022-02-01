@@ -23,8 +23,17 @@ router.afterEach(() => {
   </div>
 </template>
 
-<style scoped lang="postcss">
+<style lang="postcss" scoped>
+.blog-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+</style>
+
+<style lang="postcss">
 .container {
   padding-inline: 20px;
+  font-size: var(--text-sm);
 }
 </style>

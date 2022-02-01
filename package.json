@@ -9,6 +9,7 @@
     "autoprefixer": "^10.4.0",
     "nuxt3": "latest",
     "postcss": "^8.4.4",
+    "postcss-nested": "^5.0.6",
     "prettier": "^2.5.1"
   },
   "dependencies": {

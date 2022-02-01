@@ -1,15 +1,35 @@
 <template>
-  <div class="mb-8 flex">
-    <ul class="list-none flex space-x-2">
-      <li class="px-4 py-1 rounded font-medium bg-gray-800 text-white">All</li>
-      <li class="font-medium px-4 py-1">Design</li>
-      <li class="font-medium px-4 py-1">Development</li>
-      <li class="font-medium px-4 py-1">Product Management</li>
-      <li class="font-medium px-4 py-1">Productivity</li>
-    </ul>
-    <div class="ml-auto flex items-center">
-      <IconSearch class="mr-3" />
-      <span>Search</span>
+  <div class="filter">
+    <div class="filter_item">
+      <div>Show All</div>
+      <IconArrowDown class="icon" />
+    </div>
+    <div class="filter_item">
+      <IconSearch class="icon" />
+      <div>Search</div>
     </div>
   </div>
 </template>
+
+<style lang="postcss" scoped>
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--gray-300);
+
+  &_item {
+    display: flex;
+    align-items: center;
+
+    & > *:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}
+.icon {
+  width: 16px;
+  height: 16px;
+}
+</style>

@@ -1,7 +1,9 @@
 <template>
-  <header class="container site-header">
-    <NuxtLink to="/">Homepage</NuxtLink>
-    <a href="https://twitter.com/alekspetrov_">Twitter</a>
+  <header class="container">
+    <div class="site-header">
+      <NuxtLink to="/">Homepage</NuxtLink>
+      <a href="https://twitter.com/alekspetrov_">Twitter</a>
+    </div>
   </header>
 </template>
 
