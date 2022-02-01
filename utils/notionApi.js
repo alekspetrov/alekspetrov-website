@@ -1,41 +1,20 @@
-import { Client } from '@notionhq/client'
 import config from '#config'
 
-const NOTION_TOKEN = config.notionToken
-const NOTION_DB = config.notionDb
+const API = config.notionToken || 'http://127.0.0.1:8787'
 
-const notion = new Client({
-  auth: NOTION_TOKEN,
-})
-
-const fetchDatabase = async () => {
-  const response = await notion.databases.query({
-    database_id: NOTION_DB,
-    filter: {
-      property: 'Status',
-      select: {
-        equals: 'Published',
-      },
-    },
-  })
-
-  return response.results
-}
-
-const fetchPage = async pageId => {
-  const response = await notion.pages.retrieve({
-    page_id: pageId,
-  })
-
-  return response
+const fetchTable = async () => {
+  try {
+    const response = await fetch(`${API}/database`)
+    return response.json()
+  } catch (e) {
+    throw Error('Can not load Table ', e)
+  }
 }
 
 const fetchBlocks = async blockId => {
-  const response = await notion.blocks.children.list({
-    block_id: blockId,
-    page_size: 50,
-  })
-  return response.results
+  const response = await fetch(`${API}/blocks/${blockId}`)
+
+  return response.json()
 }
 
-export { fetchDatabase, fetchPage, fetchBlocks }
+export { fetchTable, fetchBlocks }

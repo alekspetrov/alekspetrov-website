@@ -13,16 +13,16 @@ const props = defineProps({
 const url = 'https://res.cloudinary.com/alekspetrov/image/upload'
 const src = `${url}/f_auto,q_70,w_640/v1642683138/website/${props.name}.jpg`
 
-const srcset = computed(() =>
-  props.sizes.map(
+const srcset = props.sizes
+  .map(
     screen =>
       `${url}/f_auto,q_${props.quality},w_${screen}/v1642683138/website/${props.name}.jpg ${screen}w`
   )
-)
+  .join(', ')
 </script>
 
 <template>
   <figure>
-    <img :sizes="sizes" :srcset="srcset.join(', ')" :src="src" :alt="alt" />
+    <img :sizes="sizes" :srcset="srcset" :src="src" :alt="alt" />
   </figure>
 </template>

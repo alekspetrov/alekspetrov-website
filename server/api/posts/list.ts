@@ -1,10 +1,10 @@
-import { foramatDate } from '../../../utils/dateToReadable'
-import { fetchDatabase } from '../../../utils/notionApi'
+import { foramatDate } from '../../../utils/dateToFormat'
+import { fetchTable } from '../../../utils/notionApi'
 
-const getDatabase = async () => {
-  const response = await fetchDatabase()
+const getTable = async () => {
+  const data = await fetchTable()
 
-  const data = response.map(post => {
+  const result = data.map((post) => {
     const { Image, Name, Description, Tags } = post.properties
 
     return {
@@ -17,9 +17,9 @@ const getDatabase = async () => {
     }
   })
 
-  return { main: data[0], list: data.filter((_, i) => i !== 0) }
+  return { main: result[0], list: result.filter((_, i) => i !== 0) }
 }
 
 export default async (req, res) => {
-  return getDatabase()
+  return getTable()
 }

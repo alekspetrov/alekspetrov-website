@@ -8,5 +8,5 @@ const props = defineProps({
 </script>
 
 <template>
-  <h3 class="font-medium text-xl pt-8">{{ block.content[0].text }}</h3>
+  <h3 class="pt-8 text-xl font-medium">{{ block.content[0].text }}</h3>
 </template>

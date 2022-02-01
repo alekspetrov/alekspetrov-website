@@ -1,8 +1,8 @@
 import slugify from 'slugify'
 import { blockFactory } from '~/utils/notionBlocks'
-import { fetchDatabase, fetchBlocks, fetchPage } from '../../../utils/notionApi'
+import { fetchTable, fetchBlocks } from '../../../utils/notionApi'
 
-const makeBlocks = post => {
+const makeBlocks = (post) => {
   const postBlocks = post.reduce((blocks, currentBlock) => {
     const lastBlock = blocks[blocks.length - 1] || {}
 
@@ -35,44 +35,40 @@ const makeBlocks = post => {
   return postBlocks
 }
 
-const getBlocks = async id => {
-  try {
-    const post = await fetchBlocks(id)
-    const blocks = makeBlocks(post)
-    return blocks
-  } catch (e) {
-    throw new Error("Can't get blocks")
-  }
+const getBlocks = async (id) => {
+  console.log('getBlocks')
+
+  const post = await fetchBlocks(id)
+  const blocks = makeBlocks(post)
+  return blocks
 }
 
-const getPage = async slug => {
-  try {
-    const results = await fetchDatabase()
+const getPage = async (slug) => {
+  const results = await fetchTable()
 
-    const page = results.find(post => {
-      const { Name } = post.properties
-      const postTitle = Name.title[0].plain_text
-      const postSlug = slugify(postTitle).toLowerCase()
+  // Get page form the list
+  const page = results.find((post) => {
+    const { Name } = post.properties
+    const postTitle = Name.title[0].plain_text
+    const postSlug = slugify(postTitle).toLowerCase()
 
-      return postSlug === slug
-    })
+    return postSlug === slug
+  })
 
-    const blocks = await getBlocks(page.id)
-    const { Name, Description } = page.properties
+  // Get page blocks by fetcinng the page
+  const blocks = await getBlocks(page.id)
+  const { Name, Description } = page.properties
 
-    const pageData = {
-      title: Name.title[0].plain_text,
-      description: Description.rich_text[0].plain_text,
-      date: page.properties['Crated at'].created_time,
-    }
-
-    return { ...pageData, blocks }
-  } catch (e) {
-    throw new Error("Can't load data from Notion")
+  const pageData = {
+    title: Name.title[0].plain_text,
+    description: Description.rich_text[0].plain_text,
+    date: page.properties['Crated at'].created_time,
   }
+
+  return { ...pageData, blocks }
 }
 
-export default async req => {
+export default async (req) => {
   const params = new URLSearchParams(req.url)
   const slug = params.get('slug')
 
