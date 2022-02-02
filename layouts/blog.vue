@@ -24,10 +24,6 @@ router.afterEach(() => {
 </template>
 
 <style lang="postcss" scoped>
-body {
-  background: var(--gray-100);
-}
-
 .blog-layout {
   min-height: 100vh;
   display: grid;

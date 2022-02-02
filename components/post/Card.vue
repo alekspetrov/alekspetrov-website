@@ -34,7 +34,7 @@ const len = 7
   flex-direction: column;
 
   & h3 {
-    font-size: var(--text-xl);
+    font-size: var(--text-2xl);
     line-height: var(--leading-3xl);
     margin-bottom: var(--space-sm);
   }

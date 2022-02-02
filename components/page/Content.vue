@@ -8,7 +8,18 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="text-[17px] leading-7 space-y-8">
-    <NotionBlock v-for="block in content" :key="block.id" :block="block" />
+  <div class="page-content">
+    <!-- <NotionBlock v-for="block in content" :key="block.id" :block="block" /> -->
   </div>
 </template>
+
+<style lang="postcss" scoped>
+.page-content {
+  margin-bottom: var(--space-lg);
+
+  & p {
+    font-size: var(--text-base);
+    line-height: var(--leading-lg);
+  }
+}
+</style>

@@ -8,13 +8,11 @@ const { data: post } = await useFetch(`/api/posts/get`, {
 
 <template>
   <NuxtLayout name="blog" v-if="post">
-    <div class="max-w-3xl mx-auto">
-      <PostHeader
-        :title="post.title"
-        :description="post.description"
-        :date="post.date"
-      />
-      <!-- <PostContent :content="post.blocks" /> -->
-    </div>
+    <PageHeader
+      :title="post.title"
+      :description="post.description"
+      :date="post.date"
+    />
+    <PageContent :content="post.blocks" />e
   </NuxtLayout>
 </template>
