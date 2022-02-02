@@ -4,13 +4,7 @@ import slugify from 'slugify'
 const props = defineProps({
   post: {
     type: Object,
-    default: () => ({
-      title: '5 Mac Applications To Boost Productivity',
-      description:
-        'Everytime I see posts like this there are some stupid things inside. This is why this post exists... let’s find something really great for productivity. ',
-      date: 'January 27, 2022',
-      tag: 'Productivity',
-    }),
+    default: () => ({}),
   },
 })
 
