@@ -16,6 +16,7 @@
 @media screen and (min-width: 760px) {
   .site-header {
     padding-block: var(--space-2xl);
+    font-size: var(--text-md);
   }
 }
 </style>

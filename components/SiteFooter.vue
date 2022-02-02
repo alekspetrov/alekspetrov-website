@@ -12,4 +12,11 @@
   padding-block: var(--space-md);
   border-top: 1px var(--gray-300) solid;
 }
+
+@media screen and (min-width: 760px) {
+  .site-footer {
+    padding-block: var(--space-2xl);
+    font-size: var(--text-md);
+  }
+}
 </style>

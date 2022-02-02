@@ -33,4 +33,10 @@
   width: 16px;
   height: 16px;
 }
+
+@media screen and (min-width: 768px) {
+  .filter {
+    padding-bottom: var(--space-md);
+  }
+}
 </style>
