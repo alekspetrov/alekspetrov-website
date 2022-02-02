@@ -22,7 +22,6 @@
   & h1 {
     font-size: var(--text-3xl);
     line-height: var(--leading-5xl);
-    margin-bottom: var(--space-sm);
   }
 
   & p {
