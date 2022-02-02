@@ -8,12 +8,6 @@ const { data: posts } = await useFetch('/api/posts/list')
     <PostsFilter />
     <PostsGrid>
       <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
     </PostsGrid>
   </NuxtLayout>
   <div v-else style="text-align: center; line-height: 72px">Loading...</div>

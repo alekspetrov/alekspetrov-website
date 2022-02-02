@@ -15,11 +15,11 @@ router.afterEach(() => {
 
 <template>
   <div class="blog-layout">
-    <SiteHeader />
-    <SiteBody>
+    <LayoutHeader />
+    <LayoutBody>
       <slot />
-    </SiteBody>
-    <SiteFooter />
+    </LayoutBody>
+    <LayoutFooter />
   </div>
 </template>
 

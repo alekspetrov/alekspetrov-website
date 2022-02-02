@@ -11,17 +11,7 @@
   --gray-800: hsl(195, 5%, 15%);
   --gray-900: hsl(195, 7%, 11%);
 
-  /* --bg-color: var(--gray-100);
-  --title-color: var(--gray-900);
-  --text-dark-color: var(--gray-700);
-  --text-light-color: var(--gray-600);
-  --hr-color: var(--gray-300); */
-
-  --font-sans: 'Work Sans', sans-serif;
-  --font-serif: 'Noticia Text', serif;
-
-  /* --title-font: var(--font-sans);
-  --text-font: var(--font-serif); */
+  --font-sans: 'Public Sans', sans-serif;
 
   --text-4xl: 42px;
   --text-3xl: 42px;
