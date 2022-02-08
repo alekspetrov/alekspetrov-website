@@ -1,5 +1,5 @@
 <template>
-  <footer class="site-footer">
+  <footer class="site-footer ui-text">
     <div class="">© Aleksei Petrov</div>
     <a href="mailto:hello@alekspetrov.com" class="">Contact me</a>
   </footer>
@@ -16,7 +16,6 @@
 @media screen and (min-width: 760px) {
   .site-footer {
     padding-block: var(--space-2xl);
-    font-size: var(--text-md);
   }
 }
 </style>

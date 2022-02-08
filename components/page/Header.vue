@@ -10,46 +10,36 @@ const props = defineProps({
 
 <template>
   <div class="page-header">
-    <h1>
-      {{ title }}
-    </h1>
-    <p>
-      {{ description }}
-    </p>
-    <div class="info">
+    <h1 class="header-title title-huge">{{ title }}</h1>
+    <p class="subtitle">{{ description }}</p>
+    <div class="header-info ui-text">
       <time>{{ foramatDate(date) }}</time>
-      <span>Share It</span>
+      <!-- <span>Share It</span> -->
     </div>
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .page-header {
   padding-bottom: var(--space-lg);
   border-bottom: 1px solid var(--gray-300);
   margin-top: var(--space-lg);
   margin-bottom: var(--space-lg);
+}
 
-  & h1 {
-    font-size: var(--text-4xl);
-    line-height: var(--leading-5xl);
-    font-weight: 800;
+.header-title {
+  margin-bottom: var(--space-sm);
+}
+
+.header-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-5xl);
+}
+
+@media screen and (min-width: 860px) {
+  .header-title {
     margin-bottom: var(--space-md);
-  }
-
-  & p {
-    font-size: var(--text-md);
-    line-height: var(--leading-xl);
-    margin-bottom: var(--space-xl);
-  }
-
-  & time {
-    color: var(--gray-700);
-  }
-
-  .info {
-    display: flex;
-    justify-content: space-between;
   }
 }
 </style>

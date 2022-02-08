@@ -8,14 +8,11 @@ const props = defineProps({
 </script>
 
 <template>
-  <div v-if="block.content" class="block-callout">
+  <div v-if="block.content" class="body-callout body-text">
     <template v-for="(node, idx) in block.content" :key="idx">
-      <a
-        v-if="node.href"
-        :href="node.href"
-        class="inline-block text-accent hover:underline"
-        >{{ node.text }}</a
-      >
+      <a v-if="node.href" :href="node.href" class="body-link">
+        {{ node.text }}
+      </a>
       <template v-else>
         {{ node.text }}
       </template>
@@ -24,8 +21,9 @@ const props = defineProps({
 </template>
 
 <style lang="postcss" scoped>
-.block-callout {
-  background: #000;
-  color: white;
+.body-callout {
+  background: var(--gray-200);
+  padding: var(--space-md);
+  border-left: 4px solid var(--gray-500);
 }
 </style>

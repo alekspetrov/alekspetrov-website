@@ -6,8 +6,16 @@ const props = defineProps({
 
 <template>
   <component
-    v-if="block"
     :is="`content-${block.type}`"
+    v-if="block"
     :block="block"
+    class="content-block"
   ></component>
 </template>
+
+<style lang="postcss">
+.content-block {
+  max-width: var(--content-max-width);
+  margin-bottom: var(--block-margin-bottom);
+}
+</style>

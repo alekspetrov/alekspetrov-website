@@ -33,13 +33,12 @@ router.afterEach(() => {
 }
 
 .blog-layout {
-  max-width: 1280px;
-  padding-inline: 20px;
+  max-width: var(--blog-layout-max-width);
+  padding-inline: var(--blog-layout-side-padding);
   margin: 0 auto;
-  font-size: var(--text-sm);
 }
 
-@media screen and (min-width: 1281px) {
+@media screen and (min-width: 1380px) {
   .blog-layout {
     padding-inline: 0;
   }

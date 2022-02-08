@@ -3,5 +3,5 @@ module.exports = {
   useTabs: false,
   semi: false,
   singleQuote: true,
-  tailwindConfig: './tailwind.config.js',
+  htmlWhitespaceSensitivity: 'ignore',
 }

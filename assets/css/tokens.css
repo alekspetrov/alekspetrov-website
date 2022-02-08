@@ -13,23 +13,25 @@
 
   --font-sans: 'Public Sans', sans-serif;
 
-  --text-4xl: 42px;
+  --text-5xl: 80px;
+  --text-4xl: 60px;
   --text-3xl: 42px;
   --text-2xl: 28px;
-  --text-xl: 26px;
-  --text-lg: 24px;
+  --text-xl: 24px;
+  --text-lg: 20px;
   --text-md: 18px;
   --text-base: 16px;
   --text-sm: 14px;
 
-  --leading-5xl: 44px;
+  --leading-5xl: 76px;
   --leading-4xl: 44px;
-  --leading-3xl: 32px;
-  --leading-2xl: 36px;
+  --leading-3xl: 36px;
+  --leading-2xl: 32px;
   --leading-xl: 28px;
   --leading-lg: 26px;
   --leading-md: 24px;
   --leading-sm: 16px;
+  --leading-xs: 8px;
 
   --space-5xl: 72px;
   --space-4xl: 56px;
@@ -40,13 +42,92 @@
   --space-md: 16px;
   --space-sm: 8px;
 
+  --block-margin-bottom: 24px;
+
+  --blog-layout-max-width: 1280px;
+  --blog-layout-side-padding: 20px;
+
+  --content-max-width: 736px;
   --column-gap: 40px;
 }
 
-@media screen and (min-width: 768px) {
-  :root {
-    --text-sm: 16px;
+.banner-title {
+  font-size: var(--text-3xl);
+  line-height: 1;
+}
 
-    --text-3xl: 60px;
+.banner-text {
+  font-size: var(--text-base);
+  color: var(--gray-700);
+}
+
+.body-text {
+  font-size: var(--text-base);
+  line-height: var(--leading-xl);
+  color: var(--gray-700);
+}
+
+.body-link {
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.body-title {
+  font-size: var(--text-xl);
+  line-height: var(--leading-3xl);
+  color: var(--gray-700);
+}
+
+.title-huge {
+  font-size: var(--text-3xl);
+  line-height: var(--leading-4xl);
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: var(--text-md);
+  font-style: italic;
+  line-height: var(--leading-xl);
+  color: var(--gray-700);
+}
+
+.ui-text {
+  font-size: var(--text-sm);
+  line-height: 1;
+}
+
+@media screen and (min-width: 860px) {
+  :root {
+    --block-margin-bottom: var(--space-2xl);
+    --blog-layout-side-padding: 56px;
+  }
+
+  .banner-title {
+    font-size: var(--text-4xl);
+  }
+
+  .banner-text {
+    font-size: var(--text-xl);
+  }
+
+  .body-text {
+    font-size: var(--text-lg);
+    line-height: var(--leading-2xl);
+  }
+
+  .ui-text {
+    font-size: var(--text-md);
+  }
+
+  .title-huge {
+    font-size: var(--text-5xl);
+    line-height: var(--leading-5xl);
+    font-weight: 800;
+  }
+
+  .subtitle {
+    font-size: var(--text-xl);
+    line-height: var(--leading-4xl);
+    font-style: italic;
   }
 }

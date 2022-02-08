@@ -8,5 +8,11 @@ const props = defineProps({
 </script>
 
 <template>
-  <h3 class="pt-8 text-xl font-medium">{{ block.content[0].text }}</h3>
+  <h3 class="body-title">{{ block.content[0].text }}</h3>
 </template>
+
+<style lang="postcss" scoped>
+.body-title {
+  padding-top: var(--space-lg);
+}
+</style>

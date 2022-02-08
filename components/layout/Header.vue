@@ -1,5 +1,5 @@
 <template>
-  <header class="site-header">
+  <header class="site-header ui-text">
     <NuxtLink to="/">Homepage</NuxtLink>
     <a href="https://twitter.com/alekspetrov_">Twitter</a>
   </header>
@@ -16,7 +16,6 @@
 @media screen and (min-width: 760px) {
   .site-header {
     padding-block: var(--space-2xl);
-    font-size: var(--text-md);
   }
 }
 </style>

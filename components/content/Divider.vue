@@ -1,3 +1,10 @@
 <template>
-  <hr class="w-full opacity-10" />
+  <div class="body-devider"></div>
 </template>
+
+<style lang="postcss">
+.body-devider {
+  height: 1px;
+  background-color: var(--gray-300);
+}
+</style>

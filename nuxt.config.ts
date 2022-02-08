@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from 'nuxt3'
+import eslintPlugin from 'vite-plugin-eslint'
 
 export default defineNuxtConfig({
   css: [
@@ -19,5 +20,8 @@ export default defineNuxtConfig({
   },
   privateRuntimeConfig: {
     api: process.env.API,
+  },
+  vite: {
+    plugins: [eslintPlugin()],
   },
 })
