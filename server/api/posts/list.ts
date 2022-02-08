@@ -1,11 +1,19 @@
 import { foramatDate } from '../../../utils/dateToFormat'
-import { fetchTable } from '../../../utils/notionApi'
+import { fetchApi } from '../../../api'
+
+interface ITable {
+  id: string
+  date: string
+  title: string
+  description: string
+  tags: string[]
+}
 
 const getTable = async () => {
-  const response = await fetchTable()
+  const res = await fetchApi('database')
 
-  const data = response.map((post) => {
-    const { Image, Name, Description, Tags } = post.properties
+  const data = res.map((post) => {
+    const { Name, Description, Tags } = post.properties
 
     return {
       id: post.id,

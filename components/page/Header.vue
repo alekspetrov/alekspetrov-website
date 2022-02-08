@@ -25,8 +25,9 @@ const props = defineProps({
 
 <style lang="postcss" scoped>
 .page-header {
-  padding-block: var(--space-lg);
+  padding-bottom: var(--space-lg);
   border-bottom: 1px solid var(--gray-300);
+  margin-top: var(--space-lg);
   margin-bottom: var(--space-lg);
 
   & h1 {

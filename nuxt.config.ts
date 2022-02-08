@@ -18,6 +18,6 @@ export default defineNuxtConfig({
     },
   },
   privateRuntimeConfig: {
-    notionToken: process.env.API,
+    api: process.env.API,
   },
 })

@@ -13,6 +13,6 @@ const { data: post } = await useFetch(`/api/posts/get`, {
       :description="post.description"
       :date="post.date"
     />
-    <PageContent :content="post.blocks" />e
+    <PageContent :content="post.blocks" />
   </NuxtLayout>
 </template>

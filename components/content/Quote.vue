@@ -8,10 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <blockquote
-    v-if="block.content"
-    class="border-l-2 ml-[-24px] pl-[20px] text-lg"
-  >
+  <blockquote v-if="block.content" class="block-quote">
     <template v-for="(node, idx) in block.content" :key="idx">
       <a
         v-if="node.href"
@@ -23,3 +20,9 @@ const props = defineProps({
     </template>
   </blockquote>
 </template>
+
+<style lang="postcss" scoped>
+.block-quote {
+  color: red;
+}
+</style>

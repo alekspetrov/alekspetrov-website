@@ -1,12 +1,13 @@
 <script setup>
 const props = defineProps({
-  block: {
-    type: Object,
-    default: () => ({}),
-  },
+  block: Object,
 })
 </script>
 
 <template>
-  <component :is="`blocks-${block.type}`" :block="block"></component>
+  <component
+    v-if="block"
+    :is="`content-${block.type}`"
+    :block="block"
+  ></component>
 </template>

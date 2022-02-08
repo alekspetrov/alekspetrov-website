@@ -1,4 +1,4 @@
-export const blockFactory = (block, options = { duplicated: false }) => {
+const blockFactory = (block, options = { duplicated: false }) => {
   if (block.type === 'code') {
     return {
       id: block.id,
@@ -80,7 +80,8 @@ export const blockFactory = (block, options = { duplicated: false }) => {
   if (block.type === 'heading_3') {
     return {
       id: block.id,
-      type: 'heading-3',
+      type: 'heading',
+      level: 3,
       content: block[block.type].text.map((text) => {
         return {
           type: text.type,
@@ -104,3 +105,5 @@ export const blockFactory = (block, options = { duplicated: false }) => {
     }
   }
 }
+
+export { blockFactory }

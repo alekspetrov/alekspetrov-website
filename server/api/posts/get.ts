@@ -1,9 +1,8 @@
-import slugify from 'slugify'
-import { blockFactory } from '~/utils/notionBlocks'
-import { fetchTable, fetchBlocks } from '../../../utils/notionApi'
+import { fetchApi } from '../../../api'
+import { blockFactory } from '../../../utils/blockFactory'
 
-const makeBlocks = (post) => {
-  const postBlocks = post.reduce((blocks, currentBlock) => {
+const makeBlocks = (blocks) => {
+  const pageBlocks = blocks.reduce((blocks, currentBlock) => {
     const lastBlock = blocks[blocks.length - 1] || {}
 
     if (
@@ -32,43 +31,16 @@ const makeBlocks = (post) => {
     return blocks
   }, [])
 
-  return postBlocks
-}
-
-const getBlocks = async (id) => {
-  console.log('getBlocks')
-
-  const post = await fetchBlocks(id)
-  const blocks = makeBlocks(post)
-  return blocks
+  return pageBlocks
 }
 
 const getPage = async (slug) => {
-  const results = await fetchTable()
+  const res = await fetchApi(`blocks/${slug}`)
 
-  // Get page form the list
-  const page = results.find((post) => {
-    const { Name } = post.properties
-    const postTitle = Name.title[0].plain_text
-    const postSlug = slugify(postTitle).toLowerCase()
-
-    return postSlug === slug
-  })
-
-  // Get page blocks by fetcinng the page
-  const blocks = await getBlocks(page.id)
-  const { Name, Description } = page.properties
-
-  const pageData = {
-    title: Name.title[0].plain_text,
-    description: Description.rich_text[0].plain_text,
-    date: page.properties['Crated at'].created_time,
-  }
-
-  return { ...pageData, blocks }
+  return { ...res, blocks: makeBlocks(res.blocks) }
 }
 
-export default async (req) => {
+export default (req) => {
   const params = new URLSearchParams(req.url)
   const slug = params.get('slug')
 

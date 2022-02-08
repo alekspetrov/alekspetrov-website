@@ -1,15 +1,12 @@
 <script setup>
 const props = defineProps({
-  content: {
-    type: Object,
-    default: () => ({}),
-  },
+  content: Object,
 })
 </script>
 
 <template>
-  <div class="page-content">
-    <!-- <NotionBlock v-for="block in content" :key="block.id" :block="block" /> -->
+  <div class="page-content" v-if="content">
+    <ContentBlock v-for="(block, i) in content" :key="i" :block="block" />
   </div>
 </template>
 

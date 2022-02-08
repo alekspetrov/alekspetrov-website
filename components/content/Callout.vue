@@ -8,17 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div
-    v-if="block.content"
-    class="
-      dark:text-[#A7A6AB]
-      text-black text-opacity-80
-      bg-white bg-opacity-5
-      px-6
-      py-4
-      rounded
-    "
-  >
+  <div v-if="block.content" class="block-callout">
     <template v-for="(node, idx) in block.content" :key="idx">
       <a
         v-if="node.href"
@@ -32,3 +22,10 @@ const props = defineProps({
     </template>
   </div>
 </template>
+
+<style lang="postcss" scoped>
+.block-callout {
+  background: #000;
+  color: white;
+}
+</style>
