@@ -1,6 +1,6 @@
 <template>
   <div class="hero-banner">
-    <img src="avatar-lg.png" alt="avatar" />
+    <img src="/avatar-lg.png" alt="avatar" />
     <div>
       <h1 class="banner-title">Products Maker Journal</h1>
       <p class="banner-text">by Aleks Petrov</p>
