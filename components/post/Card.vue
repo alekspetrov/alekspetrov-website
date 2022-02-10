@@ -8,12 +8,15 @@ const props = defineProps({
   },
 })
 
-const len = 7
+const slug = `/${slugify(props.post.title, {
+  remove: /[:+~*.()'"!@]/g,
+  lower: true,
+})}`
 </script>
 
 <template>
   <article class="post-card">
-    <NuxtLink :to="`/${slugify(post.title).toLowerCase()}`">
+    <NuxtLink :to="slug">
       <h3>{{ post.title }}</h3>
     </NuxtLink>
     <p>{{ post.description }}</p>
