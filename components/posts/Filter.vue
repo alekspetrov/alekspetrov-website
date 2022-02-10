@@ -1,5 +1,5 @@
 <template>
-  <div class="filter">
+  <div class="filter ui-text">
     <div class="filter_item">
       <div>Show All</div>
       <IconArrowDown class="icon" />

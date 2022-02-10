@@ -4,7 +4,12 @@
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
+.posts-grid {
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--gray-300);
+}
+
 @media screen and (min-width: 860px) {
   .posts-grid {
     display: grid;

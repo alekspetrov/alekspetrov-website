@@ -17,11 +17,7 @@ const len = 7
       <h3>{{ post.title }}</h3>
     </NuxtLink>
     <p>{{ post.description }}</p>
-    <div class="info">
-      <span>{{ post.date }}</span>
-      <span> • </span>
-      <span>{{ post.tag }}</span>
-    </div>
+    <div class="info">{{ post.date }}</div>
   </article>
 </template>
 
