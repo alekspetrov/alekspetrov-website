@@ -127,7 +127,7 @@
 
   .subtitle {
     font-size: var(--text-xl);
-    line-height: var(--leading-4xl);
+    line-height: var(--leading-3xl);
     font-style: italic;
   }
 }

@@ -10,8 +10,10 @@ const props = defineProps({
 
 <template>
   <div class="page-header">
-    <h1 class="header-title title-huge">{{ title }}</h1>
-    <p class="subtitle">{{ description }}</p>
+    <div class="page-header-content">
+      <h1 class="header-title title-huge">{{ title }}</h1>
+      <p class="subtitle">{{ description }}</p>
+    </div>
     <div class="header-info ui-text">
       <time>{{ foramatDate(date) }}</time>
       <!-- <span>Share It</span> -->
@@ -21,10 +23,14 @@ const props = defineProps({
 
 <style lang="postcss">
 .page-header {
-  padding-bottom: var(--space-lg);
+  padding-bottom: var(--space-xl);
   border-bottom: 1px solid var(--gray-300);
-  margin-top: var(--space-lg);
+  margin-top: var(--space-2xl);
   margin-bottom: var(--space-lg);
+}
+
+.page-header-content {
+  max-width: 80%;
 }
 
 .header-title {
@@ -39,7 +45,7 @@ const props = defineProps({
 
 @media screen and (min-width: 860px) {
   .header-title {
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
   }
 }
 </style>
