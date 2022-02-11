@@ -21,6 +21,9 @@ export default defineNuxtConfig({
   privateRuntimeConfig: {
     api: process.env.API,
   },
+  nitro: {
+    preset: 'vercel',
+  },
   vite: {
     plugins: [eslintPlugin()],
   },
