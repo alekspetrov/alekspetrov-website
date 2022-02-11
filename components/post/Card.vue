@@ -50,6 +50,12 @@ const slug = `/${slugify(props.post.title, {
   & .info {
     color: var(--gray-600);
   }
+
+  /* Remove border for last row in the grid */
+  &:nth-child(3n + 1):nth-last-child(-n + 3),
+  &:nth-child(3n + 1):nth-last-child(-n + 3) ~ .post-card {
+    border-bottom: 0;
+  }
 }
 
 @media screen and (min-width: 860px) {
