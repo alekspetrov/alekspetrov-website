@@ -2,7 +2,7 @@ import config from '#config'
 
 // const API = config.api || 'http://127.0.0.1:8787'
 // const API = 'https://worker.alekspetrov.com'
-const API = 'cf-notion-worker.alekspetrov.workers.dev'
+const API = 'https://cf-notion-worker.alekspetrov.workers.dev'
 
 const fetchApi = async (route: string) => {
   try {
