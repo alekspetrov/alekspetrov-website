@@ -1,4 +1,4 @@
-import { fetchApi } from '../../../api'
+import { fetchApi } from '../../../utils/api'
 import { blockFactory } from '../../../utils/blockFactory'
 
 const makeBlocks = (blocks) => {

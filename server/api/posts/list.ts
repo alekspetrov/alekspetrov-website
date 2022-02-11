@@ -1,5 +1,5 @@
 import { foramatDate } from '../../../utils/dateToFormat'
-import { fetchApi } from '../../../api'
+import { fetchApi } from '../../../utils/api'
 
 interface ITable {
   id: string
