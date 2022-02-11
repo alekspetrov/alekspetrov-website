@@ -1,11 +1,14 @@
 import config from '#config'
 
-const API = config.api || 'http://127.0.0.1:8787'
+// const API = config.api || 'http://127.0.0.1:8787'
+const API = 'https://worker.alekspetrov.com'
 
 const fetchApi = async (route: string) => {
   try {
     const res = await fetch(`${API}/${route}`)
-    return res.json()
+    const data = await res.json()
+
+    return data
   } catch (e) {
     throw Error(`Can not get data from ${route}`)
   }
