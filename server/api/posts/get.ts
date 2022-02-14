@@ -6,7 +6,7 @@ const makeBlocks = (blocks) => {
     const lastBlock = blocks[blocks.length - 1] || {}
 
     if (
-      lastBlock.type === 'bulleted-list' &&
+      lastBlock.type === 'list' && // should be the same as type in blockFactory
       currentBlock.type === 'bulleted_list_item'
     ) {
       const isArray = Array.isArray(lastBlock.content[0])

@@ -67,7 +67,8 @@ const blockFactory = (block, options = { duplicated: false }) => {
   if (block.type === 'bulleted_list_item') {
     return {
       id: block.id,
-      type: 'bulleted_list_item',
+      type: 'list',
+      listType: 'bulleted',
       content: block[block.type].text.map((item) => {
         return {
           text: item.text.content,
