@@ -42,7 +42,7 @@ const slug = `/${slugify(props.post.title, {
     font-size: var(--text-base);
     line-height: var(--leading-lg);
     color: var(--gray-600);
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-md);
   }
 
   & .info {

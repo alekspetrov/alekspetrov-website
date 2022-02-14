@@ -25,25 +25,22 @@ const props = defineProps({
 .page-header {
   padding-bottom: var(--space-xl);
   border-bottom: 1px solid var(--gray-300);
-  margin-top: var(--space-2xl);
-  margin-bottom: var(--space-lg);
+  margin-block: var(--space-lg);
 }
 
 .header-title {
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-lg);
 }
 
 .header-info {
   display: flex;
   justify-content: space-between;
   margin-top: var(--space-5xl);
+
+  font-weight: 800;
 }
 
 @media screen and (min-width: 860px) {
-  .page-header-content {
-    max-width: 80%;
-  }
-
   .header-title {
     margin-bottom: var(--space-lg);
   }

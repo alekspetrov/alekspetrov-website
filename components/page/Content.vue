@@ -5,7 +5,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="content" v-if="content">
+  <div class="content inner-padding" v-if="content">
     <ContentBlock v-for="(block, i) in content" :key="i" :block="block" />
   </div>
 </template>
