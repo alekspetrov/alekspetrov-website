@@ -1,5 +1,5 @@
 <template>
-  <header class="site-header ui-text">
+  <header class="site-header inner-padding ui-text">
     <NuxtLink to="/">Homepage</NuxtLink>
     <a href="https://twitter.com/alekspetrov_">Twitter</a>
   </header>
@@ -10,12 +10,12 @@
   display: flex;
   justify-content: space-between;
   padding-block: var(--space-md);
-  border-bottom: 1px var(--gray-300) solid;
+  border-bottom: 1px solid var(--gray-300);
 }
 
 @media screen and (min-width: 760px) {
   .site-header {
-    padding-block: var(--space-2xl);
+    padding-block: var(--space-xl);
   }
 }
 </style>

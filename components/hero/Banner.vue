@@ -1,43 +1,49 @@
 <template>
-  <div class="hero-banner">
-    <img src="/avatar-lg.png" alt="avatar" />
-    <div>
-      <h1 class="banner-title">Products Maker Journal</h1>
-      <p class="banner-text">by Aleks Petrov</p>
+  <div class="hero-banner inner-padding">
+    <div class="hero-body">
+      <img src="/avatar-lg.png" alt="avatar" />
+      <div>
+        <h1 class="banner-title">Maker Journal</h1>
+        <p class="banner-text">by Aleks Petrov</p>
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="postcss">
 .hero-banner {
-  padding-block: var(--space-md);
-  padding-bottom: clamp(16em, 60%, 20em);
+  padding-top: var(--space-lg);
+  border-bottom: 1px solid var(--gray-300);
 
   & img {
     width: 60px;
     height: 60px;
-    margin-bottom: var(--space-sm);
+    margin-right: var(--space-md);
   }
+
+  height: 240px;
 }
 
-.banner-title {
-  margin-bottom: var(--space-sm);
+.hero-body {
+  display: flex;
+  align-items: center;
+}
+
+.banner-text {
+  color: var(--gray-600);
 }
 
 @media screen and (min-width: 768px) {
   .hero-banner {
-    display: flex;
-    align-items: center;
+    padding-top: var(--space-2xl);
 
     & img {
-      width: 120px;
-      height: 120px;
+      width: 88px;
+      height: 88px;
       margin-right: var(--space-lg);
     }
-  }
 
-  .banner-title {
-    margin-bottom: 0;
+    height: 400px;
   }
 }
 </style>

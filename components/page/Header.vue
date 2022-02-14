@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="page-header">
+  <div class="page-header inner-padding">
     <div class="page-header-content">
       <h1 class="header-title title-huge">{{ title }}</h1>
       <p class="subtitle">{{ description }}</p>
@@ -29,10 +29,6 @@ const props = defineProps({
   margin-bottom: var(--space-lg);
 }
 
-.page-header-content {
-  max-width: 80%;
-}
-
 .header-title {
   margin-bottom: var(--space-sm);
 }
@@ -44,6 +40,10 @@ const props = defineProps({
 }
 
 @media screen and (min-width: 860px) {
+  .page-header-content {
+    max-width: 80%;
+  }
+
   .header-title {
     margin-bottom: var(--space-lg);
   }

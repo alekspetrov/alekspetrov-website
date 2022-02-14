@@ -14,7 +14,7 @@
   --font-sans: 'Public Sans', sans-serif;
 
   --text-5xl: 80px;
-  --text-4xl: 60px;
+  --text-4xl: 53px;
   --text-3xl: 42px;
   --text-2xl: 28px;
   --text-xl: 24px;
@@ -44,7 +44,7 @@
 
   --block-margin-bottom: 24px;
 
-  --blog-layout-max-width: 1280px;
+  --blog-layout-max-width: 896px;
   --blog-layout-side-padding: 20px;
 
   --content-max-width: 736px;
@@ -96,6 +96,10 @@
   line-height: 1;
 }
 
+.inner-padding {
+  padding-inline: var(--space-lg);
+}
+
 @media screen and (min-width: 860px) {
   :root {
     --block-margin-bottom: var(--space-2xl);
@@ -107,7 +111,7 @@
   }
 
   .banner-text {
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
   }
 
   .body-text {
@@ -129,5 +133,9 @@
     font-size: var(--text-xl);
     line-height: var(--leading-3xl);
     font-style: italic;
+  }
+
+  .inner-padding {
+    padding-inline: 88px;
   }
 }

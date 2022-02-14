@@ -15,7 +15,7 @@ const slug = `/${slugify(props.post.title, {
 </script>
 
 <template>
-  <article class="post-card">
+  <article class="post-card inner-padding">
     <NuxtLink :to="slug">
       <h3>{{ post.title }}</h3>
     </NuxtLink>
@@ -26,14 +26,12 @@ const slug = `/${slugify(props.post.title, {
 
 <style lang="postcss" scoped>
 .post-card {
-  padding-bottom: var(--space-lg);
+  padding-block: var(--space-lg);
   border-bottom: 1px solid var(--gray-300);
-  margin-bottom: var(--space-lg);
-  display: flex;
-  flex-direction: column;
 
   & h3 {
     font-size: var(--text-2xl);
+    font-weight: 700;
     line-height: var(--leading-3xl);
     margin-bottom: var(--space-sm);
   }
@@ -43,28 +41,19 @@ const slug = `/${slugify(props.post.title, {
     font-family: var(--font-serif);
     font-size: var(--text-base);
     line-height: var(--leading-lg);
-    color: var(--gray-700);
+    color: var(--gray-600);
     margin-bottom: var(--space-sm);
   }
 
   & .info {
-    color: var(--gray-600);
-  }
-
-  /* Remove border for last row in the grid */
-  &:nth-child(3n + 1):nth-last-child(-n + 3),
-  &:nth-child(3n + 1):nth-last-child(-n + 3) ~ .post-card {
-    border-bottom: 0;
+    color: var(--gray-500);
   }
 }
 
 @media screen and (min-width: 860px) {
   .post-card {
-    border-bottom: 1px solid var(--gray-300);
-
-    & h3,
     & p {
-      margin-bottom: var(--space-md);
+      font-size: var(--text-lg);
     }
   }
 }

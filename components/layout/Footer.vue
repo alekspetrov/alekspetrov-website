@@ -1,5 +1,5 @@
 <template>
-  <footer class="site-footer ui-text">
+  <footer class="site-footer inner-padding ui-text">
     <div class="">© Aleksei Petrov</div>
     <a href="mailto:hello@alekspetrov.com" class="">Contact me</a>
   </footer>
