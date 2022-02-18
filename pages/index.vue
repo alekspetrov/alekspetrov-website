@@ -1,5 +1,10 @@
 <script setup>
 const { data: posts } = await useFetch('/api/posts/list')
+
+useMeta(() => ({
+  title: 'Aleks Petrov',
+  description: 'This is my maker journal to share my learnings.',
+}))
 </script>
 
 <template>
