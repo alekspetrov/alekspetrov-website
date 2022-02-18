@@ -15,7 +15,7 @@
 
 @media screen and (min-width: 760px) {
   .site-footer {
-    padding-block: var(--space-2xl);
+    padding-block: var(--space-lg);
   }
 }
 </style>

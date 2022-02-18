@@ -21,7 +21,7 @@
     margin-right: var(--space-md);
   }
 
-  height: 240px;
+  height: 40%;
 }
 
 .hero-body {
@@ -36,14 +36,13 @@
 @media screen and (min-width: 768px) {
   .hero-banner {
     padding-top: var(--space-2xl);
+    height: 55%;
 
     & img {
       width: 88px;
       height: 88px;
       margin-right: var(--space-lg);
     }
-
-    height: 400px;
   }
 }
 </style>
