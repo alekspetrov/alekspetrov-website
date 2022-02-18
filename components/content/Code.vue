@@ -17,12 +17,24 @@ const highlight = (code) => {
 </script>
 
 <template>
-  <div class="body-code body-text">
-    <pre :class="`language-${block.language}`"><code
+  <div>
+    <div class="body-code body-text">
+      <pre :class="`language-${block.language}`"><code
         v-for="(node, idx) in block.content"
         :key="idx"
         :class="`language-${block.language}`"
         v-html="highlight(node.text)" /></pre>
+    </div>
+    <div class="body-code-caption">
+      <template v-for="(node, idx) in block.caption" :key="idx">
+        <a v-if="node.href" :href="node.href" class="body-link">
+          {{ node.text.content }}
+        </a>
+        <template v-else>
+          {{ node.text.content }}
+        </template>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -30,5 +42,9 @@ const highlight = (code) => {
 .body-code {
   background: var(--gray-900);
   padding-inline: var(--space-lg);
+}
+
+.body-code-caption {
+  color: var(--gray-600);
 }
 </style>

@@ -2,6 +2,8 @@ import { fetchApi } from '../../../utils/api'
 import { blockFactory } from '../../../utils/blockFactory'
 
 const makeBlocks = (blocks) => {
+  if (!blocks) return []
+
   const pageBlocks = blocks.reduce((blocks, currentBlock) => {
     const lastBlock = blocks[blocks.length - 1] || {}
 

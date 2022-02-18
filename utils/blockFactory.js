@@ -9,6 +9,7 @@ const blockFactory = (block, options = { duplicated: false }) => {
           text: text.text.content,
         }
       }),
+      caption: block.code.caption,
     }
   }
 
