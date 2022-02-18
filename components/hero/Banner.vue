@@ -19,14 +19,10 @@
     width: 60px;
     height: 60px;
     margin-right: var(--space-md);
+    margin-bottom: var(--space-md);
   }
 
-  height: 40%;
-}
-
-.hero-body {
-  display: flex;
-  align-items: center;
+  height: 280px;
 }
 
 .banner-text {
@@ -36,13 +32,19 @@
 @media screen and (min-width: 768px) {
   .hero-banner {
     padding-top: var(--space-2xl);
-    height: 55%;
+    margin-bottom: 0;
+    height: 420px;
 
     & img {
       width: 88px;
       height: 88px;
       margin-right: var(--space-lg);
     }
+  }
+
+  .hero-body {
+    display: flex;
+    align-items: center;
   }
 }
 </style>
