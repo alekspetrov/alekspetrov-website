@@ -4,6 +4,11 @@ const { params } = useRoute()
 const { data: post } = await useFetch(`/api/posts/get`, {
   params,
 })
+
+useMeta(() => ({
+  title: post.value.title,
+  description: post.value.description,
+}))
 </script>
 
 <template>
