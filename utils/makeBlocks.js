@@ -1,6 +1,4 @@
-import { fetchApi } from '../../../utils/api'
-import { blockFactory } from '../../../utils/blockFactory'
-import { IncomingMessage, ServerResponse } from 'http'
+import { blockFactory } from './blockFactory'
 
 const makeBlocks = (blocks) => {
   if (!blocks) return []
@@ -37,17 +35,4 @@ const makeBlocks = (blocks) => {
   return pageBlocks
 }
 
-const getPage = async (slug: string) => {
-  const res = await fetchApi(`blocks/${slug}`)
-
-  return { ...res, blocks: makeBlocks(res.blocks) }
-}
-
-export default async (req: IncomingMessage, res: ServerResponse) => {
-  const params = new URLSearchParams(req.url)
-  const slug = params.get('slug')
-  const data = await getPage(slug)
-  res.statusCode = data.status || 200
-
-  return data
-}
+export { makeBlocks }

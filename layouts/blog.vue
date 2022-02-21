@@ -1,18 +1,3 @@
-<script setup>
-import Nprogress from 'nprogress'
-
-const router = useRouter()
-
-router.beforeResolve((to, from, next) => {
-  Nprogress.start()
-  next()
-})
-
-router.afterEach(() => {
-  Nprogress.done()
-})
-</script>
-
 <template>
   <div class="blog-layout">
     <LayoutHeader />

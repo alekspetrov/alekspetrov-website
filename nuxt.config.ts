@@ -6,7 +6,6 @@ export default defineNuxtConfig({
     '~/assets/css/reset.css',
     '~/assets/css/tokens.css',
     '~/assets/css/fonts.css',
-    '~/assets/css/nprogress.css',
   ],
   build: {
     postcss: {

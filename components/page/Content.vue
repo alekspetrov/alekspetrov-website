@@ -12,7 +12,7 @@ const props = defineProps({
 
 <style lang="postcss">
 .content {
-  margin-block: var(--space-xl);
+  margin-block: var(--space-4xl);
   box-sizing: border-box;
 
   & > * {

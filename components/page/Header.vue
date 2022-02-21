@@ -5,6 +5,7 @@ const props = defineProps({
   title: String,
   description: String,
   date: String,
+  tags: Array,
 })
 </script>
 
@@ -16,7 +17,8 @@ const props = defineProps({
     </div>
     <div class="header-info ui-text">
       <time>{{ foramatDate(date) }}</time>
-      <!-- <span>Share It</span> -->
+      <span>•</span>
+      <span v-for="tag in tags" :key="tag.id">{{ tag.name }}</span>
     </div>
   </div>
 </template>
@@ -25,7 +27,7 @@ const props = defineProps({
 .page-header {
   padding-bottom: var(--space-xl);
   border-bottom: 1px solid var(--gray-300);
-  margin-block: var(--space-lg);
+  margin-block: var(--space-3xl);
 }
 
 .header-title {
@@ -33,11 +35,20 @@ const props = defineProps({
 }
 
 .header-info {
-  display: flex;
-  justify-content: space-between;
   margin-top: var(--space-5xl);
+  font-weight: 600;
 
-  font-weight: 800;
+  & > *:nth-child(2) {
+    padding-inline: var(--space-sm);
+  }
+
+  & > *:nth-child(3):not(:last-child)::after {
+    content: ', ';
+  }
+}
+
+.header-info-share {
+  margin-left: auto;
 }
 
 @media screen and (min-width: 860px) {

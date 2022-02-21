@@ -14,4 +14,3 @@ useMeta(() => ({
   </NuxtLayout>
   <div v-else style="text-align: center; line-height: 72px">Loading...</div>
 </template>
-p

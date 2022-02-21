@@ -62,7 +62,7 @@
 }
 
 .body-text {
-  font-size: var(--text-base);
+  font-size: var(--text-md);
   line-height: var(--leading-xl);
   color: var(--gray-700);
 }
@@ -82,10 +82,12 @@
   font-size: var(--text-3xl);
   line-height: var(--leading-4xl);
   font-weight: 800;
+  letter-spacing: -1px;
 }
 
 .subtitle {
   font-size: var(--text-lg);
+  font-weight: 500;
   line-height: 1.4;
   color: var(--gray-700);
 }
@@ -114,7 +116,6 @@
   }
 
   .body-text {
-    font-size: var(--text-lg);
     line-height: var(--leading-2xl);
   }
 
