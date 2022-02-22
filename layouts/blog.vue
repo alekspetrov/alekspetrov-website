@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .blog-layout {
   min-height: 100vh;
   display: grid;

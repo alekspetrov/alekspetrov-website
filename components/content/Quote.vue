@@ -22,7 +22,7 @@ const props = defineProps({
   </blockquote>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .block-quote {
   padding-left: var(--space-md);
   border-left: 4px solid var(--gray-900);

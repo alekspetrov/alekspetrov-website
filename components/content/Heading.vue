@@ -11,7 +11,7 @@ const props = defineProps({
   <h3 class="body-title">{{ block.content[0].text }}</h3>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .body-title {
   padding-top: var(--space-lg);
 }

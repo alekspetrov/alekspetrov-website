@@ -20,7 +20,7 @@ const props = defineProps({
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .body-callout {
   background: var(--gray-200);
   padding: var(--space-md);

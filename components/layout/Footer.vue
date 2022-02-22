@@ -5,7 +5,7 @@
   </footer>
 </template>
 
-<style scoped lang="postcss">
+<style lang="postcss">
 .site-footer {
   display: flex;
   justify-content: space-between;

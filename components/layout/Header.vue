@@ -5,7 +5,7 @@
   </header>
 </template>
 
-<style scoped lang="postcss">
+<style lang="postcss">
 .site-header {
   display: flex;
   justify-content: space-between;

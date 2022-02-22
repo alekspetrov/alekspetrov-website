@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .page {
   padding: 8vw;
   background: #000;

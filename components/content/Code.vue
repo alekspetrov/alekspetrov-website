@@ -38,7 +38,7 @@ const highlight = (code) => {
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .body-code {
   background: var(--gray-900);
   padding-inline: var(--space-lg);
