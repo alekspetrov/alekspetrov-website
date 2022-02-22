@@ -20,6 +20,7 @@ if (post.value) {
         :title="post.title"
         :description="post.description"
         :date="post.date"
+        :tags="post.tags"
       />
       <PageContent :content="post.blocks" />
     </NuxtLayout>
