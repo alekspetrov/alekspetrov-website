@@ -1,0 +1,44 @@
+body {
+  font-family: var(--font-sans);
+  background: var(--gray-100);
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Graphik/GraphikRegular.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/Graphik/GraphikMedium.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/Graphik/GraphikSemibold.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/Graphik/GraphikBold.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../fonts/Graphik/GraphikBlack.otf') format('truetype');
+}

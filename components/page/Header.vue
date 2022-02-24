@@ -36,7 +36,6 @@ const props = defineProps({
 
 .header-info {
   margin-top: var(--space-5xl);
-  font-weight: 600;
 
   & > *:nth-child(2) {
     padding-inline: var(--space-sm);
