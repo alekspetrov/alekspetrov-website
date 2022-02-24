@@ -10,23 +10,21 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="page-header inner-padding">
-    <div class="page-header-content">
+  <div class="page-header">
+    <div class="page-header-content inner-padding">
       <h1 class="header-title title-huge">{{ title }}</h1>
       <p class="subtitle">{{ description }}</p>
     </div>
-    <div class="header-info ui-text">
+    <div class="header-info ui-text inner-padding">
       <time>{{ foramatDate(date) }}</time>
-      <span>•</span>
       <span v-for="tag in tags" :key="tag.id">{{ tag.name }}</span>
+      <span>Share</span>
     </div>
   </div>
 </template>
 
 <style lang="postcss">
 .page-header {
-  padding-bottom: var(--space-xl);
-  border-bottom: 1px solid var(--gray-300);
   margin-block: var(--space-3xl);
 }
 
@@ -35,24 +33,20 @@ const props = defineProps({
 }
 
 .header-info {
+  line-height: 0.5;
+  border-block: 1px solid var(--gray-300);
+  padding-block: var(--space-lg);
   margin-top: var(--space-5xl);
+  font-weight: 600;
 
-  & > *:nth-child(2) {
-    padding-inline: var(--space-sm);
+  & > * {
+    padding-block: var(--space-sm);
   }
 
-  & > *:nth-child(3):not(:last-child)::after {
-    content: ', ';
-  }
-}
-
-.header-info-share {
-  margin-left: auto;
-}
-
-@media screen and (min-width: 860px) {
-  .header-title {
-    margin-bottom: var(--space-lg);
+  & > *:not(:first-child) {
+    border-left: 1px solid var(--gray-300);
+    padding-left: var(--space-lg);
+    margin-left: var(--space-lg);
   }
 }
 </style>
