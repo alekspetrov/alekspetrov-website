@@ -38,7 +38,7 @@ const makeBlocks = (blocks) => {
 }
 
 const getPage = async (slug: string) => {
-  const res = await fetchApi(`blocks/${slug}`)
+  const res = await fetchApi(`pages/${slug}`)
 
   return { ...res, blocks: makeBlocks(res.blocks) }
 }

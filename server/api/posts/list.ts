@@ -10,7 +10,7 @@ interface ITable {
 }
 
 const getTable = async () => {
-  const res = await fetchApi('database')
+  const res = await fetchApi('pages')
 
   const data = res.map((post) => {
     const { Name, Description, Tags } = post.properties
