@@ -136,15 +136,21 @@ const handleSubmit = async () => {
 }
 
 .form-row-inline {
-  display: flex;
-  align-items: center;
+  > input {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: var(--space-md);
+  }
+
+  > button {
+    width: 100%;
+  }
 }
 
 .form-input {
-  max-width: 386px;
   flex: 1;
   border: 1px solid var(--gray-300);
-  height: calc(48px - 2px);
+  height: 48px;
   border-radius: 2px;
   padding-inline: var(--space-md);
   margin-right: var(--space-md);
@@ -191,6 +197,23 @@ const handleSubmit = async () => {
 
 .form-link {
   text-decoration: underline;
+}
+
+@media screen and (min-width: 640px) {
+  .form-row-inline {
+    display: flex;
+    align-items: center;
+
+    > input {
+      box-sizing: border-box;
+      max-width: 386px;
+      margin-bottom: 0;
+    }
+
+    > button {
+      width: auto;
+    }
+  }
 }
 
 @media screen and (min-width: 860px) {
