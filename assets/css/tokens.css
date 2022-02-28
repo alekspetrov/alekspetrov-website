@@ -1,6 +1,7 @@
 :root {
-  --white: hsl(255, 255, 255);
+  --white: hsl(255, 255%, 255%);
   --accent: hsl(36, 95%, 70%);
+  --danger: hsl(0, 94%, 63%);
 
   --gray-100: hsl(180, 5%, 96%);
   --gray-200: hsl(180, 2%, 91%);
@@ -41,6 +42,7 @@
   --space-lg: 24px;
   --space-md: 16px;
   --space-sm: 8px;
+  --space-xs: 4px;
 
   --block-margin-bottom: 24px;
 

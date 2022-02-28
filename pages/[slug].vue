@@ -23,6 +23,7 @@ if (post.value) {
         :tags="post.tags"
       />
       <PageContent :content="post.blocks" />
+      <ElementsSubscriptionForm />
     </NuxtLayout>
     <NuxtLayout name="error" v-else />
   </div>
