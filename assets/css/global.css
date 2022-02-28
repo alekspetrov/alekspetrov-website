@@ -70,6 +70,13 @@ body {
   color: var(--gray-700);
 }
 
+.title-big {
+  font-size: var(--text-3xl);
+  line-height: var(--leading-4xl);
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
 .title-huge {
   font-size: var(--text-3xl);
   line-height: var(--leading-4xl);

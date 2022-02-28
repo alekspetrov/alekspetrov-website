@@ -5,25 +5,25 @@ const submitted = ref(false)
 const exist = ref(false)
 const formError = ref(null)
 
-const validateEmail = () => {
+const validateEmail = (callback) => {
   const emailFormat =
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
   if (!email.value) {
     formError.value = 'Hey, I can’t send updates to nowhere'
-  } else {
-    if (email.value.match(emailFormat)) {
-      return
-    } else {
-      formError.value = 'Check your email looks like email@domain.com'
-    }
+    return
   }
+
+  if (!email.value.match(emailFormat)) {
+    formError.value = 'Check your email looks like email@domain.com'
+    return
+  }
+
+  callback()
 }
 
 const handleSubmit = async () => {
   submitting.value = true
-
-  validateEmail()
 
   const { data } = await useFetch('/api/emails/add', {
     method: 'POST',
@@ -44,7 +44,7 @@ const handleSubmit = async () => {
 
   if (data.value.status === 409) {
     submitting.value = false
-    formError.value = 'Seems like you already subscribed! Check your email!'
+    exist.value = true
   }
 }
 </script>
@@ -59,31 +59,35 @@ const handleSubmit = async () => {
             👋 Thanks for subscription! Check your email please.
           </div>
         </div>
-        <div v-if="exist" class="form-row">
-          <div class="subscription-form-thankyou">
+        <div v-if="!exist" class="form-row subscription-form-thankyou">
+          <div>
             👋 You're already on the list!
-            <NuxtLink to="/" class="form-link">Don’t get emails?</NuxtLink>
+            <NuxtLink to="/issues" class="form-link">
+              Don’t get emails?
+            </NuxtLink>
           </div>
         </div>
         <form
           v-if="!submitted && !exist"
           class="form"
-          @submit.prevent="handleSubmit"
+          @submit.prevent="validateEmail(handleSubmit)"
         >
           <div class="form-row">
-            <input
-              :class="{ 'form-input-error': formError }"
-              class="form-input"
-              type="text"
-              placeholder="Email.."
-              v-model.trim="email"
-            />
-            <button class="form-button">
-              {{ submitting ? '…' : 'Subscribe' }}
-            </button>
-          </div>
-          <div v-if="formError" class="form-input-error-text">
-            {{ formError }}
+            <div class="form-row-inline">
+              <input
+                :class="{ 'form-input-error': formError }"
+                class="form-input"
+                type="email"
+                placeholder="Email.."
+                v-model.trim="email"
+              />
+              <button class="form-button">
+                {{ submitting ? '…' : 'Subscribe' }}
+              </button>
+            </div>
+            <div v-if="formError" class="form-input-error-text">
+              {{ formError }}
+            </div>
           </div>
         </form>
         <p>
@@ -115,20 +119,25 @@ const handleSubmit = async () => {
 }
 
 .subscription-form-thankyou {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
   font-weight: 500;
   font-size: var(--text-base);
   line-height: 1.2;
 
-  > a {
+  a {
     white-space: nowrap;
   }
 }
 
 .form-row {
+  margin-bottom: var(--space-lg);
+}
+
+.form-row-inline {
   display: flex;
   align-items: center;
-  height: 50px;
-  margin-bottom: var(--space-lg);
 }
 
 .form-input {

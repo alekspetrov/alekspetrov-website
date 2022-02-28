@@ -18,7 +18,6 @@ const props = defineProps({
     <div class="header-info ui-text inner-padding">
       <time>{{ foramatDate(date) }}</time>
       <span v-for="tag in tags" :key="tag.id">{{ tag.name }}</span>
-      <span>Share</span>
     </div>
   </div>
 </template>
