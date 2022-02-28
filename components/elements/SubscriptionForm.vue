@@ -59,7 +59,7 @@ const handleSubmit = async () => {
             👋 Thanks for subscription! Check your email please.
           </div>
         </div>
-        <div v-if="!exist" class="form-row subscription-form-thankyou">
+        <div v-if="exist" class="form-row subscription-form-thankyou">
           <div>
             👋 You're already on the list!
             <NuxtLink to="/issues" class="form-link">
