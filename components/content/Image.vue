@@ -30,7 +30,7 @@ const srcset = imageSizes
 <style lang="postcss">
 .body-image-caption {
   margin-top: var(--space-sm);
-  max-width: var(--content-max-width);
+  width: 100%;
   color: var(--gray-500);
 }
 </style>

@@ -22,17 +22,14 @@
 
 @media screen and (min-width: 720px) {
   .blog-layout {
-    border-left: 1px solid var(--gray-300);
-
-    margin-left: 88px;
+    border-inline: 1px solid var(--gray-300);
+    margin-inline: 56px;
   }
 }
 
-@media screen and (min-width: 896px) {
+@media screen and (min-width: 1080px) {
   .blog-layout {
-    border-right: 1px solid var(--gray-300);
-
-    margin-right: 88px;
+    margin-inline: 88px;
   }
 }
 </style>

@@ -1,6 +1,7 @@
 body {
   font-family: var(--font-sans);
   background: var(--gray-100);
+  -webkit-text-size-adjust: 100%;
 }
 
 @font-face {
@@ -104,10 +105,10 @@ body {
   white-space: nowrap;
 }
 
-@media screen and (min-width: 860px) {
+@media screen and (min-width: 896px) {
   :root {
     --block-margin-bottom: var(--space-2xl);
-    --blog-layout-side-padding: 56px;
+    --blog-layout-max-width: 896px;
   }
 
   .banner-title {
@@ -116,10 +117,6 @@ body {
 
   .banner-text {
     font-size: var(--text-lg);
-  }
-
-  .body-text {
-    /* line-height: var(--leading-2xl); */
   }
 
   .ui-text {

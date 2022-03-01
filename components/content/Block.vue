@@ -15,7 +15,6 @@ const props = defineProps({
 
 <style lang="postcss">
 .content-block {
-  max-width: var(--content-max-width);
   margin-bottom: var(--block-margin-bottom);
 }
 </style>
