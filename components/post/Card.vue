@@ -1,5 +1,6 @@
 <script setup>
 import slugify from 'slugify'
+import { typograph } from '../../utils/typograph'
 
 const props = defineProps({
   post: {
@@ -17,7 +18,7 @@ const slug = `/${slugify(props.post.title, {
 <template>
   <article class="post-card inner-padding">
     <NuxtLink :to="slug">
-      <h3>{{ post.title }}</h3>
+      <h3>{{ typograph(post.title) }}</h3>
     </NuxtLink>
     <p>{{ post.description }}</p>
     <div class="post-card-info">

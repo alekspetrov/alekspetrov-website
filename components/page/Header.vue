@@ -1,5 +1,6 @@
 <script setup>
 import { foramatDate } from '../../utils/dateToFormat'
+import { typograph } from '../../utils/typograph'
 
 const props = defineProps({
   title: String,
@@ -12,7 +13,7 @@ const props = defineProps({
 <template>
   <div class="page-header">
     <div class="page-header-content inner-padding">
-      <h1 class="header-title title-huge">{{ title }}</h1>
+      <h1 class="header-title title-huge">{{ typograph(title) }}</h1>
       <p class="subtitle">{{ description }}</p>
     </div>
     <div class="header-info ui-text inner-padding">
