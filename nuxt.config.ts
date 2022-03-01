@@ -3,6 +3,13 @@ import eslintPlugin from 'vite-plugin-eslint'
 
 export default defineNuxtConfig({
   meta: {
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/avatar-sm.png',
+      },
+    ],
     script: [
       {
         src: 'https://static.cloudflareinsights.com/beacon.min.js',
