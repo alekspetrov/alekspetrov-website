@@ -1,139 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--font-sans);
-  background: var(--gray-100);
+  font-size: var(--text-md);
+  line-height: var(--leading-sm);
+  font-weight: 500;
+
+  background: var(--black);
+  color: var(--gray-5);
+
   -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
-  font-family: 'Graphik';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/Graphik/GraphikRegular.otf') format('truetype');
+  src: url('../fonts/Inter/static/Inter-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Graphik';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../fonts/Graphik/GraphikMedium.otf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Graphik';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('../fonts/Graphik/GraphikSemibold.otf') format('truetype');
+  src: url('../fonts/Inter/static/Inter-SemiBold.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'Graphik';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/Graphik/GraphikBold.otf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Graphik';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('../fonts/Graphik/GraphikBlack.otf') format('truetype');
-}
-
-.banner-title {
-  font-size: var(--text-3xl);
-  line-height: 1;
-}
-
-.banner-text {
-  font-size: var(--text-base);
-  color: var(--gray-700);
-}
-
-.body-text {
+h1 {
+  color: var(--white);
   font-size: var(--text-md);
-  line-height: var(--leading-xl);
-  color: var(--gray-700);
+  font-weight: 500;
+  letter-spacing: 0.006rem;
 }
 
-.body-link {
-  display: inline-block;
-  text-decoration: underline;
-}
-
-.body-title {
-  font-size: var(--text-xl);
-  line-height: var(--leading-3xl);
-  color: var(--gray-700);
-}
-
-.title-big {
-  font-size: var(--text-3xl);
-  line-height: var(--leading-4xl);
-  font-weight: 700;
-  letter-spacing: -1px;
-}
-
-.title-huge {
-  font-size: var(--text-3xl);
-  line-height: var(--leading-4xl);
-  font-weight: 800;
-  letter-spacing: -1px;
-}
-
-.subtitle {
-  font-size: var(--text-lg);
-  font-weight: 600;
-  line-height: 1.4;
-  color: var(--gray-700);
-}
-
-.ui-text {
-  font-size: var(--text-sm);
-  line-height: 1;
-}
-
-.inner-padding {
-  padding-inline: var(--space-lg);
-}
-
-.white-space-nowrap {
-  white-space: nowrap;
-}
-
-@media screen and (min-width: 896px) {
-  :root {
-    --block-margin-bottom: var(--space-2xl);
-    --blog-layout-max-width: 896px;
-  }
-
-  .banner-title {
-    font-size: var(--text-4xl);
-  }
-
-  .banner-text {
-    font-size: var(--text-lg);
-  }
-
-  .ui-text {
-    font-size: var(--text-base);
-  }
-
-  .title-huge {
-    font-size: var(--text-4xl);
-    line-height: 1.1;
-  }
-
-  .subtitle {
-    font-size: var(--text-xl);
-    line-height: var(--leading-3xl);
-  }
-
-  .inner-padding {
-    padding-inline: 88px;
-  }
+h3 {
+  color: var(--white);
+  font-size: var(--text-md);
+  font-weight: 500;
+  letter-spacing: 0.0187rem;
 }

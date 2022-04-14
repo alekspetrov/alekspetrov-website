@@ -5,18 +5,5 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="content inner-padding" v-if="content">
-    <ContentBlock v-for="(block, i) in content" :key="i" :block="block" />
-  </div>
+  <ContentBlock v-for="(block, i) in content" :key="i" :block="block" />
 </template>
-
-<style lang="postcss">
-.content {
-  margin-block: var(--space-4xl);
-  box-sizing: border-box;
-
-  & > * {
-    box-sizing: border-box;
-  }
-}
-</style>

@@ -16,8 +16,9 @@ export function foramatDate(dateString) {
 
   const date = new Date(dateString)
   const day = date.getDate()
-  const monthIndex = date.getMonth()
   const year = date.getFullYear()
+  const monthIndex = date.getMonth()
+  const monthName = monthNames[monthIndex]
 
-  return day + ' ' + monthNames[monthIndex] + ', ' + year
+  return `${monthName} ${day}, ${year}`
 }

@@ -9,12 +9,5 @@ const props = defineProps({
     :is="`content-${block.type}`"
     v-if="block"
     :block="block"
-    class="content-block"
   ></component>
 </template>
-
-<style lang="postcss">
-.content-block {
-  margin-bottom: var(--block-margin-bottom);
-}
-</style>

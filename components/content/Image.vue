@@ -31,6 +31,8 @@ const srcset = imageSizes
 .body-image-caption {
   margin-top: var(--space-sm);
   width: 100%;
-  color: var(--gray-500);
+  color: var(--gray-7);
+  text-align: center;
+  font-size: var(--text-sm);
 }
 </style>
