@@ -45,3 +45,13 @@ h3 {
   font-weight: 500;
   letter-spacing: 0.0187rem;
 }
+
+p > a {
+  transition: all var(--transition);
+  box-shadow: 0 1px 0 var(--gray-8);
+  transition: box-shadow var(--transition);
+
+  &:hover {
+    box-shadow: 0 1px 0 var(--gray-5);
+  }
+}

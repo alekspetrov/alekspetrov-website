@@ -13,7 +13,7 @@ const props = defineProps({
     <h1>
       {{ typograph(text) }}
     </h1>
-    <div>{{ foramatDate(date) }}</div>
+    <div>{{ foramatDate(date, true) }}</div>
   </header>
 </template>
 
