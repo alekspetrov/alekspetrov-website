@@ -20,11 +20,12 @@
   --text-md: 1rem; /* body */
   --text-lg: 1.25rem; /* title */
 
-  --leading-md: 1.875rem; /* body 29px */
+  --leading-md: 1.75rem; /* body 29px */
   --leading-sm: 1.75rem; /* headers 24px*/
 
-  --space-md: 0.75rem; /* 12px */
   --space-sm: 0.5rem; /* 8px */
+  --space-md: 0.75rem; /* 12px */
+  --space-lg: 1rem; /* 16px */
 
   --blog-width: 68ch;
 }

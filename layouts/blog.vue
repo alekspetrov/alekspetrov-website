@@ -12,7 +12,7 @@
 
 <style lang="postcss">
 .blog {
-  padding: 4rem 0;
+  padding: calc(var(--space-lg) * 4) 0;
   padding-inline: calc(var(--space-md) * 2);
 
   > * {
@@ -21,7 +21,7 @@
   }
 
   > header {
-    margin-bottom: 8rem;
+    margin-bottom: calc(var(--space-lg) * 6);
   }
 }
 
