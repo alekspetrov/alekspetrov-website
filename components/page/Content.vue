@@ -1,6 +1,9 @@
 <script setup>
 const props = defineProps({
-  content: Object,
+  content: {
+    type: Object,
+    default: () => ({}),
+  },
 })
 </script>
 

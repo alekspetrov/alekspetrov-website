@@ -19,15 +19,15 @@ if (post.value) {
 
 <template>
   <NuxtLayout
-    name="blog"
     v-if="post && !error && !pending"
+    name="blog"
     class="blog-content"
   >
     <PageHeader :text="post.title" :date="post.date" />
     <PageContent :content="post.blocks" />
     <!-- <BlockForm /> -->
   </NuxtLayout>
-  <NuxtLayout name="error" v-else />
+  <NuxtLayout v-else name="error" />
 </template>
 
 <style lang="postcss">
@@ -39,7 +39,7 @@ if (post.value) {
 
   hr {
     border: 0;
-    border-top: 1px solid var(--gray-9);
+    border-top: 1px solid var(--gray-900);
     max-width: 40%;
     margin: calc(var(--space-md) * 6) auto;
   }
@@ -52,11 +52,11 @@ if (post.value) {
 
   p > a {
     transition: all var(--transition);
-    box-shadow: 0 1px 0 var(--gray-8);
+    box-shadow: 0 1px 0 var(--gray-800);
     transition: box-shadow var(--transition);
 
     &:hover {
-      box-shadow: 0 1px 0 var(--gray-5);
+      box-shadow: 0 1px 0 var(--gray-500);
     }
   }
 

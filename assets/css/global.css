@@ -1,4 +1,5 @@
 * {
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -9,7 +10,7 @@ body {
   font-weight: 500;
 
   background: var(--black);
-  color: var(--gray-5);
+  color: var(--gray-500);
 
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -48,10 +49,10 @@ h3 {
 
 p > a {
   transition: all var(--transition);
-  box-shadow: 0 1px 0 var(--gray-8);
+  box-shadow: 0 1px 0 var(--gray-800);
   transition: box-shadow var(--transition);
 
   &:hover {
-    box-shadow: 0 1px 0 var(--gray-5);
+    box-shadow: 0 1px 0 var(--gray-500);
   }
 }

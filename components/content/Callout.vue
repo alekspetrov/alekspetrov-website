@@ -22,7 +22,7 @@ const props = defineProps({
 
 <style lang="postcss">
 .content-callout {
-  border: 1px solid var(--gray-10);
+  border: 1px solid var(--gray-100);
   padding: calc(var(--space-sm) * 2) calc(var(--space-sm) * 3);
 }
 </style>

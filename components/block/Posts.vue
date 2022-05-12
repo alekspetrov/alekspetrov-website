@@ -24,12 +24,7 @@ const makeSlug = (text) => {
     </h3>
 
     <nav v-if="posts">
-      <NuxtLink
-        :to="makeSlug(post.title)"
-        v-if="posts"
-        v-for="post in posts"
-        :key="post.id"
-      >
+      <NuxtLink v-for="post in posts" :key="post.id" :to="makeSlug(post.title)">
         <p>{{ post.title }}</p>
         <hr />
         <time :datetime="post.date">{{ post.date }}</time>
@@ -46,7 +41,7 @@ const makeSlug = (text) => {
     margin-bottom: calc(var(--space-sm) * 3);
 
     div:nth-child(2) {
-      color: var(--gray-5);
+      color: var(--gray-500);
     }
   }
 
@@ -72,7 +67,7 @@ const makeSlug = (text) => {
       margin-inline: var(--space-sm);
       height: 1px;
       border: 0;
-      border-bottom: 1px dotted var(--gray-9);
+      border-bottom: 1px dotted var(--gray-900);
     }
 
     time {
@@ -80,7 +75,7 @@ const makeSlug = (text) => {
     }
 
     &:hover {
-      color: var(--gray-1);
+      color: var(--gray-100);
     }
   }
 }
