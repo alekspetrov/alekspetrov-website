@@ -33,8 +33,8 @@ export default defineNuxtConfig({
       },
     },
   },
-  privateRuntimeConfig: {
-    api: process.env.API,
+  runtimeConfig: {
+    apiUrl: '',
   },
   nitro: {
     preset: 'vercel',

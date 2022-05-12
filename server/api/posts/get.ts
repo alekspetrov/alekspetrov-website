@@ -44,9 +44,11 @@ const getPage = async (slug: string) => {
 }
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
-  const params = new URLSearchParams(req.url)
+  const url = new URL('https:' + req.url)
+  const params = new URLSearchParams(url.searchParams)
   const slug = params.get('slug')
   const data = await getPage(slug)
+
   res.statusCode = data.status || 200
 
   return data

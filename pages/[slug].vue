@@ -10,7 +10,7 @@ const {
 })
 
 if (post.value) {
-  useMeta(() => ({
+  useHead(() => ({
     title: post.value.title,
     description: post.value.description,
   }))
