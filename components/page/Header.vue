@@ -10,9 +10,7 @@ const props = defineProps({
 
 <template>
   <header class="page-header">
-    <h1>
-      {{ typograph(text) }}
-    </h1>
+    <h1>{{ typograph(text) }}</h1>
     <div>{{ foramatDate(date, true) }}</div>
   </header>
 </template>

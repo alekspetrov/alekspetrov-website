@@ -47,12 +47,34 @@ h3 {
   letter-spacing: 0.0187rem;
 }
 
-p > a {
+p > a,
+.link {
   transition: all var(--transition);
   box-shadow: 0 1px 0 var(--gray-800);
   transition: box-shadow var(--transition);
 
   &:hover {
     box-shadow: 0 1px 0 var(--gray-500);
+  }
+}
+
+.split-list {
+  padding: 0;
+
+  > li {
+    display: flex;
+    margin-bottom: var(--space-md);
+
+    div:first-of-type {
+      width: 25%;
+      flex-wrap: nowrap;
+      flex-shrink: 0;
+    }
+  }
+
+  &--relaxed {
+    > li {
+      margin-bottom: calc(var(--space-md) * 3);
+    }
   }
 }

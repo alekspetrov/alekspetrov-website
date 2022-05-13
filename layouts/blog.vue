@@ -1,8 +1,13 @@
 <template>
   <div class="blog">
     <header>
-      <NuxtLink to="/" class="blog-name">Aleks Petrov</NuxtLink>
-      <div>Product Designer & Developer</div>
+      <div>
+        <NuxtLink to="/" class="blog-name">Aleks Petrov</NuxtLink>
+        <div>Product Designer & Developer</div>
+      </div>
+      <div>
+        <img src="/avatar-lg.png" alt="avatar" />
+      </div>
     </header>
     <main>
       <slot />
@@ -20,8 +25,18 @@
     margin: auto;
   }
 
-  > header {
+  header {
     margin-bottom: calc(var(--space-lg) * 6);
+    display: flex;
+
+    > div:first-of-type {
+      flex-shrink: 0;
+    }
+
+    > div:last-of-type {
+      margin-left: auto;
+      max-width: 56px;
+    }
   }
 }
 

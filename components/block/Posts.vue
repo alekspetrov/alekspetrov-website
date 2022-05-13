@@ -35,6 +35,8 @@ const makeSlug = (text) => {
 
 <style lang="postcss">
 .posts {
+  margin-bottom: calc(var(--space-md) * 6);
+
   h3 {
     display: flex;
     justify-content: space-between;
