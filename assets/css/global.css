@@ -67,15 +67,15 @@ p > a,
     flex-direction: column;
     margin-bottom: calc(var(--space-md) * 3);
 
-    div:first-of-type {
-      width: 25%;
-      flex-wrap: nowrap;
-      flex-shrink: 0;
-    }
-
     @media screen and (min-width: 640px) {
       flex-direction: row;
       margin-bottom: calc(var(--space-md) * 2);
+
+      div:first-of-type {
+        width: 25%;
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+      }
     }
   }
 
