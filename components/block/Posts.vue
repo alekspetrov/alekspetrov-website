@@ -3,11 +3,6 @@ import slugify from 'slugify'
 
 const { data: posts } = await useFetch('/api/posts/list')
 
-useMeta(() => ({
-  title: 'Aleks Petrov',
-  description: 'Digital products maker journal',
-}))
-
 const makeSlug = (text) => {
   return `/${slugify(text, {
     remove: /[:+~*.()'"!@]/g,
@@ -20,7 +15,6 @@ const makeSlug = (text) => {
   <div class="posts">
     <h3>
       <div>Thougths</div>
-      <div>2022</div>
     </h3>
 
     <nav v-if="posts">

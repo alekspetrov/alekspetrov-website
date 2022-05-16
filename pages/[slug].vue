@@ -10,10 +10,14 @@ const {
 })
 
 if (post.value) {
-  useHead(() => ({
+  useHead({
     title: post.value.title,
-    description: post.value.description,
-  }))
+    meta: [
+      {
+        description: post.value.description,
+      },
+    ],
+  })
 }
 </script>
 

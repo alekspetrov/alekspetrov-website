@@ -87,9 +87,5 @@
   > h3 {
     margin-bottom: calc(var(--space-md) * 2);
   }
-
-  p + * {
-    margin-top: calc(var(--space-md) * 3);
-  }
 }
 </style>

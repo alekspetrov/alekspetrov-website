@@ -25,7 +25,7 @@
     margin: auto;
   }
 
-  header {
+  > header {
     margin-bottom: calc(var(--space-lg) * 6);
     display: flex;
 
