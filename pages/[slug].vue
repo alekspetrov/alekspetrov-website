@@ -38,7 +38,7 @@ if (post.value) {
 .blog-content {
   p,
   figure {
-    margin: calc(var(--space-md) * 3) auto;
+    margin: calc(var(--space-md) * 2) auto;
   }
 
   hr {

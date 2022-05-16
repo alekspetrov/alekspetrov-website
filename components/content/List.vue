@@ -10,7 +10,7 @@ const props = defineProps({
 <template>
   <ul class="body-list body-text">
     <li v-for="(node, idx) in block.content" :key="idx">
-      <template v-for="(content, idx) in node" :key="idx">
+      <template v-for="(content, i) in node" :key="i">
         <a v-if="content.href" :href="content.href">
           {{ content.text }}
         </a>

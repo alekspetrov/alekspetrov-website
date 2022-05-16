@@ -13,6 +13,6 @@ const props = defineProps({
 
 <style lang="postcss">
 .body-title {
-  padding-top: calc(var(--space-md) * 2);
+  padding-top: var(--space-md);
 }
 </style>
