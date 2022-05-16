@@ -3,7 +3,8 @@ useHead({
   title: 'Aleks Petrov',
   meta: [
     {
-      description: 'Product designer & developer blog.',
+      name: 'description',
+      content: 'Product designer & developer blog.',
     },
   ],
 })

@@ -14,7 +14,8 @@ if (post.value) {
     title: post.value.title,
     meta: [
       {
-        description: post.value.description,
+        name: 'description',
+        content: post.value.description,
       },
     ],
   })
