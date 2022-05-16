@@ -17,7 +17,7 @@ const getTable = async () => {
 
     return {
       id: post.id,
-      date: foramatDate(post.created_time),
+      date: foramatDate(post.created_time, true),
       title: Name.title[0]?.plain_text,
       description: Description.rich_text[0]?.plain_text || '',
       tags: Tags.multi_select,

@@ -1,4 +1,4 @@
-export function foramatDate(dateString, hasYear = false) {
+export function foramatDate(dateString, hasYear = false, fullName = false) {
   const monthNames = [
     'January',
     'February',
@@ -20,5 +20,7 @@ export function foramatDate(dateString, hasYear = false) {
   const monthIndex = date.getMonth()
   const monthName = monthNames[monthIndex]
 
-  return hasYear ? `${monthName} ${day}, ${year}` : `${monthName} ${day}`
+  return hasYear
+    ? `${fullName ? monthName : monthName.substr(0, 3)} ${day}, ${year}`
+    : `${monthName} ${day}`
 }

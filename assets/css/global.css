@@ -6,7 +6,7 @@
 body {
   font-family: var(--font-sans);
   font-size: var(--text-md);
-  line-height: var(--leading-sm);
+  line-height: var(--leading-md);
   font-weight: 500;
 
   background: var(--black);
@@ -49,6 +49,7 @@ h3 {
 
 p > a,
 .link {
+  display: inline;
   transition: all var(--transition);
   box-shadow: 0 1px 0 var(--gray-800);
   transition: box-shadow var(--transition);
@@ -63,12 +64,18 @@ p > a,
 
   > li {
     display: flex;
-    margin-bottom: var(--space-md);
+    flex-direction: column;
+    margin-bottom: calc(var(--space-md) * 3);
 
     div:first-of-type {
       width: 25%;
       flex-wrap: nowrap;
       flex-shrink: 0;
+    }
+
+    @media screen and (min-width: 640px) {
+      flex-direction: row;
+      margin-bottom: calc(var(--space-md) * 2);
     }
   }
 

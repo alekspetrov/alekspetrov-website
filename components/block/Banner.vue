@@ -1,6 +1,6 @@
 <template>
   <div class="banner" role="banner">
-    <h1 class="h1">About</h1>
+    <h3>About</h3>
     <p>
       I'm a designer with 12 years of experience in product design and user
       experience research. I like to code, coding is my passion. I use
@@ -22,7 +22,7 @@
 .banner {
   margin-bottom: calc(var(--space-md) * 6);
 
-  > h1 {
+  > h3 {
     margin-bottom: calc(var(--space-md) * 2);
   }
 
