@@ -5,14 +5,14 @@
       I'm a designer with 12 years of experience in product design and user
       experience research. I like to code, coding is my passion. I use
       sistematic approach, communications and human interaction to create a
-      better user experience. I love to share knowlages through my blog and I'm
+      better user experience. I love to share knowledge through my blog and I'm
       always open to learn new things.
     </p>
 
     <p>
-      Currently I'm a product manager in fintech company. I use all my skills to
-      stay with the team on the same page, increase product value and make our
-      products better. I'm always looking for new opportunities to grow my
+      Currently, I'm a product manager in a fintech company. I use all my skills
+      to stay with the team on the same page, increase product value and make
+      our products better. I'm always looking for new opportunities to grow my
       skills and my career.
     </p>
   </div>
