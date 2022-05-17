@@ -10,7 +10,7 @@ const props = defineProps({
 <template>
   <p v-if="block.content[0]">
     <template v-for="(node, idx) in block.content" :key="idx">
-      <a v-if="node.href" :href="node.href">
+      <a v-if="node.href" :href="node.href" class="link">
         {{ node.text }}
       </a>
       <template v-else>

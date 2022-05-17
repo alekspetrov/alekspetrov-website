@@ -11,7 +11,7 @@ const props = defineProps({
   <ul class="body-list body-text">
     <li v-for="(node, idx) in block.content" :key="idx">
       <template v-for="(content, i) in node" :key="i">
-        <a v-if="content.href" :href="content.href">
+        <a v-if="content.href" :href="content.href" class="link">
           {{ content.text }}
         </a>
         <p v-else>{{ content.text }}</p>
@@ -27,16 +27,6 @@ const props = defineProps({
 
   & > li {
     margin-bottom: var(--space-sm);
-  }
-
-  & a,
-  p {
-    display: inline;
-    padding-block: 4px; /* hack */
-  }
-
-  & a {
-    text-decoration: underline;
   }
 }
 

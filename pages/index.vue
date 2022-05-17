@@ -1,4 +1,10 @@
 <script setup>
+const nuxtAppHook = useNuxtApp().hook
+
+nuxtAppHook('page:finish', () => {
+  window.scrollTo(0, 0)
+})
+
 useHead({
   title: 'Aleks Petrov',
   meta: [

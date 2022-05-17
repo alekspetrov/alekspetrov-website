@@ -23,16 +23,17 @@ if (post.value) {
 </script>
 
 <template>
-  <NuxtLayout
-    v-if="post && !error && !pending"
-    name="blog"
-    class="blog-content"
-  >
-    <PageHeader :text="post.title" :date="post.date" />
-    <PageContent :content="post.blocks" />
-    <!-- <BlockForm /> -->
+  <NuxtLayout name="blog" class="blog-content">
+    <template v-if="post">
+      <PageHeader :text="post.title" :date="post.date" />
+      <PageContent :content="post.blocks" />
+      <BlockForm />
+    </template>
+    <template v-if="error">
+      <h3>404</h3>
+      <p>Sorry, there is no such page</p>
+    </template>
   </NuxtLayout>
-  <NuxtLayout v-else name="error" />
 </template>
 
 <style lang="postcss">

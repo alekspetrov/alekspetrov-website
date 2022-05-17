@@ -1,8 +1,8 @@
 <template>
-  <div class="error-page">
-    <div class="error-page-title">Page Not Found • Lost In Space?</div>
-    <NuxtLink to="/" class="error-page-link">Go Home →</NuxtLink>
-  </div>
+  <NuxtLayout name="blog"
+    ><h3>404</h3>
+    <p>Sorry, there is no such page</p>
+  </NuxtLayout>
 </template>
 
 <style lang="postcss">

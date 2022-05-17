@@ -12,10 +12,10 @@ const makeSlug = (text) => {
 </script>
 
 <template>
-  <div class="posts">
+  <div v-if="posts" class="posts">
     <h3>Thougths</h3>
 
-    <nav v-if="posts">
+    <nav>
       <ul class="split-list">
         <li v-for="post in posts" :key="post.id">
           <div>
