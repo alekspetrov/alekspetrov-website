@@ -19,9 +19,9 @@ export default defineNuxtConfig({
     ],
   },
   css: [
-    '~/assets/css/reset.css',
-    '~/assets/css/tokens.css',
-    '~/assets/css/global.css',
+    '~/assets/css/reset.pcss',
+    '~/assets/css/tokens.pcss',
+    '~/assets/css/global.pcss',
   ],
   build: {
     postcss: {

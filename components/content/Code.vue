@@ -1,6 +1,6 @@
 <script setup>
 import Prism from 'prismjs'
-import '../../assets/css/prism-theme.css'
+import '../../assets/css/prism-theme.pcss'
 
 Prism.languages.vue = Prism.languages.markup
 

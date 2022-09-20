@@ -33,21 +33,16 @@ body {
   src: url('../fonts/Inter/static/Inter-SemiBold.ttf') format('truetype');
 }
 
-h1 {
+h1,
+h2,
+h3 {
   color: var(--white);
   font-size: var(--text-md);
   font-weight: 500;
   letter-spacing: 0.006rem;
 }
 
-h3 {
-  color: var(--white);
-  font-size: var(--text-md);
-  font-weight: 500;
-  letter-spacing: 0.0187rem;
-}
-
-p > a,
+.content a,
 .link {
   display: inline;
   transition: all var(--transition);
@@ -59,23 +54,26 @@ p > a,
   }
 }
 
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .split-list {
   padding: 0;
 
-  > li {
+  > li > a {
     display: flex;
-    flex-direction: column;
-    margin-bottom: calc(var(--space-md) * 3);
+    justify-content: space-between;
+    /* margin-bottom: calc(var(--space-md) * 3); */
 
-    @media screen and (min-width: 640px) {
-      flex-direction: row;
-      margin-bottom: calc(var(--space-md) * 2);
-
-      div:first-of-type {
-        width: 25%;
-        flex-wrap: nowrap;
-        flex-shrink: 0;
-      }
+    :nth-child(2) {
+      border-bottom: 1px dashed var(--gray-900);
+      flex: 1;
+      margin-left: 1rem;
+      margin-right: 1rem;
     }
   }
 
@@ -84,4 +82,12 @@ p > a,
       margin-bottom: calc(var(--space-md) * 4);
     }
   }
+}
+
+/* Components common parts */
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
 }

@@ -1,4 +1,5 @@
 <script setup>
+import Projects from '~~/components/block/Projects.vue'
 const nuxtAppHook = useNuxtApp().hook
 
 nuxtAppHook('page:finish', () => {
@@ -10,7 +11,8 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Product designer & developer blog.',
+      content:
+        'Aleks Petrov he is experienced product maker sharing his experience.',
     },
   ],
 })
@@ -19,8 +21,24 @@ useHead({
 <template>
   <NuxtLayout name="blog">
     <BlockBanner />
-    <BlockContacts />
     <BlockPosts />
-    <BlockExperience />
+    <BlockProjects />
+    <!-- <BlockExperience /> -->
   </NuxtLayout>
 </template>
+
+<style lang="postcss">
+.block-title {
+  margin-bottom: 16px;
+}
+
+.projects {
+  li {
+    margin-bottom: 8px;
+
+    a:hover {
+      color: white;
+    }
+  }
+}
+</style>
