@@ -1,15 +1,14 @@
 <template>
-  <div class="contacts">
-    <div></div>
+  <div class="page-block">
+    <a
+      href="mailto:hello@alekspetrov.com?subject=Contact from the site"
+      class="link"
+    >
+      Email
+    </a>
+    <span> ∙ </span>
+    <a href="/">LinkedIn</a>
+    <span> ∙ </span>
+    <a href="/">Instagram</a>
   </div>
 </template>
-
-<style lang="postcss">
-.contacts {
-  margin-bottom: calc(var(--space-md) * 6);
-
-  > h3 {
-    margin-bottom: calc(var(--space-md) * 2);
-  }
-}
-</style>

@@ -9,12 +9,7 @@
 .site-header {
   display: block;
   line-height: 1.5rem;
-  margin-bottom: var(--space-3xl);
-}
-
-.site-avatar {
-  width: 72px;
-  height: auto;
+  margin-bottom: var(--space-4xl);
 }
 
 .site-name {

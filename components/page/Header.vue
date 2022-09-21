@@ -1,6 +1,6 @@
 <script setup>
 import { typograph } from '../../utils/typograph'
-import { foramatDate } from '../../utils/dateToFormat'
+import { formatDate } from '../../utils/dateToFormat'
 
 const props = defineProps({
   text: String,
@@ -11,7 +11,7 @@ const props = defineProps({
 <template>
   <header class="page-header">
     <h1>{{ typograph(text) }}</h1>
-    <div>{{ foramatDate(date, true, true) }}</div>
+    <div>{{ formatDate(date, true, true) }}</div>
   </header>
 </template>
 

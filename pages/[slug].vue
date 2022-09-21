@@ -56,7 +56,7 @@ if (post.value) {
     font-weight: 400;
   }
 
-  p > a {
+  /* p > a {
     transition: all var(--transition);
     box-shadow: 0 1px 0 var(--gray-800);
     transition: box-shadow var(--transition);
@@ -64,7 +64,7 @@ if (post.value) {
     &:hover {
       box-shadow: 0 1px 0 var(--gray-500);
     }
-  }
+  } */
 
   ul,
   ol {

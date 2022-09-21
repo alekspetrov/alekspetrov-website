@@ -21,24 +21,22 @@ useHead({
 <template>
   <NuxtLayout name="blog">
     <BlockBanner />
+    <!-- <BlockProjects /> -->
     <BlockPosts />
-    <BlockProjects />
-    <!-- <BlockExperience /> -->
+    <BlockExperience />
   </NuxtLayout>
 </template>
 
 <style lang="postcss">
-.block-title {
-  margin-bottom: 16px;
-}
+.page-block {
+  margin-bottom: var(--space-4xl);
 
-.projects {
-  li {
-    margin-bottom: 8px;
+  > h3 {
+    margin-bottom: var(--space-xl);
+  }
 
-    a:hover {
-      color: white;
-    }
+  > p + * {
+    margin-top: var(--space-xl);
   }
 }
 </style>

@@ -12,33 +12,34 @@ const makeSlug = (text) => {
 </script>
 
 <template>
-  <div v-if="posts" class="posts">
-    <h3>Thougths</h3>
-
-    <nav>
-      <ul class="split-list">
-        <li v-for="post in posts" :key="post.id">
-          <div>
-            <time :datetime="post.date">{{ post.date }}</time>
-          </div>
-          <div>
-            <NuxtLink :to="makeSlug(post.title)">
-              <h3 class="link">{{ post.title }}</h3>
-              <p>{{ post.description }}</p>
-            </NuxtLink>
-          </div>
-        </li>
-      </ul>
-    </nav>
+  <div v-if="posts" class="page-block">
+    <h3>Thoughts</h3>
+    <section v-for="post in posts" :key="post.id" class="post-item">
+      <NuxtLink :to="makeSlug(post.title)">
+        <time :datetime="post.date">{{ post.date }}</time>
+        <div>
+          <h3 class="link">{{ post.title }}</h3>
+          <p>{{ post.description }}</p>
+        </div>
+      </NuxtLink>
+    </section>
   </div>
 </template>
 
 <style lang="postcss">
-.posts {
-  margin-bottom: calc(var(--space-md) * 6);
+.post-item {
+  margin-bottom: var(--space-2xl);
 
-  > h3 {
-    margin-bottom: calc(var(--space-md) * 2);
+  a {
+    display: flex;
+  }
+
+  time {
+    width: 25%;
+  }
+
+  div {
+    flex: 1;
   }
 }
 </style>

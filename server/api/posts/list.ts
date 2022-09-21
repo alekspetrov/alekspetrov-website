@@ -1,7 +1,7 @@
-import { foramatDate } from '../../../utils/dateToFormat'
+import { formatDate } from '../../../utils/dateToFormat'
 import { fetchApi } from '../../../utils/api'
 
-interface ITable {
+type Table = {
   id: string
   date: string
   title: string
@@ -9,7 +9,7 @@ interface ITable {
   tags: string[]
 }
 
-const getTable = async () => {
+const getTable = async (): Promise<Table> => {
   const res = await fetchApi('pages')
 
   const data = res.map((post) => {
@@ -17,7 +17,7 @@ const getTable = async () => {
 
     return {
       id: post.id,
-      date: foramatDate(post.created_time, true),
+      date: formatDate(post.created_time),
       title: Name.title[0]?.plain_text,
       description: Description.rich_text[0]?.plain_text || '',
       tags: Tags.multi_select,

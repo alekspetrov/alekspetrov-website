@@ -80,7 +80,7 @@ const handleSubmit = async () => {
           type="email"
           placeholder="Your email address"
         />
-        <button class="form-button">
+        <button class="button-ghost">
           {{ submitting ? '…' : 'Subscribe' }}
         </button>
       </div>
@@ -109,56 +109,29 @@ const handleSubmit = async () => {
     }
   }
 
-  button {
-    border: 0;
-    color: var(--white);
-    background-color: var(--gray-900);
-    border-radius: 4px;
-    height: 40px;
-    padding-inline: calc(var(--space-md) * 2);
-    font-weight: 500;
-    width: 126px;
-    transition: background-color var(--transition);
-
-    &:hover {
-      background-color: var(--gray-800);
-    }
-
-    &:focus {
-      outline: none;
-      background-color: var(--gray-800);
-    }
-  }
-
   input {
     box-sizing: border-box;
     flex: 1;
-    background-color: var(--gray-900);
-    border: 1px solid var(--gray-700);
-    height: 40px;
-    border-radius: 4px;
-    padding-inline: var(--space-md);
-    margin-right: var(--space-md);
+    max-width: 320px;
+    padding: 4px 16px;
+    background: rgba(255, 255, 255, 0.03);
     caret-color: var(--gray-300);
-    color: var(--gray-300);
-    box-sizing: border-box;
-    max-width: 386px;
-    margin-bottom: 0;
+    font-size: var(--text-sm);
+    border: 1px solid var(--gray-950);
+    border-radius: 4px;
+    margin-right: var(--space-md);
+    transition: all var(--transition);
 
     &:hover {
-      border: 1px solid var(--gray-600);
+      color: var(--gray-300);
+      border: 1px solid var(--gray-900);
     }
 
     &:focus {
       outline: none;
-      border: 1px solid var(--gray-500);
+      border: 1px solid var(--gray-800);
     }
   }
-}
-
-.form-row {
-  /* display: flex; */
-  /* align-items: center; */
 }
 
 .form-error-text {

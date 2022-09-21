@@ -42,18 +42,6 @@ h3 {
   letter-spacing: 0.006rem;
 }
 
-.content a,
-.link {
-  display: inline;
-  transition: all var(--transition);
-  box-shadow: 0 1px 0 var(--gray-800);
-  transition: box-shadow var(--transition);
-
-  &:hover {
-    box-shadow: 0 1px 0 var(--gray-500);
-  }
-}
-
 ul,
 li {
   list-style: none;
@@ -61,33 +49,63 @@ li {
   margin: 0;
 }
 
-.split-list {
-  padding: 0;
+.link {
+  color: var(--white);
+  display: inline-block;
+  transition: all var(--transition);
+  text-decoration: underline;
+  text-decoration-color: var(--gray-600);
+  text-decoration-thickness: 1.3px;
 
-  > li > a {
-    display: flex;
-    justify-content: space-between;
-    /* margin-bottom: calc(var(--space-md) * 3); */
-
-    :nth-child(2) {
-      border-bottom: 1px dashed var(--gray-900);
-      flex: 1;
-      margin-left: 1rem;
-      margin-right: 1rem;
-    }
+  &:hover {
+    text-decoration-color: var(--gray-400);
   }
+}
 
-  &--relaxed {
-    > li {
-      margin-bottom: calc(var(--space-md) * 4);
+.split-list {
+  > * {
+    display: flex;
+    /* justify-content: space-between; */
+    margin-bottom: var(--space-md);
+
+    > div:nth-child(1) {
+      width: 25%;
+    }
+
+    > div:nth-child(2) {
+      flex: 1;
     }
   }
 }
 
-/* Components common parts */
 .card {
+  display: flex;
   background: rgba(255, 255, 255, 0.03);
   padding: 16px 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 4px;
+}
+
+.button-ghost {
+  color: var(--gray-500);
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 4px 16px;
+  border: 1px solid var(--gray-950);
+  border-radius: 4px;
+  font-size: var(--text-sm);
+
+  transition: all var(--transition);
+
+  &:hover {
+    color: var(--gray-300);
+    border: 1px solid var(--gray-900);
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 0;
+    box-shadow: none;
+    border: 1px solid var(--gray-800);
+  }
 }
