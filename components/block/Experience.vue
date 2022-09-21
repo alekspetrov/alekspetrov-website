@@ -32,7 +32,7 @@
           <p>
             Setting the creative vision of a crypto startup for exchange and
             trading cryptocurrencies. Introduced a systematic design approach
-            based on user experience and best practices. Provide UX researches,
+            based on user experience and best practices. Make UX researches,
             user interviews and design-sprints.
           </p>
         </div>
