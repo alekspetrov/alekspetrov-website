@@ -1,13 +1,11 @@
 // Converts Date to XX/XX/XX format
-export function formatDate(date, hasYear = true) {
+export function formatDate(date, options) {
   const d = date ? new Date(date) : Date.now()
 
-  let options = {
-    // month: 'short',
-    // day: 'numeric',
+  let defaultOptions = {
+    year: 'numeric',
+    ...options,
   }
 
-  if (hasYear) options = { ...options, year: 'numeric' }
-
-  return new Intl.DateTimeFormat('en-En', options).format(d)
+  return new Intl.DateTimeFormat('en-En', defaultOptions).format(d)
 }

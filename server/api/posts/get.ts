@@ -1,6 +1,7 @@
 import { fetchApi } from '../../../utils/api'
 import { blockFactory } from '../../../utils/blockFactory'
 import { IncomingMessage, ServerResponse } from 'http'
+import { formatDate } from '~~/utils/dateToFormat'
 
 const makeBlocks = (blocks) => {
   if (!blocks) return []
@@ -40,7 +41,13 @@ const makeBlocks = (blocks) => {
 const getPage = async (slug: string) => {
   const res = await fetchApi(`pages/${slug}`)
 
-  return { ...res, blocks: makeBlocks(res.blocks) }
+  const dateOptions = { day: 'numeric', month: 'short' }
+
+  return {
+    ...res,
+    date: formatDate(res.date, dateOptions),
+    blocks: makeBlocks(res.blocks),
+  }
 }
 
 export default async (req: IncomingMessage, res: ServerResponse) => {

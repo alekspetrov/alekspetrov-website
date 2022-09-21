@@ -1,17 +1,16 @@
 <script setup>
 import { typograph } from '../../utils/typograph'
-import { formatDate } from '../../utils/dateToFormat'
 
 const props = defineProps({
-  text: String,
-  date: String,
+  text: { type: String, required: true },
+  date: { type: String, default: Date.now() },
 })
 </script>
 
 <template>
   <header class="page-header">
     <h1>{{ typograph(text) }}</h1>
-    <div>{{ formatDate(date, true, true) }}</div>
+    <div>{{ date }}</div>
   </header>
 </template>
 

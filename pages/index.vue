@@ -1,6 +1,9 @@
 <script setup>
-import Projects from '~~/components/block/Projects.vue'
 const nuxtAppHook = useNuxtApp().hook
+const { query } = useRoute()
+
+// [] Pass query to local storage to prevent from using the default website on reload
+// [] They can send url to others
 
 nuxtAppHook('page:finish', () => {
   window.scrollTo(0, 0)
@@ -20,10 +23,10 @@ useHead({
 
 <template>
   <NuxtLayout name="blog">
-    <BlockBanner />
-    <!-- <BlockProjects /> -->
+    <BlockBanner :role="query.role" />
+    <BlockProjects />
     <BlockPosts />
-    <BlockExperience />
+    <BlockExperience v-if="query.experience" />
   </NuxtLayout>
 </template>
 

@@ -19,7 +19,7 @@ const getTable = async (): Promise<Table> => {
       id: post.id,
       date: formatDate(post.created_time),
       title: Name.title[0]?.plain_text,
-      description: Description.rich_text[0]?.plain_text || '',
+      description: Description?.rich_text[0]?.plain_text || '',
       tags: Tags.multi_select,
     }
   })
