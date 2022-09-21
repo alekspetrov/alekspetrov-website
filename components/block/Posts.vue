@@ -42,4 +42,12 @@ const makeSlug = (text) => {
     flex: 1;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .post-item {
+    a {
+      display: block;
+    }
+  }
+}
 </style>

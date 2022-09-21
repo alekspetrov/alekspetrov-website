@@ -91,4 +91,14 @@
     flex: 1;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .list-item {
+    display: block;
+
+    > div:nth-child(1) {
+      width: 100%;
+    }
+  }
+}
 </style>

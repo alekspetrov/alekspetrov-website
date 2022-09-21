@@ -42,4 +42,10 @@ useHead({
     margin-top: var(--space-xl);
   }
 }
+
+@media screen and (max-width: 480px) {
+  .page-block {
+    margin-bottom: var(--space-3xl);
+  }
+}
 </style>
