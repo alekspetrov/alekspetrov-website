@@ -10,7 +10,10 @@
     </p>
     <p>
       Currently working on&nbsp;personal project. Always looking for new
-      opportunities to&nbsp;grow. Reach me at
+      opportunities to&nbsp;grow.
+    </p>
+    <p>
+      Reach me at
       <a
         href="mailto:hello@alekspetrov.com?subject=Contact from the site"
         class="link"
