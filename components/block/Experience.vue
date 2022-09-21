@@ -7,10 +7,10 @@
         <div>
           <h3>Technical Product Manager at Libertex Group</h3>
           <p>
-            My responsibilities are gathering requirements, setting vision,
-            creating products definitions and road maps, leading the development
-            team, task prioritization according KPIs, documentation,
-            coordination with project managers and stakeholder
+            Setting vision and creating road maps for the variety of products.
+            Leading and team-building development team. Gather requirements,
+            prioritize features according KPIs. Coordination with product
+            managers and stakeholders.
           </p>
         </div>
       </li>
@@ -19,8 +19,9 @@
         <div>
           <h3>Frontend Engineer at Libertex Group</h3>
           <p>
-            Getting fintech development experience engineering complex solutions
-            for monitoring finance flows. Create design systems and more.
+            Design and develop solutions for monitoring finance flows, users
+            registrations. Building design systems. Integration of new
+            technologies, maintenance and upgrade existed one.
           </p>
         </div>
       </li>
@@ -29,8 +30,10 @@
         <div>
           <h3>Product Designer at Libertex Group</h3>
           <p>
-            Establishing the creative vision of a crypto startup. Introduced a
-            systematic design approach based on user experience.
+            Setting the creative vision of a crypto startup for exchange and
+            trading cryptocurrencies. Introduced a systematic design approach
+            based on user experience and best practices. Provide UX researches,
+            user interviews and design-sprints.
           </p>
         </div>
       </li>
@@ -39,19 +42,20 @@
         <div>
           <h3>Senior Product Manager at Avanti Pharma</h3>
           <p>
-            Setting up the design and development process. Create a new brand,
-            start a marketing campaign and push online sales to the second place
-            in the local market.
+            Establishing the design and development process for the team of 5
+            talented developers. Create a new brand, start a marketing campaign
+            and push online sales to the second place in the local market in 6
+            month.
           </p>
         </div>
       </li>
       <li class="list-item">
         <div>2013–2015</div>
         <div>
-          <h3>Frontend Designer at Primorsky Advertising Agency</h3>
+          <h3>Product lead at Primorsky Advertising Agency</h3>
           <p>
-            Setting the creative vision, and providing design leadership and
-            development at a news agency.
+            Setting the creative vision, and providing design leadership,
+            branding and development.
           </p>
         </div>
       </li>
@@ -60,18 +64,19 @@
         <div>
           <h3>UX/UI Designer at Dipex Group</h3>
           <p>
-            Establishing design for technically complex projects. Such as
-            control of city lighting, pumping and heating power systems.
+            Create design for complex tech solutions such as control of city
+            lighting, pumping and heating power systems for the city. The
+            projects were awarded at an international exhibition in Germany.
           </p>
         </div>
       </li>
       <li class="list-item">
-        <div>2009–2011</div>
+        <div>2008–2011</div>
         <div>
           <h3>Freelance Designer</h3>
           <p>
             Design and development for companies established an excellent
-            service in architecture, interior design and sales.
+            service in architecture, interior design and online sales.
           </p>
         </div>
       </li>
