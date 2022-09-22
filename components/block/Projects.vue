@@ -1,10 +1,9 @@
 <template>
   <div class="page-block">
-    <h3>Building</h3>
-    <div class="project-item">
-      <div>Wordy</div>
-      <div></div>
-      <div>In progress</div>
+    <h3>Pet projects</h3>
+    <div class="project-item card">
+      <h3>Wordy</h3>
+      <div>Coming soon</div>
     </div>
   </div>
 </template>
@@ -13,11 +12,13 @@
 .project-item {
   display: flex;
   justify-content: space-between;
+}
 
-  & div:nth-child(2) {
-    flex: 1;
-    border-bottom: 1px dashed var(--gray-900);
-    margin-inline: var(--space-lg);
-  }
+.card {
+  background: rgba(255, 255, 255, 0.01);
+  padding: 16px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  margin-bottom: var(--space-md);
 }
 </style>

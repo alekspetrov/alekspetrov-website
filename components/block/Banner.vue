@@ -6,11 +6,8 @@
       Creating & managing software since 2008. Experienced in&nbsp;product
       design, coding, researches and management. Focusing on customer experience
       and&nbsp;simplicity. Minimalism lover. Interested in fintech, crypto,
-      teaching and life-changing projects.
-    </p>
-    <p>
-      Currently working on&nbsp;personal project. Always looking for new
-      opportunities to&nbsp;grow.
+      teaching and life-changing projects. Always looking for new opportunities
+      to&nbsp;grow.
     </p>
     <p>
       Reach me at
