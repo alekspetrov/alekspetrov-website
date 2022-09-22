@@ -14,8 +14,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content:
-        'Aleks Petrov he is experienced product maker sharing his experience.',
+      content: 'Creating & managing software since 2008. ',
     },
   ],
 })
