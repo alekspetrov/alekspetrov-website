@@ -16,14 +16,17 @@ const role =
 
 <template>
   <header class="site-header">
-    <NuxtLink to="/" class="site-name">Aleks Petrov</NuxtLink>
-    <div>{{ role }}</div>
+    <div>
+      <NuxtLink to="/" class="site-name">Aleks Petrov</NuxtLink>
+      <div>{{ role }}</div>
+    </div>
   </header>
 </template>
 
 <style lang="postcss">
 .site-header {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   line-height: 1.5rem;
   margin-bottom: var(--space-4xl);
 }
@@ -31,5 +34,10 @@ const role =
 .site-name {
   display: inline-block;
   color: var(--white);
+}
+
+.main-nav {
+  display: flex;
+  gap: 24px;
 }
 </style>
