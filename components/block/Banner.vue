@@ -1,7 +1,6 @@
 <template>
   <div class="page-block" role="banner">
     <h3>About</h3>
-
     <p>
       Creating and managing software since 2008. Experienced in&nbsp;product
       design, coding, research and management. Focusing on&nbsp;user experience

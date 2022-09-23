@@ -1,6 +1,5 @@
 <script setup>
 import Prism from 'prismjs'
-import '../../assets/css/prism-theme.pcss'
 
 Prism.languages.vue = Prism.languages.markup
 
@@ -18,7 +17,7 @@ const highlight = (code) => {
 
 <template>
   <div>
-    <div class="body-code body-text">
+    <div class="card">
       <pre :class="`language-${block.language}`"><code
         v-for="(node, idx) in block.content"
         :key="idx"
@@ -40,11 +39,11 @@ const highlight = (code) => {
 
 <style lang="postcss">
 .body-code {
-  background: var(--gray-900);
-  padding-inline: var(--space-lg);
+  /* background: var(--gray-900); */
+  /* padding-inline: var(--space-lg); */
 }
 
 .body-code-caption {
-  color: var(--gray-600);
+  /* color: var(--gray-600); */
 }
 </style>

@@ -2,8 +2,9 @@
 const nuxtAppHook = useNuxtApp().hook
 const { query } = useRoute()
 
+// TODO:
 // [] Pass query to local storage to prevent from using the default website on reload
-// [] They can send url to others
+// [] Add OG schema
 
 nuxtAppHook('page:finish', () => {
   window.scrollTo(0, 0)

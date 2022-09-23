@@ -22,6 +22,7 @@ export default defineNuxtConfig({
     '~/assets/css/reset.pcss',
     '~/assets/css/tokens.pcss',
     '~/assets/css/global.pcss',
+    '~/assets/css/prism-theme.pcss',
   ],
   build: {
     postcss: {
