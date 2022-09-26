@@ -36,14 +36,3 @@ const highlight = (code) => {
     </div>
   </div>
 </template>
-
-<style lang="postcss">
-.body-code {
-  /* background: var(--gray-900); */
-  /* padding-inline: var(--space-lg); */
-}
-
-.body-code-caption {
-  /* color: var(--gray-600); */
-}
-</style>
