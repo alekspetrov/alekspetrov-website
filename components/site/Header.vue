@@ -21,8 +21,8 @@ const role =
       <div>{{ role }}</div>
     </div>
     <div class="main-nav">
-      <NuxtLink to="/blog" class="link">Thoughts</NuxtLink>
-      <NuxtLink to="/projects" class="link">Projects</NuxtLink>
+      <NuxtLink to="/blog" class="nav-link">Thoughts</NuxtLink>
+      <NuxtLink to="/projects" class="nav-link">Projects</NuxtLink>
     </div>
   </header>
 </template>
@@ -43,5 +43,11 @@ const role =
 .main-nav {
   display: flex;
   gap: 40px;
+}
+
+.nav-link {
+  &.router-link-exact-active {
+    color: var(--gray-100);
+  }
 }
 </style>
