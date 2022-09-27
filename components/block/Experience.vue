@@ -5,10 +5,10 @@
       <li class="list-item">
         <div class="experience-date">2021–2022</div>
         <div>
-          <h3>Technical Product Manager at Libertex Group</h3>
+          <h3>Technical Product Manager / Product Owner at Libertex Group</h3>
           <p>
             Setting vision and creating road maps for the variety of products.
-            Leading and team-building development team. Gather requirements,
+            Leading and building development team of 8. Gather requirements,
             prioritize features according KPIs. Coordination with product
             managers and stakeholders.
           </p>
@@ -21,7 +21,7 @@
           <p>
             Design and develop solutions for monitoring finance flows, users
             registrations. Building design systems. Integration of new
-            technologies, maintenance and upgrade existed one.
+            technologies, maintenance and upgrade existed.
           </p>
         </div>
       </li>

@@ -2,7 +2,7 @@
   <NuxtLayout name="blog">
     <div class="page-block">
       <h3 class="page-block-title">Pets</h3>
-      <NuxtLink to="/wordy" class="project-item card card-link">
+      <NuxtLink to="/projects/wordy" class="project-item card card-link">
         <h3>Wordy</h3>
         <div>Learn 1000 words in 20 min per week.</div>
       </NuxtLink>
