@@ -1,6 +1,6 @@
 <template>
   <div class="page-block">
-    <h3>Work experience</h3>
+    <h3 class="page-block-title">Work experience</h3>
     <ul class="split-list">
       <li class="list-item">
         <div class="experience-date">2021–2022</div>

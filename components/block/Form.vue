@@ -121,14 +121,20 @@ const handleSubmit = async () => {
     border-radius: 4px;
     margin-right: var(--space-md);
     transition: all var(--transition);
+    color: var(--gray-300);
+
+    &::placeholder {
+      color: var(--gray-300);
+    }
 
     &:hover {
       color: var(--gray-300);
-      border: 1px solid var(--gray-900);
+      border: 1px solid var(--gray-800);
     }
 
     &:focus {
       outline: none;
+      color: var(--gray-300);
       border: 1px solid var(--gray-800);
     }
   }

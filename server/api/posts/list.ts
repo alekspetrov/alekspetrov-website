@@ -1,15 +1,15 @@
 import { formatDate } from '../../../utils/dateToFormat'
 import { fetchApi } from '../../../utils/api'
+//
+// type Table = {
+//   id: string
+//   date: string
+//   title: string
+//   description: string
+//   tags: string[]
+// }
 
-type Table = {
-  id: string
-  date: string
-  title: string
-  description: string
-  tags: string[]
-}
-
-const getTable = async (): Promise<Table> => {
+const getTable = async () => {
   const res = await fetchApi('pages')
 
   const data = res.map((post) => {

@@ -25,7 +25,7 @@ if (post.value) {
 <template>
   <NuxtLayout name="blog" class="blog-content">
     <template v-if="post">
-      <PageHeader :text="post.title" :date="post.date" />
+      <PageHeader :title="post.title" :text="post.date" />
       <PageContent :content="post.blocks" />
       <BlockForm />
     </template>
@@ -55,16 +55,6 @@ if (post.value) {
     letter-spacing: 0.006rem;
     font-weight: 400;
   }
-
-  /* p > a {
-    transition: all var(--transition);
-    box-shadow: 0 1px 0 var(--gray-800);
-    transition: box-shadow var(--transition);
-
-    &:hover {
-      box-shadow: 0 1px 0 var(--gray-500);
-    }
-  } */
 
   ul,
   ol {

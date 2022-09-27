@@ -2,15 +2,15 @@
 import { typograph } from '../../utils/typograph'
 
 const props = defineProps({
-  text: { type: String, required: true },
-  date: { type: String, default: Date.now() },
+  title: { type: String, required: true },
+  text: { type: String, default: null },
 })
 </script>
 
 <template>
   <header class="page-header">
-    <h1>{{ typograph(text) }}</h1>
-    <div>{{ date }}</div>
+    <h1>{{ typograph(title) }}</h1>
+    <div>{{ text }}</div>
   </header>
 </template>
 

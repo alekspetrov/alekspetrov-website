@@ -1,14 +1,9 @@
 <script setup>
 const { data: posts } = await useFetch('/api/posts/list')
-
-useMeta(() => ({
-  title: 'Aleks Petrov',
-  description: 'This is my maker journal to share my learnings.',
-}))
 </script>
 
 <template>
-  <NuxtLayout name="blog" v-if="posts">
+  <NuxtLayout v-if="posts" name="blog">
     <div class="issues-page inner-padding">
       <h1>Issues</h1>
       <h3 class="issues-page-title body-title">I don't get emails</h3>

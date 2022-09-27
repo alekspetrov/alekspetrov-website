@@ -15,7 +15,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Creating & managing software since 2008. ',
+      content: 'Creating and managing software since 2008.',
     },
   ],
 })
@@ -34,17 +34,17 @@ useHead({
 .page-block {
   margin-bottom: var(--space-4xl);
 
-  > h3 {
-    margin-bottom: var(--space-xl);
-  }
-
   > p + * {
     margin-top: var(--space-xl);
   }
 }
 
+.page-block-title {
+  margin-bottom: var(--space-xl);
+}
+
 @media screen and (max-width: 480px) {
-  .page-block {
+  .page-block-title {
     margin-bottom: var(--space-3xl);
   }
 }

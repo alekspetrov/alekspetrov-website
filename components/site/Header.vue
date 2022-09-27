@@ -20,6 +20,10 @@ const role =
       <NuxtLink to="/" class="site-name">Aleks Petrov</NuxtLink>
       <div>{{ role }}</div>
     </div>
+    <div class="main-nav">
+      <NuxtLink to="/blog" class="link">Thoughts</NuxtLink>
+      <NuxtLink to="/projects" class="link">Projects</NuxtLink>
+    </div>
   </header>
 </template>
 
@@ -38,6 +42,6 @@ const role =
 
 .main-nav {
   display: flex;
-  gap: 24px;
+  gap: 40px;
 }
 </style>
