@@ -10,12 +10,16 @@ const props = defineProps({
 <template>
   <header class="page-header">
     <h1>{{ typograph(title) }}</h1>
-    <div>{{ text }}</div>
+    <div class="page-header-text">{{ text }}</div>
   </header>
 </template>
 
 <style lang="postcss">
 .page-header {
   margin-bottom: calc(var(--space-md) * 4);
+}
+
+.page-header-text {
+  color: var(--color-text-muted);
 }
 </style>

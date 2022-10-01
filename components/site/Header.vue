@@ -16,8 +16,8 @@ const role =
 
 <template>
   <header class="site-header">
-    <div>
-      <NuxtLink to="/" class="site-name">Aleks Petrov</NuxtLink>
+    <div class="site-name">
+      <NuxtLink to="/">Aleks Petrov</NuxtLink>
       <div>{{ role }}</div>
     </div>
     <div class="main-nav">
@@ -36,18 +36,33 @@ const role =
 }
 
 .site-name {
+  color: var(--color-text-base);
   display: inline-block;
-  color: var(--white);
+
+  div {
+    color: var(--color-text-muted);
+  }
 }
 
 .main-nav {
-  display: flex;
-  gap: 40px;
+  display: none;
+  align-items: start;
+  gap: 32px;
+}
+
+@media screen and (min-width: 480px) {
+  .main-nav {
+    display: flex;
+    gap: 40px;
+  }
 }
 
 .nav-link {
+  display: inline-flex;
+  color: var(--color-text-muted);
+
   &.router-link-exact-active {
-    color: var(--gray-100);
+    color: var(--color-text-base);
   }
 }
 </style>

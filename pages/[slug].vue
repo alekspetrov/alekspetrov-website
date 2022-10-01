@@ -23,7 +23,7 @@ if (post.value) {
 </script>
 
 <template>
-  <NuxtLayout name="blog" class="blog-content">
+  <NuxtLayout name="blog" class="body-text">
     <template v-if="post">
       <PageHeader :title="post.title" :text="post.date" />
       <PageContent :content="post.blocks" />
@@ -35,55 +35,3 @@ if (post.value) {
     </template>
   </NuxtLayout>
 </template>
-
-<style lang="postcss">
-.blog-content {
-  p,
-  figure {
-    margin: calc(var(--space-md) * 2) auto;
-  }
-
-  hr {
-    border: 0;
-    border-top: 1px solid var(--gray-900);
-    max-width: 40%;
-    margin: calc(var(--space-md) * 6) auto;
-  }
-
-  p {
-    font-size: var(--text-md);
-    letter-spacing: 0.006rem;
-    font-weight: 400;
-  }
-
-  ul,
-  ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    e & li {
-      margin-bottom: var(--space-sm);
-    }
-
-    & li::before {
-      display: inline-block;
-      width: 32px;
-    }
-  }
-
-  ul {
-    & li::before {
-      content: '—';
-    }
-  }
-
-  ol {
-    counter-reset: section;
-
-    & li::before {
-      counter-increment: section;
-      content: counter(section) '. ';
-    }
-  }
-}
-</style>

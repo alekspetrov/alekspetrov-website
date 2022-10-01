@@ -95,6 +95,10 @@
   > div:nth-child(2) {
     flex: 1;
   }
+
+  p {
+    color: var(--color-text-muted);
+  }
 }
 
 @media screen and (max-width: 480px) {

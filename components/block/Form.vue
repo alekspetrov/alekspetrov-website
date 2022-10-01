@@ -57,7 +57,7 @@ const handleSubmit = async () => {
 <template>
   <hr />
   <div class="form">
-    <h3>Subscribe for updates</h3>
+    <h3 class="form-title">Subscribe for updates</h3>
 
     <div v-if="submitted" class="form-row">
       <p>Thank you for subscription! Check your email please.</p>
@@ -80,8 +80,8 @@ const handleSubmit = async () => {
           type="email"
           placeholder="Your email address"
         />
-        <button class="button-ghost">
-          {{ submitting ? '…' : 'Subscribe' }}
+        <button>
+          {{ submitting ? '…' : '⏎' }}
         </button>
       </div>
       <div v-if="formError" class="form-error-text">
@@ -95,10 +95,6 @@ const handleSubmit = async () => {
 .form {
   margin-block: calc(var(--space-lg) * 4);
 
-  > h3 {
-    margin-bottom: var(--space-sm);
-  }
-
   div {
     height: 40px;
     display: flex;
@@ -111,33 +107,46 @@ const handleSubmit = async () => {
 
   input {
     box-sizing: border-box;
-    flex: 1;
-    max-width: 320px;
-    padding: 4px 16px;
-    background: rgba(255, 255, 255, 0.03);
-    caret-color: var(--gray-300);
-    font-size: var(--text-sm);
-    border: 1px solid var(--gray-950);
+    width: 100%;
+    padding: var(--space-md) var(--space-lg);
+    color: var(--color-text-base);
+    background: var(--color-card-fill);
+    caret-color: var(--color-text-base);
+    /* font-size: var(--text-sm); */
+    border: 0;
     border-radius: 4px;
-    margin-right: var(--space-md);
     transition: all var(--transition);
-    color: var(--gray-300);
 
     &::placeholder {
-      color: var(--gray-300);
+      color: var(--color-text-muted);
     }
 
     &:hover {
-      color: var(--gray-300);
-      border: 1px solid var(--gray-800);
+      background-color: var(--color-card-fill-hover);
     }
 
     &:focus {
       outline: none;
-      color: var(--gray-300);
-      border: 1px solid var(--gray-800);
+      color: var(--color-text-base);
+      background-color: var(--color-card-fill-hover);
     }
   }
+
+  button {
+    position: absolute;
+    right: var(--space-lg);
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+  }
+}
+
+.form-title {
+  margin-bottom: var(--space-lg);
+}
+
+.form-row {
+  position: relative;
 }
 
 .form-error-text {

@@ -12,13 +12,21 @@ const makeSlug = (text) => {
 </script>
 
 <template>
-  <section v-for="post in posts" :key="post.id" class="post-item">
-    <NuxtLink :to="makeSlug(post.title)">
-      <time :datetime="post.date">{{ post.date }}</time>
-      <div>
-        <h3 class="link">{{ post.title }}</h3>
-        <p>{{ post.description }}</p>
-      </div>
+  <div class="cards">
+    <NuxtLink
+      v-for="post in posts"
+      :key="post.id"
+      class="card card-link card-row"
+      :to="makeSlug(post.title)"
+    >
+      <h3>{{ post.title }}</h3>
+      <time :datetime="post.date" class="card-date">{{ post.date }}</time>
     </NuxtLink>
-  </section>
+  </div>
 </template>
+
+<style lang="postcss">
+.card-date {
+  color: var(--color-text-muted);
+}
+</style>

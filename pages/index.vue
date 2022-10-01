@@ -29,23 +29,3 @@ useHead({
     <BlockExperience v-if="query.experience" />
   </NuxtLayout>
 </template>
-
-<style lang="postcss">
-.page-block {
-  margin-bottom: var(--space-4xl);
-
-  > p + * {
-    margin-top: var(--space-xl);
-  }
-}
-
-.page-block-title {
-  margin-bottom: var(--space-xl);
-}
-
-@media screen and (max-width: 480px) {
-  .page-block-title {
-    margin-bottom: var(--space-3xl);
-  }
-}
-</style>

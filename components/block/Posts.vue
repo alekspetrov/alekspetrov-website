@@ -2,31 +2,18 @@
   <div class="page-block">
     <h3 class="page-block-title">Thoughts</h3>
     <PostsList />
+    <NuxtLink class="card card-link card-row cards-more-link" to="/blog"
+      >Read More →</NuxtLink
+    >
   </div>
 </template>
 
 <style lang="postcss">
-.post-item {
-  margin-bottom: var(--space-2xl);
+.cards-more-link {
+  color: var(--color-text-muted);
 
-  a {
-    display: flex;
-  }
-
-  time {
-    width: 25%;
-  }
-
-  div {
-    flex: 1;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .post-item {
-    a {
-      display: block;
-    }
+  &:hover {
+    color: var(--color-text-base);
   }
 }
 </style>
