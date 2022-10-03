@@ -133,7 +133,7 @@ const handleSubmit = async () => {
 
   button {
     position: absolute;
-    right: var(--space-lg);
+    right: var(--space-md);
     background: none;
     border: none;
     color: var(--color-text-muted);
