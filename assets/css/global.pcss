@@ -119,6 +119,12 @@ a {
       content: counter(section) '. ';
     }
   }
+
+  img {
+    max-width: 100%;
+    /* margin-left: -10vw;
+    margin-right: -10vw; */
+  }
 }
 
 .link {
@@ -173,6 +179,11 @@ a {
   border-radius: 4px;
   transition: all var(--transition);
 
+  h3 {
+    color: var(--color-text-muted);
+    transition: all var(--transition);
+  }
+
   p,
   span {
     color: var(--color-text-muted);
@@ -188,6 +199,12 @@ a {
 
     &:hover {
       background: var(--color-card-fill-hover);
+    }
+  }
+
+  &:hover {
+    h3 {
+      color: var(--color-text-base);
     }
   }
 }

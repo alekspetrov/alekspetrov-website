@@ -110,9 +110,8 @@ const handleSubmit = async () => {
     width: 100%;
     padding: var(--space-md) var(--space-lg);
     color: var(--color-text-base);
-    background: var(--color-card-fill);
+    background: var(--color-card-fill-hover);
     caret-color: var(--color-text-base);
-    /* font-size: var(--text-sm); */
     border: 0;
     border-radius: 4px;
     transition: all var(--transition);

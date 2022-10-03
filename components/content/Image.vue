@@ -20,15 +20,20 @@ const srcset = imageSizes
 
 <template>
   <figure class="body-image">
-    <img :sizes="imageSizes" :srcset="srcset" :src="imageSrc" :alt="imageId" />
-    <figcaption class="body-image-caption" v-if="block.caption">
+    <img
+      :sizes="imageSizes"
+      :srcset="srcset"
+      :src="imageSrc"
+      :alt="block.caption || imageId"
+    />
+    <figcaption v-if="block.caption" class="body-image-caption">
       {{ block.caption }}
     </figcaption>
   </figure>
 </template>
 
 <style lang="postcss">
-.body-image-caption {
+figcaption {
   margin-top: var(--space-sm);
   width: 100%;
   color: var(--gray-700);
