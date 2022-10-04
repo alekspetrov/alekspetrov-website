@@ -10,13 +10,7 @@ export default defineNuxtConfig({
         href: '/avatar-sm.png',
       },
     ],
-    script: [
-      {
-        src: 'https://static.cloudflareinsights.com/beacon.min.js',
-        'data-cf-beacon': '{"token": "9d53d29ccc2c4bb9a5530ca79c07efb8"}',
-        defer: true,
-      },
-    ],
+    script: [],
   },
   css: [
     '~/assets/css/reset.pcss',
