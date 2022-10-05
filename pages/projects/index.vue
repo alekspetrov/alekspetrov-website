@@ -14,7 +14,13 @@
     </div>
 
     <div class="page-block">
-      <h3 class="page-block-title">Selected projects</h3>
+      <h3 class="page-block-title">Worked on</h3>
+      <NuxtLink to="/projects/fintech" class="card card-row card-link">
+        <div>
+          <h3>Fintech</h3>
+          <p>Product Design, Development, Management</p>
+        </div>
+      </NuxtLink>
       <NuxtLink to="/projects/dashboards" class="card card-row card-link">
         <div>
           <h3>Dashboards</h3>
@@ -29,7 +35,7 @@
       </NuxtLink>
       <NuxtLink to="/projects/retail" class="card card-row card-link">
         <div>
-          <h3>Online shop</h3>
+          <h3>E-commerce</h3>
           <p>Product Design, Development, Management</p>
         </div>
       </NuxtLink>
