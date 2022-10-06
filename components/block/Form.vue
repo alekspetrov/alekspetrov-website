@@ -2,27 +2,11 @@
 const email = ref(null)
 const submitting = ref(false)
 const submitted = ref(false)
-const emailExist = ref(false)
-const formError = ref(null)
-
-const validateEmail = (cb) => {
-  const emailFormat =
-    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-
-  if (!email.value) {
-    formError.value = 'Let me know your email address please'
-    return
-  }
-
-  if (!email.value.match(emailFormat)) {
-    formError.value = 'Check your email should looks like email@domain.com'
-    return
-  }
-
-  cb()
-}
+const errorMessage = ref(null)
+const errorCode = ref(null)
 
 const handleSubmit = async () => {
+  errorMessage.value = null
   submitting.value = true
 
   const { data } = await useFetch('/api/emails/add', {
@@ -32,25 +16,40 @@ const handleSubmit = async () => {
     },
   })
 
+  if (!data.value) {
+    errorMessage.value = 'Something wrong happened, try again'
+    submitting.value = false
+    return
+  }
+
+  if (data.value?.error) {
+    errorCode.value = data.value.error.code
+    errorMessage.value = data.value.error.message
+    submitting.value = false
+    return
+  }
+
   if (data.value.status === 200) {
-    submitting.value = false
     submitted.value = true
+    submitting.value = false
+  }
+}
+
+const validateEmail = () => {
+  const emailFormat =
+    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+
+  if (!email.value) {
+    errorMessage.value = 'Let me know your email address please'
+    return
   }
 
-  if (data.value.status === 500) {
-    submitting.value = false
-    formError.value = 'Service is not responding. Please try again later.'
+  if (!email.value.match(emailFormat)) {
+    errorMessage.value = 'Check your email should looks like email@domain.com'
+    return
   }
 
-  if (data.value.status === 400) {
-    submitting.value = false
-    formError.value = 'Check your email should looks like email@domain.com'
-  }
-
-  if (data.value.status === 409) {
-    submitting.value = false
-    emailExist.value = true
-  }
+  handleSubmit()
 }
 </script>
 
@@ -62,17 +61,18 @@ const handleSubmit = async () => {
     <div v-if="submitted" class="form-row">
       <p>Thank you for subscription! Check your email please.</p>
     </div>
-    <div v-if="emailExist" class="form-row">
+
+    <div
+      v-if="errorCode === 'MEMBER_EXISTS_WITH_EMAIL_ADDRESS'"
+      class="form-row"
+    >
       <p>
         You're already on the list!
         <NuxtLink to="/issues" class="link">Don’t get emails? </NuxtLink>
       </p>
     </div>
 
-    <form
-      v-if="!submitted && !emailExist"
-      @submit.prevent="validateEmail(handleSubmit)"
-    >
+    <form v-else @submit.prevent="validateEmail">
       <div class="form-row">
         <input
           v-model.trim="email"
@@ -84,8 +84,9 @@ const handleSubmit = async () => {
           {{ submitting ? '…' : '⏎' }}
         </button>
       </div>
-      <div v-if="formError" class="form-error-text">
-        {{ formError }}
+
+      <div v-if="errorMessage" class="form-error-text">
+        {{ errorMessage }}
       </div>
     </form>
   </div>

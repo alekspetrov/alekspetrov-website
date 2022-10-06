@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <ul class="body-list body-text">
+  <ul class="body-list">
     <li v-for="(node, idx) in block.content" :key="idx">
       <template v-for="(content, i) in node" :key="i">
         <a v-if="content.href" :href="content.href" class="link">
@@ -22,17 +22,8 @@ const props = defineProps({
 
 <style lang="postcss">
 .body-list {
-  margin-left: var(--space-md);
-  padding: 0;
-
   & > li {
     margin-bottom: var(--space-sm);
-  }
-}
-
-@media screen and (min-width: 896px) {
-  .body-list {
-    margin-left: 0;
   }
 }
 </style>

@@ -5,13 +5,19 @@ import { useBody } from 'h3'
 export default async (req: IncomingMessage, res: ServerResponse) => {
   const body = await useBody(req)
 
-  const data = await fetchApi(`emails/add`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(body),
-  })
+  try {
+    const response = await fetchApi(`emails/add`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    })
 
-  return data
+    console.log(response)
+
+    return response
+  } catch (error) {
+    throw Error('Add email error: ', error.message || error)
+  }
 }

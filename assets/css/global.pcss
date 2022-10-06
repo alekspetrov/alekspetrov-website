@@ -56,9 +56,27 @@ a {
   text-decoration: none;
 }
 
+/* Grid */
+.blog-layout-grid {
+  margin-inline: 24px;
+}
+
+/* Wrappers */
+.wrapper-sm {
+  max-width: var(--blog-content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Global typography styling. */
-.body-text {
+.article-layout {
   color: var(--color-text-muted);
+
+  /* All elements */
+  & > * {
+    max-width: var(--blog-content-width);
+    margin: 0 auto;
+  }
 
   h1,
   h2,
@@ -80,7 +98,7 @@ a {
   hr {
     border: 0;
     border-top: 1px solid var(--color-text-muted);
-    max-width: 40%;
+    width: calc(var(--blog-content-width) / 2);
     margin: calc(var(--space-md) * 6) auto;
   }
 
@@ -93,7 +111,6 @@ a {
   ul,
   ol {
     list-style: none;
-    margin: 0;
     padding: 0;
     e & li {
       margin-bottom: var(--space-sm);
@@ -120,11 +137,23 @@ a {
     }
   }
 
-  img {
+  /* figure {
     max-width: 100%;
+  } */
+
+  figcaption {
+    margin-top: var(--space-sm);
+    width: 100%;
+    color: var(--gray-700);
+    text-align: center;
+    font-size: var(--text-sm);
+  }
+
+  img {
+    width: 100%;
+    /* max-width: 1200px; */
+    /* margin: 0 auto; */
     border-radius: 4px;
-    /* margin-left: -10vw;
-    margin-right: -10vw; */
   }
 }
 
@@ -137,7 +166,6 @@ a {
 .split-list {
   > * {
     display: flex;
-    /* justify-content: space-between; */
     margin-bottom: var(--space-md);
 
     > div:nth-child(1) {
@@ -174,9 +202,9 @@ a {
 }
 
 .card {
-  display: block;
+  display: flex;
   padding: 16px 24px;
-  margin-inline: -24px;
+  margin-inline: -16px;
   border-radius: 4px;
   transition: all var(--transition);
 
@@ -204,17 +232,20 @@ a {
   }
 }
 
-/* Page blocks include spacing and title setup */
 .page-block {
-  margin-bottom: var(--space-4xl);
-}
-
-@media screen and (min-width: 480px) {
-  .page-block {
-    margin-bottom: var(--space-5xl);
-  }
+  margin-bottom: var(--space-3xl);
 }
 
 .page-block-title {
   margin-bottom: var(--space-xl);
+}
+
+@media screen and (min-width: 640px) {
+  .card {
+    margin-inline: -24px;
+  }
+
+  .page-block {
+    margin-bottom: var(--space-4xl);
+  }
 }

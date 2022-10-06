@@ -31,13 +31,3 @@ const srcset = imageSizes
     </figcaption>
   </figure>
 </template>
-
-<style lang="postcss">
-figcaption {
-  margin-top: var(--space-sm);
-  width: 100%;
-  color: var(--gray-700);
-  text-align: center;
-  font-size: var(--text-sm);
-}
-</style>

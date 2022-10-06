@@ -2,10 +2,6 @@
 const nuxtAppHook = useNuxtApp().hook
 const { query } = useRoute()
 
-// TODO:
-// [] Pass query to local storage to prevent from using the default website on reload
-// [] Add OG schema
-
 nuxtAppHook('page:finish', () => {
   window.scrollTo(0, 0)
 })
@@ -23,9 +19,11 @@ useHead({
 
 <template>
   <NuxtLayout name="blog">
-    <BlockBanner :role="query.role" />
-    <BlockProjects />
-    <BlockPosts />
-    <BlockExperience v-if="query.experience" />
+    <div class="wrapper-sm">
+      <BlockBanner :role="query.role" class="index-page-banner" />
+      <BlockProjects />
+      <BlockPosts />
+      <BlockExperience v-if="query.experience" />
+    </div>
   </NuxtLayout>
 </template>

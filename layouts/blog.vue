@@ -1,23 +1,6 @@
 <template>
-  <div class="blog-layout">
+  <div class="blog-layout-grid">
     <SiteHeader />
-    <main>
-      <slot />
-    </main>
+    <slot />
   </div>
 </template>
-
-<style lang="postcss">
-.blog-layout {
-  padding: var(--space-3xl);
-  padding-inline: calc(var(--space-md) * 2);
-  max-width: var(--blog-width);
-  margin: auto;
-}
-
-@media screen and (min-width: 700px) {
-  .blog-layout {
-    padding-inline: 0;
-  }
-}
-</style>

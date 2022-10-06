@@ -23,15 +23,19 @@ if (post.value) {
 </script>
 
 <template>
-  <NuxtLayout name="blog" class="body-text">
+  <NuxtLayout name="blog">
     <template v-if="post">
       <PageHeader :title="post.title" :text="post.date" />
-      <PageContent :content="post.blocks" />
-      <BlockForm />
+      <div class="article-layout">
+        <PageContent :content="post.blocks" />
+        <BlockForm />
+      </div>
     </template>
     <template v-if="error">
-      <h3>404</h3>
-      <p>Sorry, there is no such page</p>
+      <div class="wrapper-sm">
+        <h3>404</h3>
+        <p>Sorry, there is no such page</p>
+      </div>
     </template>
   </NuxtLayout>
 </template>

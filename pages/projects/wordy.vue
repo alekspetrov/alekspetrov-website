@@ -1,7 +1,11 @@
 <template>
-  <NuxtLayout name="blog" class="body-text">
-    <PageHeader title="Wordy" text="Learn 500 words for 20 min a week" />
-    <div>
+  <NuxtLayout name="blog">
+    <PageHeader
+      class="wrapper-sm"
+      title="Wordy"
+      text="Learn 500 words for 20 min a week"
+    />
+    <div class="article-layout">
       <p>
         The idea came to me when I was looking for extension to collect words I
         want to remember to improve my vocab in english. Found some free ways of

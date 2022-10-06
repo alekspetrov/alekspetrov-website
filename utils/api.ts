@@ -5,12 +5,12 @@ const API_URL =
 
 const fetchApi = async (route, params = {}) => {
   try {
-    const res = await fetch(`${API_URL}/${route}`, params)
-    const data = await res.json()
+    const response = await fetch(`${API_URL}/${route}`, params)
+    const json = await response.json()
 
-    return data
-  } catch (e) {
-    throw Error(`Can not get data from ${route}`)
+    return json
+  } catch (error) {
+    throw Error(`API Error ${API_URL}/${route}`)
   }
 }
 

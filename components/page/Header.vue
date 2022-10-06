@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <header class="page-header">
+  <header class="page-header wrapper-sm">
     <h1>{{ typograph(title) }}</h1>
     <div class="page-header-text">{{ text }}</div>
   </header>

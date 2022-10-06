@@ -1,7 +1,9 @@
 <template>
-  <NuxtLayout name="blog"
-    ><h3>404</h3>
-    <p>Sorry, there is no such page</p>
+  <NuxtLayout name="blog">
+    <div class="wrapper-sm">
+      <h3>404</h3>
+      <p>Sorry, there is no such page</p>
+    </div>
   </NuxtLayout>
 </template>
 

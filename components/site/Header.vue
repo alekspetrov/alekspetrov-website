@@ -15,7 +15,7 @@ const role =
 </script>
 
 <template>
-  <header class="site-header">
+  <div class="site-header wrapper-sm">
     <div class="site-name">
       <NuxtLink to="/">Aleks Petrov</NuxtLink>
       <div>{{ role }}</div>
@@ -24,7 +24,7 @@ const role =
       <NuxtLink to="/blog" class="nav-link">Thoughts</NuxtLink>
       <NuxtLink to="/projects" class="nav-link">Projects</NuxtLink>
     </div>
-  </header>
+  </div>
 </template>
 
 <style lang="postcss">
@@ -32,6 +32,7 @@ const role =
   display: flex;
   justify-content: space-between;
   line-height: 1.5rem;
+  margin-top: var(--space-3xl);
   margin-bottom: var(--space-4xl);
 }
 
@@ -50,19 +51,19 @@ const role =
   gap: 32px;
 }
 
-@media screen and (min-width: 480px) {
-  .main-nav {
-    display: flex;
-    gap: 40px;
-  }
-}
-
 .nav-link {
   display: inline-flex;
   color: var(--color-text-muted);
 
   &.router-link-exact-active {
     color: var(--color-text-base);
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .main-nav {
+    display: flex;
+    gap: 40px;
   }
 }
 </style>
