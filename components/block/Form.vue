@@ -72,7 +72,7 @@ const validateEmail = () => {
       </p>
     </div>
 
-    <form v-else @submit.prevent="validateEmail">
+    <form v-if="!submitted && !errorCode" @submit.prevent="validateEmail">
       <div class="form-row">
         <input
           v-model.trim="email"
