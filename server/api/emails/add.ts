@@ -6,7 +6,7 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
   const body = await useBody(req)
 
   try {
-    const response = await fetchApi(`emails/add`, {
+    const res = await fetchApi(`emails/add`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -14,9 +14,7 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
       body: JSON.stringify(body),
     })
 
-    console.log(response)
-
-    return response
+    return await res.json()
   } catch (error) {
     throw Error('Add email error: ', error.message || error)
   }

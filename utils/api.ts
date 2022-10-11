@@ -6,9 +6,7 @@ const API_URL =
 const fetchApi = async (route, params = {}) => {
   try {
     const response = await fetch(`${API_URL}/${route}`, params)
-    const json = await response.json()
-
-    return json
+    return response
   } catch (error) {
     throw Error(`API Error ${API_URL}/${route}`)
   }

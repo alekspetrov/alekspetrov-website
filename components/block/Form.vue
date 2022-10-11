@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const email = ref(null)
-const submitting = ref(false)
-const submitted = ref(false)
+const isPending = ref(false)
+const isSubmitted = ref(false)
 const errorMessage = ref(null)
 const errorCode = ref(null)
 
 const handleSubmit = async () => {
   errorMessage.value = null
-  submitting.value = true
+  isPending.value = true
 
   const { data } = await useFetch('/api/emails/add', {
     method: 'POST',
@@ -16,29 +16,28 @@ const handleSubmit = async () => {
     },
   })
 
-  // TODO: Update all this logic to be readable
-
-  // 200
-  // 400
-
-  // Show error if no data
-  if (!data.value || data.value.status === 500) {
-    errorMessage.value = 'Something wrong happened, try again'
-    submitting.value = false
+  // If 500 unexpected error
+  if (!data.value) {
+    errorMessage.value = 'Server error happened.'
+    errorCode.value = 'UNEXPECTED_ERROR'
+    isPending.value = false
     return
   }
 
-  // Show error if error
-  if (data.value.status === 409) {
-    errorCode.value = 'MEMBER_EXISTS_WITH_EMAIL_ADDRESS'
-    submitting.value = false
+  // If 409 Conflict in DB
+  if (data.value.data?.error) {
+    errorMessage.value = data.value.data.error.code
+    errorCode.value = data.value.data.error.code
+    isPending.value = false
     return
   }
 
-  // Show data
+  // If 200 OK
   if (data.value.status === 200) {
-    submitted.value = true
-    submitting.value = false
+    errorMessage.value = null
+    errorCode.value = null
+    isPending.value = false
+    isSubmitted.value = true
   }
 }
 
@@ -65,7 +64,7 @@ const validateEmail = () => {
   <div class="form">
     <h3 class="form-title">Subscribe for updates</h3>
 
-    <div v-if="submitted" class="form-row">
+    <div v-if="isSubmitted" class="form-row">
       <p>Thank you for subscription! Check your email please.</p>
     </div>
 
@@ -79,7 +78,7 @@ const validateEmail = () => {
       </p>
     </div>
 
-    <form v-if="!submitted && !errorCode" @submit.prevent="validateEmail">
+    <form v-if="!isSubmitted && !errorCode" @submit.prevent="validateEmail">
       <div class="form-row">
         <input
           v-model.trim="email"
@@ -88,7 +87,7 @@ const validateEmail = () => {
           placeholder="Your email address"
         />
         <button>
-          {{ submitting ? '…' : '⏎' }}
+          {{ isPending ? '…' : '⏎' }}
         </button>
       </div>
 
