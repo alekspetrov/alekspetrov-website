@@ -21,8 +21,6 @@ const handleSubmit = async () => {
   // 200
   // 400
 
-  console.log(data.value)
-
   // Show error if no data
   if (!data.value || data.value.status === 500) {
     errorMessage.value = 'Something wrong happened, try again'
