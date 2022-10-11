@@ -17,21 +17,29 @@ const handleSubmit = async () => {
   })
 
   // TODO: Update all this logic to be readable
-  if (!data.value) {
+
+  // 200
+  // 400
+
+  // Show error if no data
+  if (!data.value || data.value.status === 500) {
     errorMessage.value = 'Something wrong happened, try again'
     submitting.value = false
     return
   }
 
-  if (data.value.error) {
-    errorCode.value = data.value.error.code
-    errorMessage.value = data.value.error.message
+  // Show error if error
+  if (data.value.status === 409) {
+    errorCode.value = 'MEMBER_EXISTS_WITH_EMAIL_ADDRESS'
     submitting.value = false
     return
   }
 
-  submitted.value = true
-  submitting.value = false
+  // Show data
+  if (data.value.status === 200) {
+    submitted.value = true
+    submitting.value = false
+  }
 }
 
 const validateEmail = () => {
