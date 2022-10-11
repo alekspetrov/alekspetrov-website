@@ -16,23 +16,22 @@ const handleSubmit = async () => {
     },
   })
 
+  // TODO: Update all this logic to be readable
   if (!data.value) {
     errorMessage.value = 'Something wrong happened, try again'
     submitting.value = false
     return
   }
 
-  if (data.value?.error) {
+  if (data.value.error) {
     errorCode.value = data.value.error.code
     errorMessage.value = data.value.error.message
     submitting.value = false
     return
   }
 
-  if (data.value.status === 200) {
-    submitted.value = true
-    submitting.value = false
-  }
+  submitted.value = true
+  submitting.value = false
 }
 
 const validateEmail = () => {
