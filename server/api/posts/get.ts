@@ -40,12 +40,13 @@ const makeBlocks = (blocks) => {
 
 const getPage = async (slug: string) => {
   const res = await fetchApi(`pages/${slug}`)
+  const resJson = await res.json()
   const dateOptions = { day: 'numeric', month: 'short' }
 
   return {
-    ...res,
-    date: formatDate(res.date, dateOptions),
-    blocks: makeBlocks(res.blocks),
+    ...resJson,
+    date: formatDate(resJson.date, dateOptions),
+    blocks: makeBlocks(resJson.blocks),
   }
 }
 
