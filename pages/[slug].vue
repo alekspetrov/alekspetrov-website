@@ -25,7 +25,7 @@ if (post.value) {
 <template>
   <NuxtLayout name="blog">
     <template v-if="post">
-      <PageHeader :title="post.title" :text="post.date" />
+      <PageHeader class="wrapper-sm" :title="post.title" :text="post.date" />
       <div class="article-layout">
         <PageContent :content="post.blocks" />
         <BlockForm />

@@ -15,29 +15,17 @@
       </div>
 
       <div class="page-block">
-        <h3 class="page-block-title">Worked on</h3>
-        <NuxtLink to="/projects/fintech" class="card card-row card-link">
+        <h3 class="page-block-title">Made</h3>
+        <NuxtLink to="/projects/web-monitoring" class="card card-row card-link">
           <div>
-            <h3>Fintech</h3>
-            <p>Product Design, Development, Management</p>
+            <h3>Web Monitoring</h3>
+            <p>Idea, design, frontend development.</p>
           </div>
         </NuxtLink>
-        <NuxtLink to="/projects/dashboards" class="card card-row card-link">
+        <NuxtLink to="/projects/xcoex" class="card card-row card-link">
           <div>
-            <h3>Dashboards</h3>
-            <p>Design and Development</p>
-          </div>
-        </NuxtLink>
-        <NuxtLink to="/projects/product-design" class="card card-row card-link">
-          <div>
-            <h3>Crypto</h3>
-            <p>Product Design</p>
-          </div>
-        </NuxtLink>
-        <NuxtLink to="/projects/retail" class="card card-row card-link">
-          <div>
-            <h3>E-commerce</h3>
-            <p>Product Design, Development, Management</p>
+            <h3>XCOEX</h3>
+            <p>Product design, UX research, systematic design.</p>
           </div>
         </NuxtLink>
       </div>
