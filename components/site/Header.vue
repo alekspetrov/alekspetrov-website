@@ -29,16 +29,15 @@ const role =
 
 <style lang="postcss">
 .site-header {
-  display: flex;
-  justify-content: space-between;
-  line-height: 1.5rem;
-  margin-top: var(--space-3xl);
-  margin-bottom: var(--space-4xl);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-3xl);
 }
 
 .site-name {
   color: var(--color-text-base);
   display: inline-block;
+
+  margin-bottom: var(--space-xl);
 
   div {
     color: var(--color-text-muted);
@@ -46,9 +45,9 @@ const role =
 }
 
 .main-nav {
-  display: none;
+  display: flex;
   align-items: start;
-  gap: 32px;
+  gap: 40px;
 }
 
 .nav-link {
@@ -61,9 +60,9 @@ const role =
 }
 
 @media screen and (min-width: 480px) {
-  .main-nav {
+  .site-header {
     display: flex;
-    gap: 40px;
+    justify-content: space-between;
   }
 }
 </style>
