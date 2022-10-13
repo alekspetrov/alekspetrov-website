@@ -21,5 +21,6 @@
         model "ask" to model "watch".
       </p>
     </div>
+    <BlockForm />
   </NuxtLayout>
 </template>

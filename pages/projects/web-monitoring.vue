@@ -62,6 +62,7 @@
         specialists on different levels. This types of products underestimated
         in positive effort that they can bring.
       </p>
+      <BlockForm />
     </div>
   </NuxtLayout>
 </template>
