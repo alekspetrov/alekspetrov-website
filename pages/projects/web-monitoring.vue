@@ -14,7 +14,7 @@
           style="width: 200%"
         />
       </figure>
-      <h3>Problem</h3>
+      <h3>Input</h3>
       <p>
         There are many microservices, websites and hosts owning by different
         teams. The only way to know if service available or to find existing
@@ -25,7 +25,7 @@
         We can’t use third-party to solve this, because of security, the network
         is close, and we have our own checklist to find why it is not working.
       </p>
-      <h3>Success metrics</h3>
+      <h3>Success measure</h3>
       <p>Decrease status requests:</p>
       <ul>
         <li>1 month: 10-20%</li>
@@ -34,9 +34,9 @@
       </ul>
       <h3>Solution</h3>
       <p>
-        This project made to monitor all api, data-endpoints and websites at
-        once. It helps all the company see if endpoint works or website or
-        web-service available, if logs are enabled and some more information.
+        Dashboard with monitoring for all api, data-endpoints and websites and
+        represent it in a simple way. It helps all the company see if endpoint
+        works or web-service is available and grab more info.
       </p>
       <p>
         I create a simple design to show all the nodes with a memory and cpu
@@ -53,14 +53,14 @@
       <p>
         After launch we got positive feedback and decreased load on incident
         managers, product owners and developers as expected. Now all new
-        endpoints covered with monitoring are available in out dashboard for all
-        the authorized people.
+        endpoints connected to monitoring are available in out dashboard for all
+        the authorized users.
       </p>
       <h3>Conclusion</h3>
       <p>
-        Platform product are very important and helps to decrease load from
-        specialists on different levels. Use specialist not only make products
-        for users but also for internal usages it will save your time and money.
+        Platform product are very important and help to decrease load from
+        specialists on different levels. This types of products underestimated
+        in positive effort that they can bring.
       </p>
     </div>
   </NuxtLayout>
