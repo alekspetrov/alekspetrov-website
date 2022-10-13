@@ -25,16 +25,13 @@
         We can’t use third-party to solve this, because of security, the network
         is close, and we have our own checklist to find why it is not working.
       </p>
-      <p>Success metrics Decrease status requests:</p>
+      <h3>Success metrics</h3>
+      <p>Decrease status requests:</p>
       <ul>
         <li>1 month: 10-20%</li>
         <li>3 month: 60%</li>
         <li>6 month: 98%</li>
       </ul>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
       <h3>Solution</h3>
       <p>
         This project made to monitor all api, data-endpoints and websites at
@@ -43,8 +40,7 @@
       </p>
       <p>
         I create a simple design to show all the nodes with a memory and cpu
-        usage dots and availability. Unavailable and issued nodes goes first to
-        help you find out issues fast.
+        usage and availability. Unavailable and issued nodes goes first.
       </p>
       <p>
         Admins and owners has “Stop" button to disconnect container from the
