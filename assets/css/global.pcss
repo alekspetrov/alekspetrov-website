@@ -203,7 +203,7 @@ a {
 }
 
 .card {
-  display: flex;
+  display: block;
   padding: 16px 16px;
   margin-inline: -16px;
   border-radius: 4px;
@@ -220,7 +220,6 @@ a {
   }
 
   &-row {
-    display: flex;
     justify-content: space-between;
   }
 
@@ -243,6 +242,7 @@ a {
 
 @media screen and (min-width: 640px) {
   .card {
+    display: flex;
     margin-inline: -24px;
     padding: 16px 24px;
   }

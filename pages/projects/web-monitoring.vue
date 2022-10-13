@@ -56,7 +56,7 @@
         endpoints connected to monitoring are available in out dashboard for all
         the authorized users.
       </p>
-      <h3>Conclusion</h3>
+      <h3>Conclusions</h3>
       <p>
         Platform product are very important and help to decrease load from
         specialists on different levels. This types of products underestimated

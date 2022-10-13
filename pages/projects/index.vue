@@ -6,16 +6,13 @@
         <NuxtLink to="/projects/wordy" class="card card-row card-link">
           <div>
             <h3>Wordy</h3>
-            <p>Learn 1000 words in 20 min per week</p>
-          </div>
-          <div>
-            <span>In process</span>
+            <p>Learn 1000 words in 20 min per week.</p>
           </div>
         </NuxtLink>
       </div>
 
       <div class="page-block">
-        <h3 class="page-block-title">Made</h3>
+        <h3 class="page-block-title">Selected</h3>
         <NuxtLink to="/projects/web-monitoring" class="card card-row card-link">
           <div>
             <h3>Web Monitoring</h3>
@@ -26,3 +23,9 @@
     </div>
   </NuxtLayout>
 </template>
+
+<style lang="postcss" scoped>
+.card-status {
+  /* display: none; */
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="blog">
+    <PageHeader class="wrapper-sm" title="Writings" />
     <div class="wrapper-sm">
-      <h3 class="page-block-title">Thoughts</h3>
       <PostsList />
     </div>
   </NuxtLayout>

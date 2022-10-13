@@ -21,7 +21,7 @@ const role =
       <div>{{ role }}</div>
     </div>
     <div class="main-nav">
-      <NuxtLink to="/blog" class="nav-link">Thoughts</NuxtLink>
+      <NuxtLink to="/blog" class="nav-link">Writings</NuxtLink>
       <NuxtLink to="/projects" class="nav-link">Projects</NuxtLink>
     </div>
   </div>
@@ -29,6 +29,8 @@ const role =
 
 <style lang="postcss">
 .site-header {
+  display: flex;
+  justify-content: space-between;
   margin-top: var(--space-xl);
   margin-bottom: var(--space-3xl);
 }
@@ -56,13 +58,6 @@ const role =
 
   &.router-link-exact-active {
     color: var(--color-text-base);
-  }
-}
-
-@media screen and (min-width: 480px) {
-  .site-header {
-    display: flex;
-    justify-content: space-between;
   }
 }
 </style>

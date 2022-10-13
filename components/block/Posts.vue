@@ -1,10 +1,7 @@
 <template>
   <div class="page-block">
-    <h3 class="page-block-title">Thoughts</h3>
+    <h3 class="page-block-title">Writings</h3>
     <PostsList />
-    <!-- <NuxtLink class="card card-link card-row cards-more-link" to="/blog"
-      >Read More →</NuxtLink
-    > -->
   </div>
 </template>
 
