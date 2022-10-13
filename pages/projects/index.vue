@@ -22,12 +22,6 @@
             <p>Idea, design, frontend development.</p>
           </div>
         </NuxtLink>
-        <NuxtLink to="/projects/xcoex" class="card card-row card-link">
-          <div>
-            <h3>XCOEX</h3>
-            <p>Product design, UX research, systematic design.</p>
-          </div>
-        </NuxtLink>
       </div>
     </div>
   </NuxtLayout>
