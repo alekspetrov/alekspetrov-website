@@ -1,3 +1,15 @@
+<script setup>
+useHead({
+  title: 'Wordy',
+  meta: [
+    {
+      name: 'description',
+      content: 'Learn 500 words for 20 min a week!',
+    },
+  ],
+})
+</script>
+
 <template>
   <NuxtLayout name="blog">
     <PageHeader

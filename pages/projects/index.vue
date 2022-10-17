@@ -1,3 +1,15 @@
+<script setup>
+useHead({
+  title: 'Projects',
+  meta: [
+    {
+      name: 'description',
+      content: 'Projects built in the last 5 years.',
+    },
+  ],
+})
+</script>
+
 <template>
   <NuxtLayout name="blog">
     <div class="wrapper-sm">

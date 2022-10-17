@@ -1,3 +1,15 @@
+<script setup>
+useHead({
+  title: 'Web Monitoring',
+  meta: [
+    {
+      name: 'description',
+      content: 'A project to monitor web -sites, -endpoints, -apis',
+    },
+  ],
+})
+</script>
+
 <template>
   <NuxtLayout name="blog">
     <PageHeader
@@ -11,7 +23,6 @@
           class="article-img-wide"
           src="https://res.cloudinary.com/alekspetrov/image/upload/v1665594447/website/web-monitoring-1_difrzm.png"
           alt="Web Monitoring UI"
-          style="width: 200%"
         />
       </figure>
       <h3>Input</h3>
