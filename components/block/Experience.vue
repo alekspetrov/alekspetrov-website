@@ -63,7 +63,7 @@
         <div>
           <h3>UX/UI Designer at Dipex Group</h3>
           <p>
-            Create design for complex tech solutions such as control of city
+            Create design for complex tech products such as control of city
             lighting, pumping and heating power systems for the city. The
             projects were awarded at an international exhibition in Germany.
           </p>
