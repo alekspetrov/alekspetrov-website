@@ -1,6 +1,6 @@
 <template>
   <div class="page-block">
-    <h3 class="page-block-title">Currently</h3>
+    <h3 class="page-block-title">Now</h3>
     <NuxtLink to="/projects/wordy" class="card card-row card-link">
       <div>
         <h3>Wordy</h3>
