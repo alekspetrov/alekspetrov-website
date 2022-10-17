@@ -5,7 +5,8 @@ const roles = {
   prod: 'Product Manager',
   des: 'Product Designer & Developer',
   dev: 'Product Developer & Designer',
-  default: 'Design Engineer',
+  default: 'Product Manager',
+  // default: 'Design Engineer',
 }
 
 const role =
@@ -22,6 +23,7 @@ const role =
     </div>
     <div class="main-nav">
       <NuxtLink to="/blog" class="nav-link">Writings</NuxtLink>
+      <NuxtLink to="/experience" class="nav-link">Experience</NuxtLink>
       <NuxtLink to="/projects" class="nav-link">Projects</NuxtLink>
     </div>
   </div>
@@ -29,7 +31,7 @@ const role =
 
 <style lang="postcss">
 .site-header {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   margin-top: var(--space-xl);
   margin-bottom: var(--space-3xl);
@@ -49,7 +51,7 @@ const role =
 .main-nav {
   display: flex;
   align-items: start;
-  gap: 40px;
+  gap: 30px;
 }
 
 .nav-link {
@@ -58,6 +60,12 @@ const role =
 
   &.router-link-exact-active {
     color: var(--color-text-base);
+  }
+}
+
+@media screen and (min-width: 560px) {
+  .site-header {
+    display: flex;
   }
 }
 </style>

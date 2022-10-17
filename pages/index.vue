@@ -23,7 +23,6 @@ useHead({
       <BlockBanner :role="query.role" class="index-page-banner" />
       <BlockProjects />
       <BlockPosts />
-      <BlockExperience v-if="query.experience" />
     </div>
   </NuxtLayout>
 </template>
