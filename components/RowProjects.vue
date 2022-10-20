@@ -16,13 +16,13 @@
         </div>
         <span>2020</span>
       </NuxtLink>
-      <NuxtLink to="/projects/web-monitoring" class="card card-row card-link">
+      <!-- <NuxtLink to="/projects/web-monitoring" class="card card-row card-link">
         <div>
           <h3>Workouts Scheduler</h3>
           <p>Track workouts and progress</p>
         </div>
         <span>2019</span>
-      </NuxtLink>
+      </NuxtLink> -->
     </div>
     <NuxtLink to="/projects" class="more-link"> Show all → </NuxtLink>
   </div>
