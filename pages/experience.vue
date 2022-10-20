@@ -12,9 +12,9 @@ useHead({
 
 <template>
   <NuxtLayout name="blog">
-    <PageHeader class="wrapper-sm" title="Experience" />
+    <PageHeader class="wrapper-sm" title="Work Experience" />
     <div class="wrapper-sm">
-      <BlockExperience />
+      <RowExperience />
     </div>
   </NuxtLayout>
 </template>

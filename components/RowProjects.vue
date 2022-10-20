@@ -12,7 +12,7 @@
       <NuxtLink to="/projects/web-monitoring" class="card card-row card-link">
         <div>
           <h3>Web Monitor</h3>
-          <p>See endpoints availability</p>
+          <p>Monitoring for websites, endpoints ans API's.</p>
         </div>
         <span>2020</span>
       </NuxtLink>

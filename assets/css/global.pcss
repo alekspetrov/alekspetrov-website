@@ -113,7 +113,7 @@ a {
   hr {
     border: 0;
     border-top: 1px solid var(--gray-900);
-    width: calc(var(--blog-content-width) / var(--golden-ratio-number));
+    max-width: var(--blog-content-width);
     margin: calc(var(--space-md) * 6) auto;
   }
 
@@ -162,7 +162,7 @@ a {
 
     figcaption {
       margin-top: var(--space-sm);
-      color: var(--gray-700);
+      color: var(--color-text-muted);
       text-align: center;
       font-size: var(--text-sm);
     }
@@ -283,4 +283,12 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 4px;
   margin-bottom: var(--space-md);
+}
+
+.more-link {
+  transition: color var(--transition);
+
+  &:hover {
+    color: var(--color-text-base);
+  }
 }

@@ -20,14 +20,14 @@ const srcset = imageSizes
 </script>
 
 <template>
-  <figure class="body-image">
+  <figure>
     <img
       :sizes="imageSizes"
       :srcset="srcset"
       :src="imageSrc"
       :alt="block.caption || imageId"
     />
-    <figcaption v-if="block.caption" class="body-image-caption">
+    <figcaption v-if="block.caption">
       {{ block.caption }}
     </figcaption>
   </figure>

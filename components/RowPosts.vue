@@ -7,13 +7,3 @@
     <NuxtLink to="/blog" class="more-link">Read all →</NuxtLink>
   </div>
 </template>
-
-<style lang="postcss">
-.cards-more-link {
-  color: var(--color-text-muted);
-
-  &:hover {
-    color: var(--color-text-base);
-  }
-}
-</style>

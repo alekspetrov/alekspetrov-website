@@ -8,10 +8,10 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="page-header">
+  <header class="page-header">
     <h1>{{ typograph(title) }}</h1>
     <p>{{ text }}</p>
-  </div>
+  </header>
 </template>
 
 <style lang="postcss">

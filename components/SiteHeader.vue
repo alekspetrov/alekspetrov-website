@@ -21,9 +21,9 @@ const role =
       <NuxtLink to="/" class="site-name">Aleks Petrov</NuxtLink>
       <p>{{ role }}</p>
     </div>
-    <!-- <div class="main-nav">
-      <NuxtLink to="/blog" class="nav-item">Menu</NuxtLink>
-    </div> -->
+    <div class="main-nav">
+      <NuxtLink to="/experience" class="nav-item">Experience</NuxtLink>
+    </div>
   </div>
 </template>
 
@@ -40,9 +40,13 @@ const role =
 }
 
 .main-nav {
+  color: var(--color-text-base);
   display: flex;
   align-items: start;
   gap: 30px;
+
+  &:hover {
+  }
 }
 
 .nav-item:hover {

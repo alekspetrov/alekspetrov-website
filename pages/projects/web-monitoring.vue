@@ -15,7 +15,7 @@ useHead({
     <PageHeader
       class="wrapper-sm"
       title="Web Monitoring"
-      text="Made for internal teams to see if websites available realtime."
+      text="Internal usage monitoring for websites, endpoints ans API's."
     />
     <div class="article-layout">
       <figure class="article-item-full">
