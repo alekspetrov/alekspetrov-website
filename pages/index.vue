@@ -20,9 +20,9 @@ useHead({
 <template>
   <NuxtLayout name="blog">
     <div class="wrapper-sm">
-      <BlockBanner :role="query.role" class="index-page-banner" />
-      <BlockProjects />
-      <BlockPosts />
+      <RowBanner :role="query.role" class="index-page-banner" />
+      <RowProjects />
+      <RowPosts />
     </div>
   </NuxtLayout>
 </template>

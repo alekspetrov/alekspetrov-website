@@ -7,7 +7,6 @@
 </template>
 
 <style lang="postcss">
-/* Grid */
 .blog-layout {
   margin: 0 var(--space-base);
 }

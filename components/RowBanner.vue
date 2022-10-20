@@ -1,5 +1,5 @@
 <template>
-  <div class="page-block banner-text" role="banner">
+  <div class="page-block article-layout" role="banner">
     <h3 class="page-block-title">About</h3>
     <p>
       Creating and managing software since 2008. Experienced in&nbsp;product
@@ -10,22 +10,11 @@
     <p>
       Reach me at
       <a
+        class="text-white"
         href="mailto:hello@alekspetrov.com?subject=Contact from the site"
-        class="link"
       >
         hello@alekspetrov.com
       </a>
     </p>
-    <p></p>
   </div>
 </template>
-
-<style lang="postcss">
-.banner-text {
-  color: var(--color-text-muted);
-
-  > p + p {
-    margin-top: var(--space-xl);
-  }
-}
-</style>

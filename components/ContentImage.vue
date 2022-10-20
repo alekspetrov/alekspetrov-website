@@ -2,6 +2,7 @@
 const props = defineProps({
   block: {
     type: Object,
+    default: () => ({}),
   },
 })
 

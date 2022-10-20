@@ -28,7 +28,7 @@ if (post.value) {
       <PageHeader class="wrapper-sm" :title="post.title" :text="post.date" />
       <div class="article-layout">
         <PageContent :content="post.blocks" />
-        <BlockForm />
+        <RowForm />
       </div>
     </template>
     <template v-if="error">

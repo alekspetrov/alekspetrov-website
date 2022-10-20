@@ -1,19 +1,29 @@
 * {
   margin: 0;
   box-sizing: border-box;
+}
 
-  scrollbar-width: 12px;
-  scrollbar-color: red;
+html::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: var(--gray-900);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--gray-600);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 body {
   font-family: var(--font-sans);
   font-size: var(--text-md);
-  line-height: var(--leading-md);
+  line-height: var(--leading-base);
   font-weight: 500;
+  letter-spacing: 0.006rem;
 
+  color: var(--color-text-muted);
   background: var(--color-fill-bg);
-  color: var(--color-text-base);
 
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -42,7 +52,6 @@ h3 {
   color: var(--color-heading);
   font-size: var(--text-md);
   font-weight: 500;
-  letter-spacing: 0.006rem;
 }
 
 ul,
@@ -56,18 +65,27 @@ a {
   text-decoration: none;
 }
 
-/* Wrappers */
+/* Utils */
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-white {
+  color: var(--color-text-base);
+}
+
+.body-text {
+  line-height: var(--leading-md);
+}
+
 .wrapper-sm {
   max-width: var(--blog-content-width);
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Global typography styling. */
+/* Article */
 .article-layout {
-  color: var(--color-text-muted);
-
-  /* All elements */
   & > * {
     max-width: var(--blog-content-width);
     margin-left: auto;
@@ -84,6 +102,7 @@ a {
   ul,
   ol {
     color: var(--color-text-muted);
+    line-height: var(--leading-md);
   }
 
   p,
@@ -93,8 +112,8 @@ a {
 
   hr {
     border: 0;
-    border-top: 1px solid var(--color-text-muted);
-    width: calc(var(--blog-content-width) / 2);
+    border-top: 1px solid var(--gray-900);
+    width: calc(var(--blog-content-width) / var(--golden-ratio-number));
     margin: calc(var(--space-md) * 6) auto;
   }
 
@@ -161,7 +180,6 @@ a {
 .link {
   color: var(--color-text-base);
   display: inline-block;
-  text-decoration: underline;
 }
 
 .split-list {
@@ -232,22 +250,37 @@ a {
   }
 }
 
-.page-block {
-  margin-bottom: var(--space-3xl);
-}
-
-.page-block-title {
-  margin-bottom: var(--space-xl);
-}
-
 @media screen and (min-width: 640px) {
   .card {
     display: flex;
     margin-inline: -24px;
     padding: 16px 24px;
   }
+}
 
+.page-block {
+  margin-bottom: var(--space-3xl);
+}
+
+@media screen and (min-width: 640px) {
   .page-block {
     margin-bottom: var(--space-4xl);
   }
+}
+
+.page-block-title {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xl);
+}
+
+.page-block-list {
+  margin-bottom: var(--space-xl);
+}
+
+.callout {
+  background: rgba(255, 255, 255, 0.01);
+  padding: 16px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  margin-bottom: var(--space-md);
 }

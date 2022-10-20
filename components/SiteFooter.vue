@@ -7,7 +7,6 @@
 <style lang="postcss">
 .site-footer {
   color: var(--color-text-muted);
-  font-size: var(--text-sm);
   letter-spacing: 0.006rem;
   font-weight: 400;
 

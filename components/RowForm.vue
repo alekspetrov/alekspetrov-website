@@ -60,14 +60,11 @@ const validateEmail = () => {
 </script>
 
 <template>
-  <hr />
   <div class="form">
     <h3 class="form-title">Subscribe for updates</h3>
-
     <div v-if="isSubmitted" class="form-row">
       <p>Thank you for subscription! Check your email please.</p>
     </div>
-
     <div
       v-if="errorCode === 'MEMBER_EXISTS_WITH_EMAIL_ADDRESS'"
       class="form-row"
@@ -77,7 +74,6 @@ const validateEmail = () => {
         <NuxtLink to="/issues" class="link">Don’t get emails? </NuxtLink>
       </p>
     </div>
-
     <form v-if="!isSubmitted && !errorCode" @submit.prevent="validateEmail">
       <div class="form-row">
         <input
@@ -90,7 +86,6 @@ const validateEmail = () => {
           {{ isPending ? '…' : '⏎' }}
         </button>
       </div>
-
       <div v-if="errorMessage" class="form-error-text">
         {{ errorMessage }}
       </div>

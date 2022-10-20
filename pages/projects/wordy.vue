@@ -4,7 +4,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Learn 500 words for 20 min a week!',
+      content: 'Boost your vocab fast and free!',
     },
   ],
 })
@@ -15,7 +15,7 @@ useHead({
     <PageHeader
       class="wrapper-sm"
       title="Wordy"
-      text="Learn 500 words for 20 min a week"
+      text="Boost your vocab fast and free!"
     />
     <div class="article-layout">
       <p>
@@ -129,7 +129,7 @@ useHead({
         I learned that idea are nothing without experience, but experience is
         impossible without ideas.
       </p>
-      <BlockForm />
+      <RowForm />
     </div>
   </NuxtLayout>
 </template>
