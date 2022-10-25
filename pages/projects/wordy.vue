@@ -44,7 +44,7 @@ useHead({
 
       <figure>
         <img
-          src="https://res.cloudinary.com/alekspetrov/image/upload/v1664655264/website/wrody-forgetting-curve.png"
+          src="https://res.cloudinary.com/alekspetrov/image/upload/v1666707613/website/forgetting-curve.png"
           alt=""
         />
         <figcaption>Hermann Ebbinghaus' forgeting curve graph</figcaption>
