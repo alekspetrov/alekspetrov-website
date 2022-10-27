@@ -1,25 +1,12 @@
 <script setup lang="ts">
-const { query } = useRoute()
-
-const roles = {
-  prod: 'Product Manager',
-  des: 'Product Designer & Developer',
-  dev: 'Product Developer & Designer',
-  default: 'Product Manager',
-  // default: 'Design Engineer',
-}
-
-const role =
-  query.role && typeof query.role === 'string' && roles[query.role]
-    ? roles[query.role]
-    : roles['default']
+const { query } = useRoute();
 </script>
 
 <template>
   <div class="site-header wrapper-sm">
     <div>
       <NuxtLink to="/" class="site-name">Aleks Petrov</NuxtLink>
-      <p>{{ role }}</p>
+      <p>Product Led</p>
     </div>
     <div class="main-nav">
       <NuxtLink to="/experience" class="nav-item">Experience</NuxtLink>
